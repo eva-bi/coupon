@@ -1,0 +1,223 @@
+@charset "utf-8";
+
+/*doc
+---
+title: float テキストリスト
+name: Text_List
+category: リスト
+parent:
+---
+
+floatを使用したテキスト横並びリスト。
+
+- テキストの要素毎に自動改行する。
+
+```html_example
+<ul class="txtListType01">
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+</ul>
+```
+*/
+
+.txtListType01 {
+    @extend .clearfix;
+
+    & > li {
+        float:left;
+        margin:2px 1.5em 2px 0;
+    }
+}
+
+/*doc
+---
+title: 箇条書きリスト
+name: Bullet_Point_List
+category: リスト
+parent:
+---
+
+テキストの箇条書きリスト。
+
+- .listChilds
+
+```html_example
+<ul class="listType01">
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+</ul>
+```
+*/
+
+.listType01 {
+    margin-bottom: mgn(0);
+
+    & > li {
+        position:relative;
+        margin-bottom: 4px;
+        padding-left: 1em;
+
+        @include setElem(before, "");
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            top: 0.65em;
+            left: 0.3em;
+            width: 3px;
+            height: 3px;
+            background-color: lighten($color04, 60%);
+        }
+
+        & > ul.listChilds {
+            margin-top: 4px;
+
+            & > li {
+                position:relative;
+                padding-left: 1em;
+
+                @include setElem(before, "");
+
+                &::before {
+                    top: 0;
+                    left: 0;
+                    content: "-";
+                }
+            }
+        }
+    }
+}
+
+/*doc
+---
+title: ※付きリスト
+name: Bullet_Point_List
+category: リスト
+parent:
+---
+
+テキストの※付きリスト。
+
+```html_example
+<ul class="listType02">
+    <li><i class="mk">※</i>コンテンツ</li>
+    <li><i class="mk">※</i>コンテンツ</li>
+    <li><i class="mk">※</i>コンテンツ</li>
+</ul>
+```
+*/
+
+.listType02 {
+    margin-bottom: mgn(0);
+
+    & > li {
+        position:relative;
+        margin-bottom: 4px;
+        padding-left: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & > .mk {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+/*doc
+---
+title: ※num付きリスト
+name: Bullet_Point_List
+category: リスト
+parent:
+---
+
+テキストの※付きリスト。
+
+```html_example
+<ul class="listType03">
+    <li><i class="mk">※1</i>コンテンツ</li>
+    <li><i class="mk">※2</i>コンテンツ</li>
+    <li><i class="mk">※3</i>コンテンツ</li>
+</ul>
+```
+*/
+
+.listType03 {
+    @extend .listType02;
+
+    & > li {
+        padding-left: 2.6em;
+    }
+}
+
+/*doc
+---
+title: 序列ありリスト
+name: Order_List
+category: リスト
+parent:
+---
+
+テキストの序列ありリスト。
+
+```html_example
+<ol class="odListType01">
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+</ol>
+
+<ol class="odListType02">
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+    <li>コンテンツ</li>
+</ol>
+```
+*/
+
+.odListType01 {
+    margin-bottom: mgn(0);
+    list-style-type:decimal;
+
+    & > li {
+        margin:0 0 4px 1.5em;
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+        & > .odListType01 {
+            margin-top: 4px;
+
+            & > li {
+                margin-bottom:0;
+            }
+        }
+    }
+}
+
+.odListType02 {
+    @extend .odListType01;
+
+    list-style-type:lower-alpha;
+
+    & > li {
+        & > .odListType01 {
+            margin-top: 4px;
+
+            & > li {
+                margin-bottom:0;
+            }
+        }
+    }
+}
+
+

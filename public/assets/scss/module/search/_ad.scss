@@ -1,0 +1,470 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------
+    Direct Link AD Setting
+----------------------------------------------------------------- */
+/* BG */
+.bgClType01{
+    background-color:#fffce3;
+}
+.bgClType01:hover{
+    background-color:inherit;
+}
+
+
+/* -----------------------------------------------------------------
+    Personalize AD Setting
+----------------------------------------------------------------- */
+/* --- pslAdCtHor --- */
+.pslAdCtHor{
+	margin:0 auto 1em auto;
+}
+.pslAdCtHor.item8{
+	width:746px;
+}
+.pslAdCtHor.item10{
+	width:932px;
+}
+.pslAdCtHor > div{
+	overflow:hidden;
+	padding:2px;
+	background:#333333;
+}
+.pslAdCtHor > div > a{
+	float:left;
+	display:block;
+	overflow:hidden;
+	margin-left:2px;
+	width:91px;
+	height:91px;
+	background:#ffffff;
+	color:#000000;
+	cursor:pointer;
+	text-decoration:none;
+}
+.pslAdCtHor > div > a:first-child{
+	margin-left:0;
+}
+.pslAdCtHor > div > a img{
+	max-width:91px;
+	max-height:91px;
+}
+.pslAdCtHor > div .imgContainer{
+	display:table-cell;
+	width:91px;
+	height:91px;
+	text-align:center;
+	vertical-align:middle;
+}
+.pslAdCtHor > div > a:hover .imgContainer,
+.pslAdCtHor .imgContainer.on{
+	display:none;
+}
+.pslAdCtHor .txtContainer{
+	position:relative;
+	width:83px;
+	height:83px;
+	padding:4px;
+}
+.pslAdCtHor .txtTl{
+	font-size:12px;
+	line-height:1.2;
+}
+.pslAdCtHor .txtPl{
+	position:absolute;
+	bottom:0.5em;
+	left:0;
+	right:0;
+	color:#ff0000;
+	font-size:16px;
+	font-family:Arial;
+	font-weight:bold;
+	text-align:center;
+}
+
+/* --- pslAdCtVrt --- */
+.pslAdCtVrt{
+	margin-bottom:1em;
+}
+.pslAdCtVrt > div{
+	overflow:hidden;
+	width:178px;
+	padding:2px 0 0 2px;
+	background:#333333;
+}
+.pslAdCtVrt > div > a{
+	float:left;
+	display:block;
+	overflow:hidden;
+	margin:0 2px 2px 0;
+	width:87px;
+	height:87px;
+	background:#ffffff;
+	color:#000000;
+	cursor:pointer;
+	text-decoration:none;
+}
+.pslAdCtVrt > div > a img{
+	max-width:87px;
+	max-height:87px;
+}
+.pslAdCtVrt .imgContainer{
+	display:table-cell;
+	width:87px;
+	height:87px;
+	text-align:center;
+	vertical-align:middle;
+}
+.pslAdCtVrt > div > a:hover .imgContainer,
+.pslAdCtVrt .imgContainer.on{
+	display:none;
+}
+.pslAdCtVrt .txtContainer{
+	position:relative;
+	width:79px;
+	height:79px;
+	padding:4px;
+}
+.pslAdCtVrt .txtTl{
+	font-size:12px;
+	line-height:1.2;
+}
+.pslAdCtVrt .txtPl{
+	position:absolute;
+	bottom:0.5em;
+	left:0;
+	right:0;
+	color:#ff0000;
+	font-size:15px;
+	font-family:Arial;
+	font-weight:bold;
+	text-align:center;
+}
+
+/* --- pslAdCtHorWide --- */
+.pslAdCtHorWide{
+	display: none;
+	clear: both;
+	margin:0 auto 1em auto;
+}
+.pslAdCtHorWide#rakutenAdBottom{
+	padding-top: 13px;
+}
+.pslAdCtHorWide.item5{
+	width:677px;
+}
+.pslAdCtHorWide.item6{
+	width:812px;
+}
+.pslAdCtHorWide > div{
+	overflow:hidden;
+	padding:2px;
+	background:#333;
+}
+.pslAdCtHorWide > div > a{
+	float:left;
+	display:block;
+	overflow:hidden;
+	margin-left:2px;
+	width:133px;
+	height:133px;
+	background:#ffffff;
+	color:#000000;
+	cursor:pointer;
+	text-decoration:none;
+}
+.pslAdCtHorWide > div > a:first-child{
+	margin-left:0;
+}
+.pslAdCtHorWide > div > a img{
+	max-width:133px;
+	max-height:133px;
+}
+.pslAdCtHorWide .imgContainer{
+	display:table-cell;
+	width:133px;
+	height:133px;
+	text-align:center;
+	vertical-align:middle;
+}
+.pslAdCtHorWide div > a:hover .imgContainer,
+.pslAdCtHorWide div> a .imgContainer.on{
+	display:none;
+}
+.pslAdCtHorWide .txtContainer{
+	position:relative;
+	width:125px;
+	height:125px;
+	padding:4px;
+}
+.pslAdCtHorWide .txtTl{
+	font-size:15px;
+	line-height:1.3;
+	text-align:left;
+}
+.pslAdCtHorWide .txtPl{
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0.8em;
+	color:#ff0000;
+	font-size:18px;
+	font-family:Arial;
+	font-weight:bold;
+	text-align:center;
+}
+
+/* --- market logo --- */
+.pslAdCtHor.rakuten p.logo a,
+.pslAdCtHorWide.rakuten p.logo a{
+	display:block;
+	width:40px;
+	height:16px;
+	margin-top:6px;
+	background:url(/assets/image/common/layout/search/ad/mkp-logo-sprite.png) no-repeat left 0;
+	text-indent:-9999px;
+}
+.pslAdCtVrt p.logo{
+	padding:6px;
+	border-width:0 2px 2px 2px;
+	border-style:solid;
+	border-color:#333333;
+}
+.pslAdCtVrt p.logo a{
+	display:block;
+	margin:0 auto;
+	background-image:url(/assets/image/common/layout/search/ad/mkp-logo-sprite.png);
+	background-repeat:no-repeat;
+	text-indent:-9999px;
+}
+/* rakuten */
+.pslAdCtVrt.rakuten p.logo a{
+	width:60px;
+	height:30px;
+	background-position:0 -36px;
+}
+/* amazon */
+.pslAdCtVrt.amazon p.logo a{
+	width:81px;
+	height:27px;
+	background-position:-92px -34px;
+}
+/* yafuoku */
+.pslAdCtVrt.yafuoku p.logo a{
+	width:98px;
+	height:22px;
+	background-position:-200px -36px;
+}
+/* smaoku */
+.pslAdCtVrt.smaoku p.logo a{
+	width:118px;
+	height:23px;
+	background-position:-330px -36px;
+}
+
+/* --- bnrAdCt --- */
+#bnrAdCt{
+	width:300px;
+	margin:1.5em auto;
+}
+#bnrAdCt > div{
+	overflow:hidden;
+	width:298px;
+	height:248px;
+	padding:2px 0 0 2px;
+	border-radius:3px 3px 0 0;
+	background:#333;
+}
+#bnrAdCt > div > a{
+	position:relative;
+	display:block;
+	overflow:hidden;
+	float:left;
+	width:145px;
+	height:120px;
+	margin:0 2px 2px 0;
+	border:1px solid #ffffff;
+	background:#ffffff;
+	text-align:center;
+}
+#bnrAdCt a > img{
+	min-width:145px;
+	max-width:145px;
+}
+#bnrAdCt a:hover > img{
+	opacity:0.7;
+}
+#bnrAdCt p.txtTl{
+	position:absolute;
+	bottom:0;
+	width:137px;
+	height:16px;
+	padding:4px;
+	background:#333;
+	color:#ffffff;
+	font-size:10px;
+	overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    opacity:0.8;
+}
+#bnrAdCt p.logo{
+	padding:6px;
+	border-width:0 2px 2px 2px;
+	border-style:solid;
+	border-color:#333333;
+}
+#bnrAdCt p.logo a{
+	display:block;
+	margin:0 auto;
+	background-image:url(/assets/image/common/layout/search/ad/mkp-logo-sprite.png);
+	background-repeat:no-repeat;
+	text-indent:-9999px;
+}
+#bnrAdCt.rakuten p.logo a{
+	width:60px;
+    height:30px;
+    background-position:0 -36px;
+}
+#bnrAdCt.amazon p.logo a{
+    width:81px;
+    height:27px;
+    background-position: -92px -34px;
+}
+
+
+/* --- Item No Match --- */
+.pslAdCtVrt > div > a.noMatch,
+.pslAdCtHor > div > a.noMatch,
+.pslAdCtHorWide > div > a.noMatch{
+    display:block;
+    float:none;
+    color:#0078e0;
+    cursor:pointer;
+    font-size:16px;
+    line-height:1.5;
+    text-align:center;
+    vertical-align:middle;
+}
+.pslAdCtVrt.rakuten > div > a.noMatch,
+.pslAdCtHor.rakuten > div > a.noMatch,
+.pslAdCtHorWide.rakuten > div > a.noMatch{
+    background:url(/assets/image/common/layout/search/rakten_ichiba_recommend_alt.jpg) #ffffff no-repeat center 10px;
+}
+.pslAdCtVrt.yafuoku > div > a.noMatch,
+.pslAdCtHor.yafuoku > div > a.noMatch,
+.pslAdCtHorWide.yafuoku > div > a.noMatch{
+    background:url(/assets/image/common/layout/search/yahoo_recommend_alt.png) #ffffff no-repeat center 10px;
+}
+.pslAdCtVrt.amazon > div > a.noMatch,
+.pslAdCtHor.amazon > div > a.noMatch,
+.pslAdCtHorWide.amazon > div > a.noMatch{
+    background:url(/assets/image/common/layout/search/amazon_recommend_side_bar_bg.gif) #ffffff no-repeat center 10px;
+}
+
+.pslAdCtVrt > div > a.noMatch:hover,
+.pslAdCtHor > div > a.noMatch:hover,
+.pslAdCtHorWide > div > a.noMatch:hover {
+	text-decoration:underline;
+	color:#333333;
+}
+.pslAdCtVrt > div > a.noMatch {
+    width:166px;
+    height:90px;
+    padding:100px 5px 0 5px;
+}
+.pslAdCtVrt.amazon > div > a.noMatch {
+    width:166px;
+    height:140px;
+    padding:50px 5px 0 5px;
+}
+.pslAdCtHor > div > a.noMatch,
+.pslAdCtHorWide > div > a.noMatch {
+    height:30px;
+    padding-top:90px;
+}
+.pslAdCtHor.item8 > div > a.noMatch {
+    width:742px;
+}
+.pslAdCtHor.item10 > div > a.noMatch {
+    width:928px;
+}
+.pslAdCtHorWide > div > a.noMatch {
+    width:673px;
+}
+.pslAdCtHorWide.item6 > div > a.noMatch {
+    width:808px;
+}
+
+
+/* -----------------------------------------------------------------
+    AD Listing
+----------------------------------------------------------------- */
+#listingAd{
+	clear:both;
+	margin:0 0 1em 0;
+}
+#listingAd .adArea {
+	overflow:hidden;
+}
+#listingAd .adArea li {
+	float:left;
+	width:149px;
+	border-left:1px dotted #cccccc;
+}
+#listingAd .adArea li:first-child {
+	width:150px;
+    border-left:none;
+}
+#listingAd .adArea li a {
+	display: block;
+	height:175px;
+	padding:10px;
+	background:#fffce3;
+    text-decoration: none;
+}
+#listingAd .adArea li a:hover {
+	background:#ebf8ff;
+}
+#listingAd .thumb{
+	width:130px;
+	height:115px;
+	margin-bottom:10px;
+    text-align:center;
+}
+#listingAd .thumb img{
+    max-width:130px;
+    max-height:115px;
+}
+#listingAd .txtTl{
+	font-size:11px;
+	line-height:1.4;
+}
+
+/* -----------------------------------------------------------------
+    Banner Super Sale
+----------------------------------------------------------------- */
+.bnrSpsale {
+    margin-top: 1em;
+}
+.bnrSpsale a {
+    display: block;
+    width: 100%;
+    height: 42px;
+    background-image: url(/assets/image/banner/size_width_full/bnr_super_sale.png);
+    background-repeat: repeat-x;
+    background-position: center top;
+    cursor:pointer;
+    text-indent: -9999px;
+}
+
+/* -----------------------------------------------------------------
+    rakuten Widget
+----------------------------------------------------------------- */
+#rakutenWidgetBottom {
+    display: none;
+    clear: both;
+    width: 100%;
+    padding: 10px 0px;
+    text-align: center;
+}

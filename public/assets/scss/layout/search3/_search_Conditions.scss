@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*-------------------------------------------------------------------
+ *
+ * File Name   : _search_conditons.css
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+  .searchFormConditions
+
+================================================================= */
+.searchFormConditions{
+    padding:5px 0;
+    border-bottom:2px solid #f2f2f2;
+    background:#fff;
+    font-size:14px;
+}
+.searchFormConditions ul li{
+    float:left;
+    height:20px;
+    margin:3px 10px 3px 0;
+    vertical-align:bottom;
+}
+.searchFormConditions ul li.searchFormConditionsListNumber{
+    margin:3px 20px 3px 0;
+}
+.searchFormConditions ul li.searchFormConditionsListHd{
+    margin:0 10px 0 0;
+    padding:6px 0 0;
+}
+.searchFormConditions ul li.searchFormConditionsList{
+    padding:2px 5px;
+    border:1px #ddd;
+    border-radius:6px;
+    background:#eee;
+    font-size:12px;
+}

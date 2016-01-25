@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  Encoding.default_external = 'UTF-8'
+  config.vm.box = "bento/centos-6.7"
+  
+  config.vm.define :coupon_search do |web|
+    web.vm.network :private_network, ip: "192.168.33.115"
+    config.vm.provision "chef_solo" do |chef|
+      chef.add_recipe "php"
+      chef.add_recipe "httpd"
+    end
+  end
+
+  config.vm.synced_folder "../../", "/vagrant", :create => true, :owner=> 'vagrant', :group=>'vagrant', :mount_options => ['dmode=777,fmode=755']
+
+  config.vm.provider :virtualbox do |vb|
+    #vb.customize ["modifyvm", :id, "--memory", 1024]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
+end

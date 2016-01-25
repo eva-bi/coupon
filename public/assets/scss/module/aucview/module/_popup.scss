@@ -1,0 +1,187 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------------------------------
+Modal View
+--------------------------------------------------------------------------------------------*/
+.modal{display:none;}
+.modalBody{position: fixed; z-index:1000;  width:690px; left:50%; top:30%; height: 300px}
+.modalBK{position: fixed; z-index:999; height:100%; width:100%;background:#000; opacity: 0.7;filter: alpha(opacity=70);-moz-opacity:0.70; top:0; left:0;}
+
+.alert {
+    background-color: #FCF8E3;
+    border: 1px solid #FBEED5;
+    border-radius: 4px 4px 4px 4px;
+    text-align:center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.alert-success {
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #468847;
+}
+.alert-error {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    color: #B94A48;
+}
+
+
+/*------------------------------------------------------------------------------------------
+POPUP
+--------------------------------------------------------------------------------------------*/
+/* POPUP Width - 幅指定 */
+.popup_window.w600 { width:600px; }
+.popup_window.w520 { width:520px; }
+.popup_window.w380 { width:380px; }
+
+/* POPUP WINDOW - ポップアップウインドウ（通常） */
+.popup_window {
+    margin:0 auto;
+    background:#FFF;
+    border:2px solid #CCC;
+    border-radius:5px;
+    position:relative;
+}
+/* POPUP Head - （通常） */
+.popup_window .pop_hd {
+    background:#EEE;
+    padding:4px 0;
+    border-radius:4px 4px 0 0;
+    font-size:14px;
+    font-weight:bold;
+    text-align:center;
+    min-width:16px;/* 最小限アイコン高さセット */
+}
+
+
+/* POPUP WINDOW - ポップアップウインドウ（重要告知） */
+.popup_window.important {
+    margin:0 auto;
+    background:#FFF;
+    border:2px solid #C00;
+    border-radius:5px;
+    position:relative;
+}
+/* POPUP Head -（重要告知） */
+.popup_window.important .pop_hd {
+    background:#C00;
+    padding:4px 0;
+    border-radius:4px 4px 0 0;
+    font-size:20px;
+    font-weight:bold;
+    color:#FFF;
+    text-align:center;
+}
+/* POPUP Body -（重要告知） */
+.popup_window.important .pop_bd p.txt01 {
+    margin-bottom:15px;
+    font-size:14px;
+}
+.popup_window.important .pop_bd .red_bold {
+    font-weight:bold;
+    color:#C00;
+}
+.popup_window.important .pop_bd p.txt_cre_change { font-size:16px; text-align:center; }
+.popup_window.important .pop_bd p.txt_cre_change a { text-decoration:underline; }
+.popup_window.important .pop_bd p.txt_cre_change a:hover { text-decoration:none; }
+
+
+/* POPUP WINDOW - ポップアップウインドウ（ゲスト会員時） */
+.popup_window.guest_member_msg {
+    margin:0 auto;
+    background:#FFF;
+    border:2px solid #9DC422;
+    border-radius:5px;
+    position:relative;
+}
+.popup_window.guest_member_msg .pop_bd p.txt01 { font-size:18px; color:#000; line-height:1.4; }
+.popup_window.guest_member_msg .pop_bd p.txt01 span { font-weight:bold; }
+/* Btn Regist Member */
+.popup_window.guest_member_msg ul.btn_regist_member {
+    overflow:hidden;
+    width:530px;
+    margin-top: 20px;
+}
+.popup_window.guest_member_msg ul.btn_regist_member li {
+    float:left;
+    width:250px;
+}
+.popup_window.guest_member_msg ul.btn_regist_member li span {
+    margin-top:8px;
+    color:#C00;
+    text-align:center;
+    display:block;
+}
+.popup_window.guest_member_msg ul.btn_regist_member li.general { margin-right:30px; }
+.popup_window.guest_member_msg ul.btn_regist_member li a {
+    width:250px;
+    height:29px;
+    padding-top:13px;
+    font-size:14px;
+    text-align:center;
+    text-decoration:none;
+    display:block;
+}
+.popup_window.guest_member_msg ul.btn_regist_member li.general a { background:url(/assets/image/common/module/popup/btn_pop_btn02.png) no-repeat 0 0; color:#000; }
+.popup_window.guest_member_msg ul.btn_regist_member li.premium a { background:url(/assets/image/common/module/popup/btn_pop_btn02.png) no-repeat 0 -42px; color:#503005; }
+.popup_window.guest_member_msg ul.btn_regist_member li.general a:hover { background:url(/assets/image/common/module/popup/btn_pop_btn02.png) no-repeat -250px 0; color:#000; }
+.popup_window.guest_member_msg ul.btn_regist_member li.premium a:hover { background:url(/assets/image/common/module/popup/btn_pop_btn02.png) no-repeat -250px -42px; color:#503005; }
+
+
+/* Icon - クローズアイコン（×） */
+.btn_close { position:absolute; top:5px; right:5px; }
+
+/* POPUP Body */
+.popup_window .pop_bd { padding:15px 20px; }
+.popup_window .pop_bd dl dt { font-weight:bold; }
+.popup_window .pop_bd dl dd ul li {
+    margin-top:10px;
+    padding-left:23px;
+}
+
+/* Text・Button加工 スタイル指定（連番によりスタイル複製してください） */
+.popup_window .pop_bd .pop_text01 { width:270px; height:25px; margin-right:5px; }
+.popup_window .pop_bd .pop_text02 { width:300px; height:25px; margin-right:5px; }
+.popup_window .pop_bd .pop_button01 { width:80px; height:28px; }
+.popup_window .pop_bd .pop_button02 { width:130px; height:35px; }
+
+/* 境界線 */
+.popup_window .bdtop { border-top:1px solid #CCC; margin-top:15px; padding-top:15px; }
+
+
+/* 汎用スタイル（モジュール・パーツに合わせて使用） */
+.alright { text-align:right; }
+.alleft { text-align:left; }
+.alcenter { text-align:center; }
+
+.mt10 { margin-top:10px; }
+.mt15 { margin-top:15px; }
+.mt20 { margin-top:20px; }
+.mt25 { margin-top:25px; }
+
+.rename_box{
+    margin-bottom: 20px;
+}
+
+.delete_box{
+    margin-bottom: 20px;
+    border-width: 1px 20px 1px 1px;
+    margin-top: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.buttons_box{
+    text-align:right;
+}
+
+.select_folder{
+    width: 300px;
+}
+
+.loading_image{
+    padding-top: 100px;
+}
+

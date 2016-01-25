@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*
+# couponSearchInput - state
+
+## クーポン検索　ヘッダー検索エリア
+
+*/
+
+/* 検索入力ボックスパーツ */
+.couponSearchInput {
+    & .selectBox {
+        & > .selectList {
+            & > .selectListInner {
+                & > li {
+                    &.current,
+                    &.current:not(.tb):hover {
+                        background-color: $ciColor02;
+                        color: $color01;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}

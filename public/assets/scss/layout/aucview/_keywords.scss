@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*
+# searchKeywordsList
+
+## 検索キーワード群
+
+*/
+
+.searchKeywordsBox {
+    & > .keywordsList {
+        margin-top: -4px;
+
+        @include fz(13);
+
+        & a {
+            color: lighten($color04, 60%);
+
+            &:hover {
+                color: darken($ciColor02, 5%);
+            }
+        }
+    }
+}

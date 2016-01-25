@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/*
+# HeaderArea - state
+
+## ヘッダーエリアのスタイル
+
+*/
+
+// 追従ヘッダーエリア
+#fixedMinHeader {    
+    & > .fixedMinHeaderInner {
+        & > .recommendKeywords {
+            & > dt {
+                &.usually:hover {
+                    opacity: 1;
+                    cursor: default;
+                }
+            }
+            
+            & > dd {
+                & > .nextPage{
+                    &.disabled {
+                        opacity: 0 !important;
+                        cursor: default;
+
+                        & + .keywordsBlock{
+                            &:before {
+                                opacity: 0;
+                                width: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

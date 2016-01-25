@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*
+# ContentsArea
+
+## コンテンツエリアのスタイル
+
+*/
+
+#contentsArea {
+    position: relative;
+    z-index: 1;
+    width: 1000px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 0 $baseSideMgn mgn(4);
+}
+body.typeExtend #contentsArea {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide #contentsArea {
+    width: auto;
+}
+
+

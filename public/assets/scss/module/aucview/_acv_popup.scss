@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------------------------------
+Modal View
+--------------------------------------------------------------------------------------------*/
+.modal{ display:none;}
+.modalBody{
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	width:300px;
+	height:300px;
+}
+.modal_alpha_BK{ position: fixed; z-index:999; height:100%; width:100%;	background:#000; opacity: 0.7; filter: alpha(opacity=70); -moz-opacity:0.70; top:0;	left:0;}
+
+/*------------------------------------------------------------------------------------------
+Popup Window Style
+--------------------------------------------------------------------------------------------*/
+#modal_reserve #popup_window{
+	position:relative;
+	background:#FFF;
+	border:5px solid #404040;
+	border-radius:4px;
+	margin-top: -150px;
+	margin-left: -250px;
+}
+#modal_reserve #popup_window .pop_hd{
+	background:#F66;
+	padding:8px 0;
+	color:#FFF;
+	font-size:20px;
+	font-weight:bold;
+}
+#modal_reserve #popup_window .pop_hd span{
+	background:url(/assets/image/common/layout/aucview/acv_ic_sprite_m.png) no-repeat 0 -207px;
+	margin:0 auto;
+	padding-left:30px;
+	width:80px;
+	display:block;
+	line-height:26px;
+}
+#modal_reserve #popup_window .pop_bd{ padding:0 25px 15px 25px;}
+
+/*------------------------------------------------------------------------------------------
+Popup Window Point
+--------------------------------------------------------------------------------------------*/
+#modal_point #popup_window{
+	position:relative;
+	background:#FFF;
+	border:5px solid #404040;
+	border-radius:4px;
+	margin-top: -150px;
+	margin-left: -250px;
+}
+#modal_point #popup_window .pop_hd{
+	background:#78bd36;
+	padding:8px 0;
+	color:#FFF;
+	font-size:20px;
+	font-weight:bold;
+	text-align:center;
+	line-height:1.4;
+}
+#modal_point #popup_window .pop_bd{ padding:20px;}
+#modal_point #popup_window .pop_bd p.txt_lead{
+	margin-bottom:20px;
+	font-size:18px;
+	color:#000;
+	text-align:center;
+	line-height:1.6;
+}
+#modal_point .pop_bd p.txt_lead span{
+	margin-right:5px;
+	font-size:24px;
+	color:#ff0000;
+}
+/* loginArea */
+#modal_point .pop_bd ul.loginArea{
+	width:430px;
+	margin:0 auto 20px auto;
+}
+#modal_point .pop_bd ul.loginArea li{
+	float:left;
+}
+#modal_point .pop_bd ul.loginArea li a{
+	display:block;
+	width:200px;
+	height:30px;
+	padding:10px 0 0 0;
+	color:#FFF;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+}
+#modal_point .pop_bd ul.loginArea li a:hover{
+	opacity: 0.75;
+	filter: alpha(opacity=75);
+	-ms-filter: alpha(opacity=75);
+	transition-duration: 0.5s;
+}
+#modal_point .pop_bd ul.loginArea li.btn_login a{
+	background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 -120px;
+}
+#modal_point .pop_bd ul.loginArea li.btn_regist a{
+	margin-left:30px;
+	background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 -160px;
+}
+/* infoArea */
+#modal_point .pop_bd ul.infoArea{
+	clear:both;
+	width:430px;
+	margin:0 auto;
+}
+#modal_point .pop_bd ul.infoArea li{
+	float:left;
+	width:200px;
+	text-align:center;
+}
+#modal_point .pop_bd ul.infoArea li.itemlink{
+	margin-left:30px;
+}
+#modal_point .pop_bd ul.infoArea li a{
+	font-size:14px;
+	text-decoration:underline;
+}
+#modal_point .pop_bd ul.infoArea li a:hover{
+	text-decoration:none;
+}
+
+
+/*------------------------------------------------------------------------------------------
+Bid Regist Member
+--------------------------------------------------------------------------------------------*/
+.regist_member p.pop_txt01{
+	margin-top:15px;
+	color:#000;
+	font-size:15px;
+	line-height:1.5;
+}
+.regist_member p.pop_txt01 span{ font-weight:bold;}
+.regist_member ul{ margin:15px auto; width:420px; overflow:hidden; }
+.regist_member ul li{ float:left;}
+.regist_member ul li a{
+	display:block;
+	padding:15px 0 0 0;
+	width:200px;
+	height:25px;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+}
+.regist_member ul li a:hover{ opacity:0.80;	filter: alpha(opacity=80); -ms-filter: "alpha(opacity=80)";}
+.regist_member ul li span{ display:block; margin-top:10px; text-align:center;}
+
+/* Icon Set */
+.regist_member ul li.btn_login a{ background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 -80px;}
+.regist_member ul li.btn_member a{ background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 -120px; margin-left:20px;}
+
+/* Link About */
+.regist_member .bid_tool_about{
+	margin-top:25px;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+/*------------------------------------------------------------------------------------------
+General Member
+--------------------------------------------------------------------------------------------*/
+.general_member p.pop_txt01{
+	margin-top:15px;
+	color:#000;
+	font-size:15px;
+	line-height:1.5;
+}
+.general_member p.pop_txt01 span{ font-weight:bold;}
+.general_member ul{ margin:15px auto; width:420px; overflow:hidden; }
+.general_member ul li{ float:left;}
+.general_member ul li a{
+	display:block;
+	padding:12px 0 0 0;
+	width:390px;
+	height:28px;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+}
+.general_member ul li a:hover{ opacity:0.80; filter: alpha(opacity=80); -ms-filter: "alpha(opacity=80)";}
+.general_member ul li span{ display:block; margin-top:10px; text-align:center;}
+
+/* Icon Set */
+.general_member ul li.btn_premium a{ background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 0; margin-left:20px;}
+
+/* Link About */
+.general_member .bid_tool_about{
+	margin-top:25px;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+/*------------------------------------------------------------------------------------------
+Mbok Member
+--------------------------------------------------------------------------------------------*/
+.mbok_member p.pop_txt01{
+	margin-top:15px;
+	color:#000;
+	font-size:15px;
+	line-height:1.5;
+}
+.mbok_member p.pop_txt01 span{ font-weight:bold;}
+.mbok_member ul{ margin:15px auto; width:200px; overflow:hidden; }
+.mbok_member ul li{ float:left;}
+.mbok_member ul li a{
+	display:block;
+	padding:12px 0 0 0;
+	width:200px;
+	height:28px;
+	color:#FFF;
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	text-decoration:none;
+}
+.mbok_member ul li a:hover{ opacity:0.80; filter: alpha(opacity=80); -ms-filter: "alpha(opacity=80)";}
+.mbok_member ul li span{ display:block; margin-top:10px; text-align:center;}
+
+/* Icon Set */
+.mbok_member ul li.btn_member a{ background:url(/assets/image/common/layout/aucview/acv_regist_btn_sprite.png) no-repeat 0 -160px;}
+
+/* Link About */
+.mbok_member .bid_tool_about{
+	margin-top:25px;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+/*------------------------------------------------------------------------------------------
+Bid Set Input
+--------------------------------------------------------------------------------------------*/
+/* Common Style Set */
+.bid_set_input .pop_bd .bid_num,
+.bid_set_input .pop_bd .m_set,
+.bid_set_input .pop_bd .m_unit,
+.bid_set_input .pop_bd .m_num,
+.bid_set_input .pop_bd #sss_for_minute,
+.bid_set_input .pop_bd #sss_bid_price {
+	margin-top:15px;
+	font-size:14px;
+	color:#000;
+}
+/* bid_num */
+.bid_set_input .pop_bd .bid_num span{
+	margin:0 4px;
+	font-size:18px;
+	font-weight:bold;
+}
+/* m_set */
+.bid_set_input .pop_bd .m_set span{
+	margin-right:5px;
+	font-size:18px;
+	font-weight:bold;
+}
+/* m_unit */
+.bid_set_input .pop_bd .m_unit span{
+	margin:0 5px;
+	font-weight:bold;
+}
+/* m_num */
+.bid_set_input .pop_bd .m_num span{
+	margin:0 10px;
+	font-size:16px;
+	font-weight:bold;
+}
+/* ss_for_minute */
+.bid_set_input .pop_bd #sss_for_minute select{
+	background:transparent;
+	border:1px solid #CCC;
+	border-radius:3px;
+	margin:0 3px;
+	padding:3px 2px;
+	width:100px;
+}
+/* ss_bid_price */
+.bid_set_input .pop_bd #sss_bid_price input{
+	margin:0 5px 0 8px;
+	width:100px;
+	font-family:Arial;
+	font-size:16px;
+}
+.bid_set_input .pop_bd #sss_bid_price span{ font-size:11px; color:#999;}
+
+
+/*------------------------------------------------------------------------------------------
+SSS Bid Btn
+--------------------------------------------------------------------------------------------*/
+/* sss_bid_btn */
+.bid_set_input .pop_bd #sss_bid_btn{
+	margin-top:20px;
+	text-align:center;
+}
+.bid_set_input .pop_bd #sss_bid_btn:hover{
+	opacity:0.80;
+	filter: alpha(opacity=80);
+	-ms-filter: "alpha(opacity=80)";
+}
+
+/*------------------------------------------------------------------------------------------
+Btn Pop Close
+--------------------------------------------------------------------------------------------*/
+.btn_pop_close{ position:absolute; right:10px; top:8px;}
+
+

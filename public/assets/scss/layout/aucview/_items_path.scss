@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/*
+# itemsPath
+
+## 商品リンクパス
+
+*/
+
+.itemsPath {
+    margin: mgn(-2) 0 mgn(1);
+    padding-top: mgn(0);
+    border-top: 1px solid $color02;
+
+    @extend %clearfix;
+    @include fz(13);
+
+    & > dt {
+        float: left;
+        width: 4.5em;
+        margin-bottom: mgn(-2);
+        font-weight: bold;
+    }
+
+    & > dd {
+        margin: 0 0 mgn(-2) 4.5em;
+        padding-left: 1.5em;
+
+        @include setElem(before, "");
+
+        &:before {
+            top: 0;
+            left: 0;
+            content: "：";
+            font-weight: bold;
+        }
+
+        & > .itemsCatePath {
+            & > li {
+                display: inline-block;
+                margin-left: 0.4em;
+                padding-left: 1.2em;
+
+                @include setElem(before, "");
+
+                &:before {
+                    top: 50%;
+                    left: 0;
+                    margin-top: -5px;
+
+                    @include sprite(ico_arrow_right02, $commonSprites, $common);
+                }
+
+                &:first-child {
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+
+                &:first-child:before {
+                    display: none;
+                }
+
+                &.exhibit {
+                    margin-left: 0;
+                    padding-left: 0;
+                    font-weight: bold;
+
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        & > .itemsTagPath {
+            position: relative;
+            top: -3px;
+
+            & > li {
+                display: inline-block;
+                margin-left: 0.4em;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                & > a {
+                    display: inline-block;
+                    padding: 2px 6px;
+                    border: 1px solid $color02;
+
+                    @include border-radius(r(0));
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+/*
+# hdMainItem
+
+## 商品詳細　メイン商品タイトル
+
+*/
+
+.hdMainItemBox {
+    position: relative;
+    z-index: 2;
+    margin-top: -14px;
+    border-top: 4px solid $ciColor02;
+    background-color: lighten($color06, 75%);
+    line-height: 1.4;
+
+    @include shadow(0);
+    @include fz(24);
+
+    &.typeWide {
+        & > .hdMainItemBoxInner {
+            &:before {
+                display: none;
+            }
+
+            & .hdMainItem {
+                margin-right: 0;
+            }
+        }
+    }
+
+    & > .hdMainItemBoxInner {
+        position: relative;
+        width: $contMinWidth;
+        margin: 0 auto;
+        padding: 0 mgn(0, $baseSideMgn);
+
+        @include setElem(before, "");
+
+        &:before {
+            top: 0;
+            right: 191px + mgn(0, $baseSideMgn);
+            bottom: 0;
+            border-left: 1px dotted darken($color01, 20%);
+        }
+
+        & .hdMainItem {
+            position: relative;
+            margin-right: 200px;
+            padding: 0 0 mgn(-2) 65px;
+
+            & > i {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -20px;
+            }
+
+            & > .hdMainItemSup {
+                color: lighten($color04, 60%);
+
+                @include fz(15);
+            }
+
+            & > .hdMainItemTxt {
+                display: inline-block;
+                margin: 0 mgn(-1) 0 0;
+                color: $color03;
+            }
+
+            & > .state {
+                display: inline-block;
+                background-color: $color01;
+                margin: -2px 0 0;
+                padding: 2px 8px;
+                vertical-align: middle;
+
+                @include border-radius(200px);
+                @include fz(13);
+            }
+        }
+
+        & > .hdSubBlock {
+            position: absolute;
+            top: 50%;
+            right: mgn(0, $baseSideMgn);
+            width: 190px;
+
+            @include transform(
+                translateY(-50%)
+            );
+            @include fz(18);
+
+            & p {
+                margin: 0;
+            }
+
+            & > .aucSnipeTxt {
+                width: 100%;
+                font-weight: bold;
+                text-align: center;
+            }
+
+            & > .aucSnipeSwitch {
+                position: absolute;
+                top: -3px;
+                left: 0;
+                width: 100%;
+                text-align: left;
+
+                @include transform(
+                    translateY(-50%)
+                );
+
+                & > .aucSnipeTxt {
+                    width: 105px;
+                    margin-top: 8px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+
+                & > .switchType01 {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        & > #aucSnipeConfig {
+            position: absolute;
+            right: $baseSideMgn;
+            bottom: 0;
+            width: 376px;
+
+            @include translateY(100%);
+            @include shadow(2);
+            @include fz(13);
+
+            & > .aucSnipeBdr {
+                display: none;
+                position: absolute;
+                top: -8px;
+                right: 0;
+                width: 0;
+                height: 8px;
+                background-color: $ciColor01;
+            }
+
+            & > .aucSnipeConfigInner {
+                display: none;
+                position: relative;
+                z-index: 1;
+                background-color: $color01;
+
+                & > .aucSnipeConfigCont {
+                    position: relative;
+                    min-height: 200px;
+                    padding: mgn(-1);
+
+                    & > .close {
+                        position: absolute;
+                        top: -8px;
+                        right: 0;
+                        width: 40px;
+                        height: 40px;
+                        background-color: $ciColor01;
+                        line-height: 40px;
+                        text-align: center;
+                        cursor: pointer;
+
+                        @include transition(background-color 0.2s ease);
+
+                        &:not(.tb):hover {
+                            background-color: lighten($ciColor01, 5%);
+                        }
+                    }
+
+                    & .val{
+                        font-weight: bold;
+
+                        @include fz(18);
+                    }
+
+                    & .snipInputBlock {
+                        margin-bottom: 6px;
+                        vertical-align: middle;
+
+                        @include fz(15);
+
+                        & .selectElem {
+                            position: relative;
+                            display: inline-block;
+                            width: 120px;
+                            border-bottom: 2px solid $ciColor02;
+                            vertical-align: bottom;
+
+                            @include overflow(xy, hidden);
+
+                            & > select {
+                                position: relative;
+                                z-index: 1;
+                                -moz-appearance: none;
+                                -webkit-appearance: none;
+                                appearance: none;
+                                width: 180px;
+                                height: 30px;
+                                padding: 0 mgn(-1);
+                                border:none;
+                                background: none;
+                                text-indent: 0.01px;
+                                text-overflow: "";
+                                vertical-align: bottom;
+
+                                @include border-radius(0);
+                                @include box-sizing(content-box);
+                                @include fz(18);
+                            }
+
+                            & > i {
+                                position: absolute;
+                                top: 50%;
+                                right: 10px;
+                                margin: -3px 0 0;
+                            }
+                        }
+
+                        & input[type="text"] {
+                            width: 150px;
+                            height: 30px;
+                            padding: 0 mgn(-2);
+                            border:none;
+                            border-bottom: 2px solid $ciColor02;
+                            text-align: center;
+                            vertical-align: bottom;
+
+                            @include box-sizing(border-box);
+                            @include fz(18);
+                        }
+
+                        & .note {
+                            margin-top: mgn(-2);
+                            color: lighten($color04, 40%);
+
+                            @include fz(13);
+                        }
+                    }
+
+                    & .snipSubmit {
+                        margin: mgn(0) mgn(0) mgn(-2);
+                    }
+                }
+            }
+        }
+    }
+}
+body.typeExtend .hdMainItemBox > .hdMainItemBoxInner {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide .hdMainItemBox > .hdMainItemBoxInner {
+    width: auto;
+}
+
+/*
+# aucviewHd
+
+## 商品詳細　汎用タイトル
+
+*/
+
+.aucviewHdType01 {
+    margin: mgn(1) 0 mgn(-1);
+
+    @include fz(20);
+}
+
+.aucviewHdType02 {
+    margin: mgn(0) 0 mgn(-1);
+    padding: mgn(-2) mgn(-1);
+    background-color: lighten($color06, 75%);
+
+    @include fz(20);
+}
+
+.aucviewHdType03 {
+    margin: mgn(0) 0 mgn(-1);
+
+    @include fz(15);
+}
+
+
+

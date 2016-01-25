@@ -1,0 +1,348 @@
+@charset "UTF-8";
+
+/*-------------------------------------------------------------------
+ *
+ * File Name     : index.css
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+    Hyperlink
+
+================================================================= */
+a,
+a:link,
+a:visited {
+    color: #0dafde;
+}
+a:active,
+a:hover {
+    color: #0dd9f7;
+}
+
+/* =================================================================
+
+    Seminar Header Area
+
+================================================================= */
+#seminarHeaderArea {
+    background: #3e1804 url(/assets/image/static/seminar/dvd/vol10/index_bg_header.jpg) no-repeat center bottom;
+}
+#seminarHeaderArea .upsideBox {
+    background-color: #303135;
+    color: #ffffff;
+}
+#seminarHeaderArea .upsideBoxInner {
+    position: relative;
+    width: 940px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 8px 30px 0;
+}
+#seminarHeaderArea .upsideBox .ci {
+    position: absolute;
+    top: 6px;
+    right: 30px;
+}
+#seminarHeaderArea .mainVisualBox {
+    width: 1000px;
+    height: 476px;
+    margin: 0 auto;
+}
+#seminarHeaderArea .mainVisualHd,
+#seminarHeaderArea .mainVisualTxt {
+    margin-bottom: 0;
+    padding-left: 371px;
+}
+#seminarHeaderArea .btn {
+    margin: 70px 0 0 5px;
+}
+
+/* =================================================================
+
+    Seminar Contents Area
+
+================================================================= */
+#seminarContentsArea {
+    color: #000000;
+}
+
+/* -----------------------------------------------------------------
+    secHd
+----------------------------------------------------------------- */
+#seminarContentsArea .secHd {
+    margin-bottom: 60px;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+#seminarContentsArea .secBoxInner {
+    width: 940px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+#seminarContentsArea p {
+    margin-bottom: 30px;
+}
+#seminarContentsArea p.lastElem {
+    margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox01
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox01 {
+    background: #ffffff url(/assets/image/static/seminar/dvd/vol10/index_bg_sec01.jpg) no-repeat center top;
+    font-size: 160%;
+    text-align: center;
+}
+#seminarContentsArea .secBox01 .txt01 {
+    font-size: 120%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox01 .txt02 {
+    display: inline-block;
+    margin: 10px 0;
+    color: #f11f0c;
+    font-size: 140%;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------
+    secBox02
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox02 {
+    background: #403c38 url(/assets/image/static/seminar/dvd/vol10/index_bg_sec02.jpg) no-repeat center top;
+    color: #ffffff;
+    font-size: 130%;
+}
+#seminarContentsArea .secBox02 .secBoxCont {
+    margin-left: 230px;
+}
+#seminarContentsArea .secBox02 .txt01 {
+    color: #ffb400;
+    font-weight: normal;
+}
+
+/* -----------------------------------------------------------------
+    secBox03
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox03 {
+    background: #ffffff url(/assets/image/static/seminar/dvd/vol10/index_bg_sec03.jpg) no-repeat center top;
+    font-size: 130%;
+}
+#seminarContentsArea .secBox03 .secBoxCont {
+    margin-left: 80px;
+}
+#seminarContentsArea .secBox03 .txt01 {
+    margin-bottom: 5px;
+    font-size: 110%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox03 .txt02 {
+    margin-left: 1em;
+}
+
+/* -----------------------------------------------------------------
+    secBox04
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox04 {
+    background: #39434b url(/assets/image/static/seminar/dvd/vol10/index_bg_sec04.jpg) no-repeat center top;
+    color: #ffffff;
+}
+#seminarContentsArea .secBox04 .secHd {
+    margin-bottom: 30px;
+}
+#seminarContentsArea .secBox04 .secBoxInner {
+    padding-bottom: 0;
+}
+#seminarContentsArea .secBox04 .photoBox {
+    display: table;
+    padding-left: 50px;
+}
+#seminarContentsArea .secBox04 .photoBox .image {
+    display: table-cell;
+    vertical-align: middle;
+}
+#seminarContentsArea .secBox04 .photoBox .lecturerName {
+    display: table-cell;
+    width: 530px;
+    padding-left: 50px;
+    font-size: 140%;
+    vertical-align: middle;
+}
+#seminarContentsArea .secBox04 .photoBox .lecturerName > span {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 160%;
+}
+#seminarContentsArea .secBox04 .secBoxCont {
+    margin-left: 190px;
+    padding: 40px 0 30px;
+    border-left: 4px solid #ffffff;
+}
+#seminarContentsArea .secBox04 .biography {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 45px;
+}
+#seminarContentsArea .secBox04 .biography:before {
+    display: block;
+    position: absolute;
+    top: 0.8em;
+    left: 0;
+    content: "";
+    width: 35px;
+    height: 1px;
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox04 .biography > dt {
+    margin-bottom: 5px;
+    font-size: 120%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox04 .biography > dd {
+    margin-left: 1em;
+}
+
+/* -----------------------------------------------------------------
+    secBox05
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox05 {
+    background: #ffffff url(/assets/image/static/seminar/dvd/vol10/index_bg_sec05.jpg) no-repeat center top;
+    font-size: 160%;
+}
+#seminarContentsArea .secBox05 .secBoxCont {
+    margin-left: 110px;
+}
+#seminarContentsArea .secBox05 .targetList > li {
+    position: relative;
+    min-height: 28px;
+    margin-top: 20px;
+    padding-left: 45px;
+}
+#seminarContentsArea .secBox05 .targetList > li:first-child {
+    margin-top: 0;
+}
+#seminarContentsArea .secBox05 .targetList > li:before {
+    display: block;
+    position: absolute;
+    top: 0.2em;
+    left: 0;
+    content: "";
+    width: 25px;
+    height: 28px;
+    background: url(/assets/image/static/seminar/dvd/vol10/index_ico_check.png) no-repeat left top;
+}
+#seminarContentsArea .secBox05 .txt01 {
+    color: #f11f0c;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------
+    secBox06
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox06 {
+    background: #39434b;
+    color: #ffffff;
+}
+#seminarContentsArea .secBox06 .secBoxCont {
+    margin: 0 80px;
+}
+#seminarContentsArea .secBox06 .priceBox {
+    display: table;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#seminarContentsArea .secBox06 .priceBox .image {
+    display: table-cell;
+    width: 200px;
+    vertical-align: top;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont {
+    display: table-cell;
+    padding-left: 15px;
+    vertical-align: top;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont > dt {
+    margin-bottom: 20px;
+    font-size: 160%;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont > dd {
+    position: relative;
+    min-height: 140px;
+    padding-left: 135px;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont .postage {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    width: 110px;
+    height: 83px;
+    margin-top: -50px;
+    padding-top: 27px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #39434b;
+    font-size: 180%;
+    font-weight: bold;
+    line-height: 1.1;
+    text-align: center;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont .val {
+    display: block;
+    margin: 0 0 10px -5px;
+    color: #ffb400;
+    font-size: 200%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox06 .priceBox .priceCont .val > span {
+    font-size: 180%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox06 .privilege {
+    margin: 0 0 0 -30px;
+}
+#seminarContentsArea .secBox06 .btnEntry {
+    margin: 20px 0 60px;
+}
+#seminarContentsArea .secBox06 .confirm {
+    color: #eeeeee;
+    text-align: center;
+}
+#seminarContentsArea .secBox06 .confirm > .hd {
+    margin-bottom: 10px;
+    font-size: 140%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox06 .confirm .linkInfo {
+    margin-bottom: 0;
+}
+
+/* =================================================================
+
+    Button
+
+================================================================= */
+.seminarBtn01,
+.seminarBtn02 {
+    display: block;
+    overflow: hidden;
+    width: 264px;
+    height: 66px;
+    margin: 0 auto;
+    background: url(/assets/image/static/seminar/dvd/vol10/index_btn01.png) no-repeat left top;
+    text-indent: -9999px;
+}
+.seminarBtn02 {
+    width: 570px;
+    height: 86px;
+    background: url(/assets/image/static/seminar/dvd/vol10/index_btn02.png) no-repeat left top;
+}
+.seminarBtn02:hover,
+.seminarBtn01:hover {
+    background-position: left bottom;
+}

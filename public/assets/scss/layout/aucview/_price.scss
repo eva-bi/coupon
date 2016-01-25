@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/*
+# mainPrice
+
+## メイン価格
+
+*/
+
+.mainPrice {
+    margin-bottom: mgn(-1);
+    line-height: 1.2;
+    text-align: center;
+    word-break: break-all;
+
+    @include fz(18);
+
+    & .amount {
+        color: $color10;
+        font-weight: bold;
+
+        @include fz(32);
+    }
+
+    & a {
+        color: $color10;
+        font-weight: bold;
+
+        @include fz(26);
+    }
+}

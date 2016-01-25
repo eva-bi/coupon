@@ -1,0 +1,64 @@
+@charset "utf-8";
+
+/*doc
+---
+title: カラムレイアウト
+name: column
+category: カラム
+parent:
+---
+
+カラムレイアウト
+
+```html_example
+<div class="colType02">
+    <div class="colBlock">
+        カラム
+    </div>
+    <div class="colBlock">
+        カラム
+    </div>
+</div>
+```
+*/
+
+@mixin columnForm($col) {
+    @if $col != 1 {
+        display: table;
+        margin: 0 0 mgn(2) mgn(0)*-1;
+        @include calc(width, 100% "+" 24px, 102%);
+    } @else {
+        display: block;
+        width: 100%;
+        margin-bottom: mgn(2);
+    }
+
+    & > .colBlock {
+        display: table-cell;
+        width: 100% / $col;
+        padding-left: mgn(0);
+        vertical-align: top;
+    }
+}
+
+@for $i from 1 through 100 {
+    [class*="colType"].colSize#{$i},
+    [class*="colType"] > .colBlock.colSize#{$i} {
+        width: $i * 1%;
+    }
+}
+
+@for $j from 1 through 10 {
+    $num: 0;
+
+    @if $j < 10 {
+        $num: '0' + $j;
+    } @else {
+        $num: $j;
+    }
+
+    .colType#{$num} {
+        @include columnForm($j);
+    }
+}
+

@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/*doc
+---
+title: スライドスイッチ
+name: pagetop
+category: スイッチ
+parent:
+---
+
+スライドスイッチ
+
+```html_example
+<div class="switchType01"></div>
+```
+*/
+
+.switchType01 {
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background-color: $ciColor01;
+    cursor: pointer;
+
+    @include border-radius(200px);
+    @include transition(all 0.5s $easeOutExpo);
+
+    &:not(.tb):hover {
+        background-color: lighten($ciColor01, 3%);
+
+        & > .switch {
+            @include shadow(2);
+        }
+    }
+
+    & > .switch {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 34px;
+        height: 34px;
+        background-color: $color01;
+        cursor: pointer;
+
+        @include shadow(1);
+        @include border-radius(200px);
+        @include setElem(before, "");
+        @include transition(all 0.5s $easeOutExpo);
+
+        &:before {
+            display: none;
+            content: "済";
+            top: 50%;
+            left: 0;
+            width: 34px;
+            color: $color09;
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+
+            @include transform(
+                translateY(-50%)
+            );
+            @include fz(15);
+        }
+    }
+}
+

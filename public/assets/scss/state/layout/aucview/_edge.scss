@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/*
+# edgeArea - state
+
+## 画面端コンテンツエリア - state
+
+*/
+
+.edgeArea {
+    &.hideEdgeArea {
+        @include box-shadow(none);
+        @include transform(
+            translate(100%, 0)
+        );
+    }
+}

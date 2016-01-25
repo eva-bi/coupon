@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+/*
+# itemsDescOutline
+
+## 商品詳細　商品説明概要
+
+*/
+
+.itemsDescOutline {
+    margin-bottom: mgn(0);
+    padding: mgn(0);
+    background-color: lighten($color06, 75%);
+
+    & > .outlineTxt {
+        color: lighten($color04, 40%);
+    }
+
+    & > .itemsDescBtn {
+        margin-bottom: 0;
+        text-align: center;
+
+        & > a {
+            width: 380px;
+
+            @include fz(24);
+        }
+    }
+}
+
+/*
+# itemsDescOutline
+
+## 商品詳細　支払い・配送方法
+
+*/
+
+.itemsDescMethod {
+    & .methodList > li {
+        margin-top: mgn(0);
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    & .logoPayment {
+        margin-left: mgn(-2);
+        vertical-align: middle;
+    }
+
+    & .methodDef {
+        margin-bottom: 4px;
+
+        @extend %clearfix;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & > dt {
+            float: left;
+            width: 4.5em;
+        }
+        & > dd {
+            margin-left: 4.5em;
+            padding-left: 1.5em;
+
+            @include setElem(before, "");
+
+            &:before {
+                top: 0;
+                left: 0;
+                content: "：";
+            }
+        }
+    }
+}
+
+/*
+# itemsDescArea
+
+## 商品詳細　商品説明
+
+*/
+
+%itemsDesc {
+    & .itemsDescHd {
+        padding: mgn(-2);
+        background-color: lighten($color06, 75%);
+        text-align: center;
+
+        @include fz(20);
+    }
+
+    & .itemsDescCont {
+        margin: mgn(2) mgn(4);
+        word-break: break-all;
+
+        @include fz(13);
+
+        & img {
+            max-width: 1000px - mgn(4);
+            height: auto;
+        }
+
+        & center {
+            & table{
+                margin: 0 auto;
+            }
+        }
+    }
+
+    & > .itemsDescClose {
+        display: block;
+        position: absolute;
+    }
+
+    & > .itemsDescBtmClose {
+        width: 160px;
+        margin: mgn(2) auto;
+    }
+
+    & > .itemsDescBtmBack {
+        width: 300px;
+        margin: mgn(2) auto;
+
+        & > a {
+            @include fz(24);
+        }
+    }
+}
+
+#itemsDescArea {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    width: 960px + mgn(4)*2;
+    min-height: 100%;
+    background-color: $color01;
+
+    @include transform(
+        translate(-100%, 0)
+    );
+    @include box-shadow(4px 0 4px 0 rgba($color04, 0.2));
+    @extend %itemsDesc;
+}
+#itemsDescPage {
+    @extend %itemsDesc;
+}
+
+.itemsDescClose {
+    display: none;
+    top: 200px;
+    left: 1026px;
+    z-index: 2000;
+    width: 50px;
+    height: 80px;
+    background-color: lighten($color06, 20%);
+    cursor: pointer;
+
+    @include border-radius(r(0) 0 0 r(0));
+    @include transition(opacity, 0.2s, ease);
+    @include setElem(before, "");
+
+    position: fixed;
+
+    &:before {
+        top: 50%;
+        left: 50%;
+        margin: -23px 0 0 -15px;
+
+        @include aucviewIcoForm(ico_arrow_item01);
+    }
+
+    &:not(.tb):hover {
+        @include opacity(0.7);
+    }
+}
+

@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/*
+# recomServicesBox
+
+## 商品詳細　おすすめサービス
+
+
+*/
+
+.recomServicesBox {
+    margin-bottom: mgn(-2);
+    padding-bottom: mgn(-2);
+    border-bottom: 1px dotted $color02;
+
+    & > a {
+        display: block;
+
+        @extend %clearfix;
+
+        & > .thumBlock {
+            float: left;
+            width: 100px;
+        }
+
+        & > .txtBlock {
+            margin-left: 110px;
+
+            @include fz(12);
+
+            & > .hd {
+                margin-bottom: 4px;
+
+                @include fz(13);
+            }
+
+            & > p {
+                margin-bottom: 0;
+                color: lighten($color04, 60%);
+            }
+        }
+    }
+}
+
+
+

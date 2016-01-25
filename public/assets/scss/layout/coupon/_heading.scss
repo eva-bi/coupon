@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/*
+# couponHd
+
+## クーポン検索　汎用タイトル
+
+*/
+
+.couponHdType01 {
+    @include fz(30);
+
+    padding: mgn(2) 0;
+    font-weight: bold;
+
+    & > .hd {
+        display: inline-block;
+    }
+
+    & > .count {
+        @include fz(24);
+
+        display: inline-block;
+        margin: 0 0 0 mgn(1);
+        font-weight: normal;
+
+        & > .total {
+            color: $color10;
+            font-weight: normal;
+        }
+
+        & > .display {
+            @include fz(18);
+
+            margin-left: mgn(-2);
+        }
+    }
+}
+
+/* トップページ内タイトル */
+.couponTopHdType01 {
+    @include couponIcoForm(logo_coupon_search01);
+
+    display: block;
+    margin: 0 auto mgn(3);
+}
+
+.couponTopHdType02 {
+    @include fz(24);
+    @include setElem(before, "");
+
+    position: relative;
+    margin-bottom: mgn(0);
+    padding-bottom: mgn(1);
+    color: $color01;
+    text-align: center;
+
+    &:before {
+        @include couponIcoForm(ico_arrow_down02);
+
+        bottom: 0;
+        left: 50%;
+        margin-left: -9.5px;
+    }
+
+}
+
+
+

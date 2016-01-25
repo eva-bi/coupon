@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------
+    sameProdWin
+----------------------------------------------------------------- */
+.sameProdWin{
+    display:none;
+    position:absolute;
+    top:30px;
+    left:50%;
+    z-index:10001;
+    width:700px;
+    margin:0 0 0 -360px;
+    padding:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    background-color:#000000;
+    background-color:rgba(0,0,0,0.3);
+    #{$slash}background-color:#000000;
+    color:#333333;
+    font-size:15px;
+    line-height:1.4;
+}
+.sameProdWinInner{
+    position:relative;
+    width:100%;
+    margin:0 auto;
+    padding-bottom:15px;
+    -webkit-border-radius:8px;
+    border-radius:8px;
+    background-color:#ffffff;
+}
+
+.sameProdWin sup{
+    position:relative;
+    bottom:1ex;
+    height:0;
+    line-height:1;
+    vertical-align:baseline;
+    _vertical-align:bottom;
+    font-size:70%;
+}
+
+.sameProdWin .sameProdNote{
+    position:relative;
+    padding-left:1em;
+    font-size:80%;
+}
+.sameProdWin .sameProdNote .mk{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.sameProdWin .sameProdWinCls{
+    position:absolute;
+    top:-22px;
+    right:-22px;
+    overflow:hidden;
+    width:44px;
+    height:44px;
+    background:url(/assets/image/common/layout/search/img_sameprod_sprite.png) no-repeat 0 -68px;
+    text-indent:-9999px;
+    cursor:pointer;
+}
+.sameProdWin .sameProdWinCls:hover{
+    background-position:-44px -68px;
+}
+.sameProdWin .sameProdBlock{
+    display:table;
+    width:100%;
+    -webkit-border-radius:8px 8px 0 0;
+    border-radius:8px 8px 0 0;
+    background-color:#eeeeee;
+}
+.sameProdWin .sameProdImg{
+    display:table-cell;
+    #{$slash}float:left;
+    overflow:hidden;
+    width:180px;
+    -webkit-border-radius:6px 0 0 0;
+    border-radius:6px 0 0 0;
+    background-color:#222222;
+    vertical-align:middle;
+}
+.sameProdWin .sameProdImg img{
+    width:100%;
+    height:auto;
+}
+.sameProdWin .sameProdDet{
+    display:table-cell;
+    #{$slash}float:left;
+    width:480px;
+    height:150px;
+    padding:10px 20px;
+    vertical-align:top;
+}
+.sameProdWin .sameProdName{
+    margin-bottom:5px;
+    font-size:160%;
+    font-weight:bold;
+}
+.sameProdWin .sameProdName > a{
+    display:block;
+    color:#006ad6;
+}
+.sameProdWin .refAmoTable{
+    width:auto;
+    margin-bottom:5px;
+    border:3px solid #999999;
+    border-collapse:separate;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+.sameProdWin .refAmoTable th,
+.sameProdWin .refAmoTable td{
+    padding:5px 15px 2px;
+    vertical-align:middle;
+}
+.sameProdWin .refAmoTable th{
+    background-color:#999999;
+    color:#ffffff;
+    font-weight:normal;
+}
+.sameProdWin .refAmoTable td{
+    -webkit-border-radius:0 5px 5px 0;
+    border-radius:0 5px 5px 0;
+    background-color:#ffffff;
+}
+.sameProdWin .refAmoTable .refAmo{
+    color:#ff4e00;
+    font-size:160%;
+    font-weight:bold;
+}
+
+.sameProdWin .sameProdSub dd{
+    margin:0 20px;
+}
+.sameProdWin .sameProdSubHd{
+    margin-bottom:8px;
+    padding:10px 20px 10px 12px;
+    border-top:2px solid #3e8600;
+    border-left:8px solid #3e8600;
+    background-color:#5cb510;
+    color:#ffffff;
+    font-size:140%;
+}
+.sameProdWin .sameProdBtnBox{
+    position:relative;
+    margin-bottom:15px;
+    padding:28px 0 29px 15px;
+    background-color:#eeeeee;
+}
+.sameProdWin .sameProdBtnTxt{
+    overflow:hidden;
+    width:283px;
+    height:17px;
+    background:url(/assets/image/common/layout/search/img_sameprod_sprite.png) no-repeat 0 -126px;
+    text-indent:-9999px;
+}
+.sameProdWin .sameProdBtn > a{
+    display:block;
+    position:absolute;
+    top:-10px;
+    right:-9px;
+    overflow:hidden;
+    width:359px;
+    height:79px;
+    background:url(/assets/image/common/layout/search/img_sameprod_sprite.png) no-repeat 0 -228px;
+    text-indent:-9999px;
+}
+.sameProdWin .sameProdBtn > a:hover{
+    background-position:-359px -228px;
+}
+
+.sameProdWin .sameProdSubLink > li{
+    margin-top:5px;
+}
+.sameProdWin .sameProdSubLink > li:first-child{
+    margin-top:0;
+}
+.sameProdWin .sameProdSubLink a{
+    padding-left:12px;
+    background:url(/assets/image/common/layout/search/img_sameprod_sprite.png) no-repeat 0 7px;
+}
+
+/* sameProdBack */
+.sameProdBack{
+    display:none;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:10000;
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    -ms-filter:"alpha(opacity=70)";
+    background-color:#000000;
+}
+
+/* =================================================================
+
+    Clearfix
+
+================================================================= */
+.mwClearfix:after{
+    display:block;
+    clear:both;
+    height:0;
+    visibility:hidden;
+    content:".";
+}
+.mwClearfix{
+    zoom:1;
+}

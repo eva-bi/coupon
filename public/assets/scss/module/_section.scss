@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+/*doc
+---
+title: セクション
+name: Standard_Section
+category: セクション
+parent:
+---
+
+左右下に余白のみのセクション。
+
+- 各コンテンツのセクションはこのカテゴリのモジュールでネストさせる
+- 原則、コンテンツ周りに余白をつける場合はこのカテゴリのモジュールを使用する
+
+```html_example
+<section class="secType01">
+    ここにコンテンツが入ります
+</section>
+```
+*/
+
+.secType01 {
+    margin: 0 mgn(0, $baseSideMgn);
+}

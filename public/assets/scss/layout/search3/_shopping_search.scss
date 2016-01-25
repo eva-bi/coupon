@@ -1,0 +1,493 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*-------------------------------------------------------------------
+ *
+ * File Name   : _shopping_search.scss
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+  .searchShopping
+
+================================================================= */
+.searchShopping{
+    background:#f2f2f2;
+}
+
+
+/* =================================================================
+
+  form.searchForm
+
+================================================================= */
+form.searchForm{
+    width:1000px;
+    margin:0 auto;
+    padding:16px 30px 10px;
+}
+form.searchForm .searchFormLeft{
+    float:left;
+    width:670px;
+}
+form.searchForm .searchFormRight{
+    float:right;
+    width:300px;
+}
+
+
+/*------------------------------------------
+.searchFormLeft
+------------------------------------------ */
+/* --- #searchFormBox --- */
+.searchFromBox{
+    position:relative;
+    height:38px;
+}
+#searchFormKeyword{
+    position:absolute;
+    left:0;
+    width:558px;
+    height:36px;
+    padding:0 10px;
+    border-radius:7px;
+    border:1px solid #bbb;
+    font-size:17px;
+}
+#searchFormBtn{
+    position:absolute;
+    right:0;
+    top:0;
+    background-image: url("/assets/image/common/layout/search3/tools/search3_btn_search.jpg");
+    background-repeat: no-repeat;
+    border: 0;
+    width: 82px;
+    height: 38px;
+    padding: 0;
+    border-radius: 7px;
+}
+
+/* --- .searchPickUp --- */
+.searchPickUp{
+    font-size:11px;
+}
+.searchPickUp ul li{
+    float:left;
+    margin:12px 0 0;
+    padding:0 10px 0 0;
+}
+.searchPickUp ul li a{
+    color:#333;
+}
+.searchPickUp ul li a:hover{
+    text-decoration:underline;
+}
+
+/* --- .searchPlus input[type=checkbox]  --- */
+.searchPlus{
+    margin:8px 0 0;
+}
+.searchPlusBox{
+    display: inline-block;
+    position:relative;
+    bottom:3px;
+    padding:0 0 0 8px;
+    font-size:13px;
+}
+.searchPlus input[type=checkbox] {
+    display: inline-block;
+    margin-right: 6px;
+    margin-right: 4px\0;
+}
+html:not(:target) .searchPlus input[type=checkbox] {
+    margin-right: 6px;
+}
+.searchPlus input[type=checkbox] + label {
+    position: relative;
+    right:6px\0;
+    bottom:3px;
+    display: inline-block;
+    margin-right: 6px;
+    margin-right: 0\0;
+    font-size: 13px;
+    line-height: 30px;
+    cursor: pointer;
+}
+html:not(:target) .searchPlus input[type=checkbox] + label {
+    right:0;
+    margin-right: 6px;
+}
+@media (min-width: 1px) {
+    .searchPlus input[type=checkbox] {
+        display: none;
+        margin: 0;
+    }
+    .searchPlus input[type=checkbox] + label {
+        padding: 0 0 0 17px;
+    }
+    .searchPlus input[type=checkbox] + label::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin-top: -8px;
+        border-radius:2px;
+        background: #FFF;
+    }
+    .searchPlus input[type=checkbox] + label::before {
+        border: 1px solid #bbb;
+    }
+    .searchPlus input[type=checkbox]:checked + label::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .searchPlus input[type=checkbox]:checked + label::after {
+        left: 1px;
+        width: 16px;
+        height: 8px;
+        margin-top: -9px;
+        border-left: 3px solid #88cb1e;
+        border-bottom: 3px solid #88cb1e;
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    /* either */
+    .searchPlus .either {
+        position: relative;
+        display: inline-block;
+        width: 120px;
+        overflow: hidden;
+        border: 2px solid #ccc;
+    }
+    .searchPlus .either input[type=radio]:checked + label::before {
+        color: #fff;
+    }
+
+}
+
+/*------------------------------------------
+.searchFormRight
+------------------------------------------ */
+
+/* --- #searchDetail --- */
+#searchDetail{
+    position:relative;
+}
+#searchDetail .searchDetailBox{
+    float:left;
+    width:148px;
+    height:36px;
+    background:#fff;
+    border:1px solid #bbb;
+}
+#searchDetail .searchDetailBox02{
+    border-left:0;
+}
+#searchDetail input.searchDetailBoxBtn{
+    display:block;
+    width:80%;
+    padding:4px 0;
+    margin:10px auto;
+    background:#333;
+    border-radius:6px;
+    color:#fff;
+    text-align:center;
+    font-size:17px;
+}
+
+/* --- .searchPrice --- */
+.searchPrice{
+    float:left;
+    margin:18px 0 0;
+    width:235px;
+}
+.searchPrice .searchPriceLine{
+    position:relative;
+    height:2px;
+    width:180px;
+    margin:0 0 0 45px;
+}
+.searchPriceLineHover{
+    background-position:-100px -50px;
+}
+.searchPrice p{
+    margin:12px 0 0;
+    font-size:13px;
+    font-size:13px\0;
+}
+.searchPrice input[type=text]{
+    width:50px;
+    padding:2px 5px;
+    height:16px;
+    border-radius:2px;
+    border:1px solid #ccc;
+}
+
+/* --- .searchPriceBtn --- */
+.searchPriceBtn{
+    float:left;
+    margin:5px 0 0 5px;
+    width:44px;
+    display:none\0;
+}
+html:not(:target) .searchPriceBtn{
+    display:block;
+}
+.searchPriceBtn input{
+    margin:5px 0 0;
+    width:44px;
+    background:#999;
+    border-radius:6px;
+    color:#fff;
+}
+
+
+
+/* =================================================================
+
+  .slideDown
+
+================================================================= */
+.slideDown{
+    display: none;
+    position: absolute;
+    z-index:10;
+    background:#fff;
+    border:1px solid #ccc;
+}
+
+/*------------------------------------------
+#searchDetail
+------------------------------------------ */
+/* --- #searchDetail --- */
+#searchDetail span {
+    display:block;
+    width:108px;
+    padding:8px 20px;
+    cursor: pointer;
+    font-size:15px;
+}
+#slideDownBtn02,#slideDownBtn03{
+    position:relative;
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat 122px -34px;
+}
+
+/* --- .searchFromBoxDetail --- */
+.searchFromBoxDetail{
+    position:absolute;
+    top:1px;
+    right:91px;
+    width:36px;
+    height:37px;
+}
+.searchFromBoxDetailNon{
+    display:none;
+}
+#slideDownBtn01{
+    display:block;
+    width:100%;
+    height:100%;
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) #88cb1e no-repeat 10px 14px;
+    border-radius:0 6px 6px 0;
+}
+#slideDownBtn01.selected:before{
+    display:none;
+}
+.selected:before{
+    position:absolute;
+    left:1px;
+    bottom:1px;
+    overflow:visible;
+    content:'';
+    width:147px;
+    height:2px;
+    background:#fff;
+    z-index:30;
+}
+
+/* --- #searchDetailBoxNon --- */
+#searchDetail #searchDetailBoxNon {
+    background:#f1f1f2;
+    border:1px dashed #ccc;
+    border-left:0;
+    color:#999;
+}
+#searchDetail #searchDetailBoxNon #slideDownBtn03{
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat -182px -34px;
+    cursor:default;
+}
+#searchDetail #searchDetailBoxNon01 {
+    background: #f1f1f2;
+    border: 1px dashed #ccc;
+    color: #999;
+}
+#searchDetail #searchDetailBoxNon01 #slideDownBtn03 {
+    background: url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat -182px -34px;
+    cursor: default;
+}
+
+/*------------------------------------------
+#slideDown01
+------------------------------------------ */
+#slideDown01{
+    top:36px;
+    right:0;
+    width:538px;
+    padding:5px 20px;
+}
+#slideDown01 ul li{
+    margin:10px 0;
+    font-size:12px;
+}
+#slideDown01 ul li input[type=text] {
+    width:530px;
+    padding:5px;
+    font-size:14px;
+    border:1px solid #bbb;
+}
+#slideDown01 ul li input.slideDown01Btn{
+    display:block;
+    width:100%;
+    padding:4px 0;
+    margin:15px 0 0;
+    background:#333;
+    border-radius:6px;
+    color:#fff;
+    text-align:center;
+    font-size:17px;
+}
+
+/* ---  #slideDown01 input --- */
+#slideDown01 input[type="radio"]{
+	display: none;
+    display:inline-block\0;
+}
+html:not(:target) #slideDown01 input[type="radio"]{
+    display: none¥9;
+}
+#slideDown01 label{
+	display: inline-block;
+	position: relative;
+    left:5px;
+    left:0\0;
+	cursor: pointer;
+	padding: 10px;
+    padding-left:0\0;
+	border-radius: 2px;
+	color: #3e4956;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1;
+}
+html:not(:target) #slideDown01 label{
+    left:5px¥9;
+    padding: 10px¥9;
+}
+#slideDown01 label:before{
+    display:none\0;
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: -10px;
+	width: 15px;
+	height: 15px;
+	margin-top: -10px;
+	background: #fff;
+    border:1px solid #bbb;
+	border-radius: 50%;
+}
+html:not(:target) #slideDown01 label:before{
+    display:block¥9;
+}
+#slideDown01 input[type="radio"]:checked + label:after {
+    display:none\0;
+	position: absolute;
+	content: "";
+	top: 15px;
+	left: -6px;
+	width: 9px;
+	height: 9px;
+	margin-top: -4px;
+	border-radius: 50%;
+	background: #777;
+}
+html:not(:target) #slideDown01 input[type="radio"]:checked + label:after{
+    display:block¥9;
+}
+
+/*------------------------------------------
+#slideDown02
+------------------------------------------ */
+#slideDown02{
+    top:37px;
+    right:1px;
+    width:297px;
+    height:360px;
+    font-size:13px;
+}
+#slideDown02 ul{
+    overflow:scroll;
+    overflow-x: hidden;
+    display:block;
+    width:100%;
+    height:360px;
+    color:#333;
+}
+#slideDown02 ul li a{
+    display:block;
+    width:90%;
+    padding:5px 5%;
+    color:#333;
+}
+#slideDown02 ul li a:hover{
+    background:#ddd;
+}
+#slideDown02 ul li a span{
+    display:inline;
+    padding:0 5px;
+    font-size:11px;
+}
+
+
+
+/*------------------------------------------
+#slideDown03
+------------------------------------------ */
+#slideDown03{
+    top:37px;
+    right:1px;
+    width:957px;
+    padding:10px 20px;
+    font-size:13px;
+}
+#slideDown03 table{
+    width:100%;
+    border-collapse: collapse;
+    border:2px solid #fff;
+}
+#slideDown03 table td{
+    width:300px;
+    padding:10px;
+    border:1px dotted #ddd;
+}
+#slideDown03 table td dt{
+    font-size:12px;
+}
+#slideDown03 input[type="text"]{
+    width:60px;
+}
+#slideDown03 input[type="text"].slideDownBtn03InputBig{
+    width:200px;
+}
+

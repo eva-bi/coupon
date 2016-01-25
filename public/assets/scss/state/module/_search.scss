@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*
+# Search - state
+## Header Search Field
+
+ヘッダーに配置する検索ボックス - state
+
+- .active
+- .cateActive
+***
+*/
+
+#searchField {
+    & > .searchFieldInner {
+        & > .searchBox {
+            & .searchToolBox {
+                &.active {
+                    @include shadow(2);
+                }
+
+                &.cateActive {
+                    & > .categorySelect {
+                        &:before {
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

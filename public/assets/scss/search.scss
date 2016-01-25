@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@import "compass";
+
+@import "module/search/base/reset.scss";
+@import "module/search/base/mixin.scss";
+@import "module/search/base/base.scss";
+
+@import "module/search/layout/footer.scss";
+@import "module/search/layout/header.scss";
+
+@import "module/search/module/ad.scss";
+@import "module/search/module/popup.scss";
+@import "module/search/module/sub_search.scss";
+
+@import "module/search/result2_sr.scss";
+@import "module/search/result_common2_sr.scss";
+@import "module/search/amazon.scss";
+@import "module/search/thickbox.scss";
+@import "module/search/same_products.scss";
+@import "module/search/ad.scss";
+@import "module/aucview/redirect.scss";
+@import "module/search/prem_sidebnr.scss";

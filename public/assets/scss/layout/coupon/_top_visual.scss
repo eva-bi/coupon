@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+/*
+# couponTopVisual
+
+## クーポン検索　トップビジュアル
+
+*/
+
+#couponTopVisual {
+    @include setElem(before, "");
+
+    position: relative;
+    z-index: 1;
+    min-height: 750px;
+    max-height: 1200px;
+    background: url(/assets/image/common/layout/coupon/bg_top_visual.png) repeat 50% 50px fixed;
+    color: $color01;
+
+    &:before {
+        @include background-image(linear-gradient(top, rgba($color04, 0), rgba($color04, 1)));
+
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+    }
+
+    & > .couponTopVisualInner {
+        position: relative;
+        z-index: 1;
+        width: 1000px;
+        margin: 0 auto;
+        padding-top: 80px;
+
+        & > .couponTopCatch {
+            @include fz(24);
+
+            margin-bottom: 70px;
+            padding-left: 0.7em;
+            color: $color01;
+            text-align: center;
+        }
+
+        & > .couponTopInput {
+            @include setElem(before, "");
+            @include setElem(after, "で");
+
+            position: relative;
+            left: 25px;
+            z-index: 1;
+            width: 770px;
+            margin: 0 auto;
+            padding-top: 80px;
+
+            &:before {
+                @include couponIcoForm(ico_cross01);
+
+                top: 12px;
+                left: 345px;
+            }
+
+            &:after {
+                @include fz(32);
+
+                top: 0;
+                right: 0;
+                color: $color01;
+                line-height: 50px;
+            }
+
+            & .areaSelectBox,
+            & .categorySelectBox {
+                @include box-sizing(border-box);
+                @include border-radius(r(0) r(1) r(1) r(0));
+                @include fz(24);
+                @include setElem(before, "");
+                @include setElem(after, "");
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                width: 320px;
+                height: 50px;
+                background-color: $color01;
+                color: $color03;
+                cursor: pointer;
+
+                &.categorySelectBox {
+                    left: 395px;
+                }
+
+                &:before {
+                    @include border-radius(0 r(0) r(0) 0);
+                    @include transition(background-color 0.2s ease);
+
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 50px;
+                    background-color: $color12;
+                }
+
+                &:after {
+                    @include border-radius(r(0));
+                    @include box-shadow(0 1px 2px 0 rgba($color04, 0.4) inset);
+
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                & > .hdSelect {
+                    @include fz(18);
+
+                    position: absolute;
+                    top: -30px;
+                    left: 0;
+                    color: $color01;
+                    cursor: text;
+                }
+
+                & > .arrow {
+                    @include couponIcoForm(ico_arrow_down03);
+
+                    position: absolute;
+                    top: 20px;
+                    right: 14px;
+                    z-index: 2;
+                }
+
+                & > .close {
+                    display: none;
+                    position: absolute;
+                    top: 15px;
+                    left: (715px - 20px) - (mgn(0) + 4px);
+                    z-index: 4;
+                    margin: 0;
+                }
+
+                & > .selectBlock {
+                    @include box-sizing(border-box);
+
+                    position: relative;
+                    z-index: 3;
+                    overflow: hidden;
+                    height: 100%;
+                    padding: 0 (mgn(0) + 50px) 0 mgn(0);
+                    line-height: 50px;
+                }
+
+                & > .selectList {
+                    @include box-sizing(border-box);
+                    @include box-shadow(
+                        0 1px 2px 0 rgba($color04, 0.4) inset,
+                        0 -1px 1px 0 rgba($color04, 0.2) inset
+                    );
+                    @include border-radius(r(0));
+                    @include fz(14);
+
+                    visibility: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    overflow: hidden;
+                    opacity: 0;
+                    width: 715px;
+                    background-color: lighten($color06, 75%);
+                    color: $color03;
+
+                    & > .selectData {
+                        display: none;
+                    }
+
+                    & > .selectListInner {
+                        @extend %clearfix;
+
+                        padding: 55px 4px mgn(-1);
+
+                        & > li {
+                            @include box-sizing(border-box);
+
+                            float: left;
+                            opacity: 0;
+                            overflow: hidden;
+                            @include calc(width, 100% "/" 8.1, 12%);
+                            height: 30px;
+                            padding: 4px 0 4px mgn(0);
+
+                            &:not(.tb):hover {
+                                background-color: rgba($ciColor02, 0.5);
+                            }
+                        }
+                    }
+                }
+
+                &:not(.tb):hover {
+                    &:before {
+                        background-color: lighten($color12, 5%);
+                    }
+                }
+
+                &.categorySelectBox {
+                    & > .close {
+                        right: mgn(0) + 4px;
+                        left: auto;
+                    }
+
+                    & > .selectList {
+                        @include fz(20);
+
+                        right: 0;
+                        left: auto;
+
+                        & > .selectListInner {
+                            & > li {
+                                @include calc(width, 100% "/" 4, 25%);
+
+                                height: 40px;
+
+                                &.leisure {
+                                    @include calc(width, 100% "/" 2, 50%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .searchSubmit {
+                position: relative;
+                z-index: 1;
+                width: 270px;
+                margin: 0 auto;
+                padding-right: 50px;
+
+                & > .searchBtn {
+                    @include fz(30);
+                }
+            }
+        }
+    }
+}
+
+body.typeExtend #couponTopVisual .couponTopVisualInner {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeExtend #couponTopVisual .couponTopVisualInner {
+    width: auto;
+}
+
+
+

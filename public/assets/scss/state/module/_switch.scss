@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*
+# Switch - state
+## Slide Switch - state
+
+スライドスイッチ
+
+- .switchType01
+
+***
+```
+
+```
+
+***
+*/
+
+.switchType01 {
+    &.active {
+        background-color: $color09;
+
+        &:not(.tb):hover {
+            background-color: lighten($color09, 3%);
+        }
+
+        & > .switch {
+            left: 43px;
+
+            &:before {
+                display: block;
+            }
+        }
+    }
+}
+

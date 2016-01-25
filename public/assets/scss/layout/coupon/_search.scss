@@ -1,0 +1,420 @@
+@charset "utf-8";
+
+/*
+# couponSearchInput
+
+## クーポン検索　ヘッダー検索エリア
+
+*/
+
+/* 検索入力ボックスパーツ */
+.couponSearchInput {
+    @include border-radius(r(0) r(1) r(1) r(0));
+    @include box-shadow(0 1px 2px 0 rgba($color04, 0.4) inset);
+    @include fz(18);
+
+    position: relative;
+    z-index: 1;
+    width: 510px;
+    height: 40px;
+    background-color: $color01;
+    color: $color03;
+
+    & .areaSelectBox {
+        @include box-sizing(border-box);
+        @include border-radius(r(0) 0 0 r(0));
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 219px;
+        height: 100%;
+        border-right: 1px solid $color02;
+        cursor: pointer;
+
+        & > .arrow {
+            @include couponIcoForm(ico_arrow_down01);
+
+            position: absolute;
+            top: 16px;
+            left: 186px;
+            z-index: 2;
+        }
+
+        & > .close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            left: (460px - 20px) - (mgn(-1) + 4px);
+            z-index: 2;
+            margin: 0;
+        }
+
+        & > .selectBlock {
+            @include box-sizing(border-box);
+
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            padding: 0 mgn(-1);
+            line-height: 40px;
+        }
+
+        & > .selectList {
+            @include box-sizing(border-box);
+            @include box-shadow(
+                0 1px 2px 0 rgba($color04, 0.4) inset,
+                0 -1px 1px 0 rgba($color04, 0.2) inset
+            );
+            @include border-radius(r(0) 0 0 r(0));
+            @include fz(14);
+
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            width: 460px;
+            background-color: lighten($color06, 75%);
+            color: $color03;
+
+            & > select {
+                display: none;
+            }
+
+            & > .selectListInner {
+                @extend %clearfix;
+
+                padding: 50px 4px mgn(-2);
+
+                & > li {
+                    @include box-sizing(border-box);
+                    @include calc(width, 100% "/" 6, 16%);
+
+                    float: left;
+                    opacity: 0;
+                    overflow: hidden;
+                    height: 30px;
+                    padding: 4px 0 4px mgn(-1);
+
+                    &:not(.tb):hover {
+                        background-color: rgba($ciColor02, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    & .categorySelectBox {
+        @include box-sizing(border-box);
+
+        position: absolute;
+        top: 0;
+        right: 50px;
+        z-index: 1;
+        width: 242px;
+        height: 100%;
+        border-left: 1px solid $color02;
+        cursor: pointer;
+
+        & > .arrow {
+            @include couponIcoForm(ico_arrow_down01);
+
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 2;
+        }
+
+        & > .close {
+            display: none;
+            position: absolute;
+            top: 12px;
+            right: mgn(-1) + 4px;
+            z-index: 2;
+            margin: 0;
+        }
+
+        & > .selectBlock {
+            @include box-sizing(border-box);
+
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            padding: 0 mgn(-1);
+            line-height: 40px;
+        }
+
+        & > .selectList {
+            @include box-sizing(border-box);
+            @include box-shadow(
+                0 1px 2px 0 rgba($color04, 0.4) inset,
+                0 -1px 1px 0 rgba($color04, 0.2) inset
+            );
+            @include border-radius(r(0) 0 0 r(0));
+            @include fz(14);
+
+            visibility: hidden;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            overflow: hidden;
+            width: 460px;
+            background-color: lighten($color06, 75%);
+            color: $color03;
+
+            & > select {
+                display: none;
+            }
+
+            & > .selectListInner {
+                @extend %clearfix;
+
+                padding: 50px 4px mgn(-2);
+
+                & > li {
+                    @include box-sizing(border-box);
+                    @include calc(width, 100% "/" 4, 20%);
+
+                    float: left;
+                    opacity: 0;
+                    overflow: hidden;
+                    height: 30px;
+                    padding: 4px 0 4px mgn(-1);
+
+                    &.leisure {
+                        @include calc(width, 100% "/" 2, 50%);
+                    }
+
+                    &:not(.tb):hover {
+                        background-color: rgba($ciColor02, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    & .searchSubmit {
+        @include border-radius(0 r(0) r(0) 0);
+        @include transition(background-color 0.2s ease);
+        @include setElem(before, "");
+
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 40px;
+        background-color: $color12;
+        cursor: pointer;
+        position: absolute;
+
+        &:not(.tb):hover {
+            background-color: lighten($color12, 5%);
+        }
+
+        &:before {
+            @include couponIcoForm(ico_search01);
+
+            top: 7px;
+            left: 11px;
+        }
+
+        & > .searchBtn {
+            @include border-radius(0 r(0) r(0) 0);
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            bottom: none;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+/* 検索エリア */
+#couponSearchField {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    border-bottom: 1px solid $color01;
+    background: url(/assets/image/common/layout/coupon/bg_search_field.png) repeat 50% 0;
+    color: $color01;
+
+    & > .couponSearchBox {
+        position: relative;
+        width: 1000px;
+        height: 88px;
+        margin: 0 auto;
+        padding: 0 $baseSideMgn;
+
+        & > .logoCouponSearch {
+            @include couponIcoForm(logo_coupon_search02);
+
+            position: absolute;
+            top: 50%;
+            left: $baseSideMgn;
+            margin-top: -(image-height(sprite-file($couponSprites, logo_coupon_search02)) / 2);
+        }
+
+        & > .couponSearchInput {
+            position: absolute;
+            top: 50%;
+            left: image-width(sprite-file($couponSprites, logo_coupon_search02)) + $baseSideMgn + mgn(2);
+            margin-top: -20px;
+        }
+    }
+
+    & > .couponHeadNav {
+        @include fz(15);
+
+        height: 56px;
+        background-color: $color06;
+
+        & > .couponHeadNavInner {
+            position: relative;
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 $baseSideMgn;
+
+            & > .couponSortHeadNav {
+                @extend %clearfix;
+
+                position: absolute;
+                top: 50%;
+                left: $baseSideMgn;
+                margin-top: -12px;
+
+                & > li {
+                    float: left;
+                    margin-left: mgn(-2);
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    & > a {
+                        @include border-radius(200px);
+                        @include transition(background-color 0.2s ease);
+
+                        display: inline-block;
+                        padding: 0 mgn(-2);
+                        color: $color01;
+
+                        &:not(.tb):hover {
+                            background-color: $color04;
+                            color: darken($color01, 20%);
+                        }
+                    }
+
+                    &.current {
+                        & > a,
+                        & > a:not(.tb):hover {
+                            background-color: $color01;
+                            color: $color03;
+                            cursor: text;
+                        }
+                    }
+                }
+            }
+
+            & > .couponPaginationHeadNav {
+                @extend %clearfix;
+
+                position: absolute;
+                top: 50%;
+                right: $baseSideMgn;
+                margin-top: -10px;
+
+                & > li {
+                    position: relative;
+                    float: left;
+
+                    & > a {
+                        @include border-radius(200px);
+                        @include transition(background-color 0.2s ease);
+
+                        display: inline-block;
+                        padding: 0 mgn(-2);
+                        color: $color01;
+
+                        &:not(.tb):hover {
+                            background-color: $color04;
+                            color: darken($color01, 20%);
+                        }
+                    }
+
+                    &.current {
+                        & > a,
+                        & > a:not(.tb):hover {
+                            background-color: $color01;
+                            color: $color03;
+                            cursor: text;
+                        }
+                    }
+
+                    &.first {
+                        @include setElem(before, "...");
+
+                        margin-right: mgn(-2.5);
+                        padding-right: mgn(-1);
+
+                        &:before {
+                            top: 0;
+                            right: 0;
+                        }
+                    }
+
+                    &.last {
+                        @include setElem(before, "...");
+
+                        margin-left: mgn(-2.5);
+                        padding-left: mgn(-1);
+
+                        &:before {
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+
+                    &.prev {
+                        & i {
+                            margin-left: 0;
+                        }
+                    }
+
+                    &.next {
+                        & i {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.typeExtend #couponSearchField .couponSearchBox,
+body.typeExtend #couponSearchField .couponHeadNavInner {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide #couponSearchField .couponSearchBox,
+body.typeWide #couponSearchField .couponHeadNavInner {
+    width: auto;
+}
+
+
+

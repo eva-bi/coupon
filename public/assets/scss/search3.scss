@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/*doc
+---
+title: aucfan.com 新オークファンサイト
+name: Index
+category: Index
+parent:
+---
+
+###### スタイルガイドライン
+aucfan.comで使用しているスタイルモジュール。
+このガイドラインは下記JavaScriptファイルをページ内にインクルードしていることを前提とする。
+
+```
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/js/common/library/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/assets/js/common/basic.js"></script>
+```
+
+*/
+
+@import "compass";
+
+@import "base/reset.scss";
+@import "base/setting.scss";
+@import "base/mixin.scss";
+@import "base/base.scss";
+
+@import "layout/contents.scss";
+@import "layout/footer.scss";
+@import "layout/header.scss";
+
+@import "layout/search3/common.scss";
+@import "layout/search3/heading.scss";
+@import "layout/search3/market_navi.scss";
+@import "layout/search3/shopping_search.scss";
+@import "layout/search3/search_conditions.scss";
+@import "layout/search3/select_down.scss";
+@import "layout/search3/showcase.scss";
+@import "layout/search3/pagenation.scss";
+
+@import "module/button.scss";
+@import "module/topics_path.scss";

@@ -1,0 +1,168 @@
+@charset "utf-8";
+
+/*doc
+---
+title: 汎用長方形ボタン
+name: Standard_Button-type1
+category: ボタン
+parent:
+---
+
+汎用長方形ボタン。
+
+```html_example
+<a href="" class="btnType01 btnColor01">出品する</a>
+<a href="" class="btnType01 btnColor02">出品する</a>
+<a href="" class="btnType01 btnColor03">出品する</a>
+<a href="" class="btnType01 btnColor04">出品する</a>
+<a href="" class="btnType01 btnColor05">出品する</a>
+```
+*/
+
+@mixin btnColorSet($c) {
+    background-color: $c;
+    color: $color01;
+
+    &:not(.tb):hover {
+        background-color: lighten($c, 5%);
+    }
+}
+@mixin btnColorSets() {
+    &.btnColor01 {
+        @include btnColorSet($color09);
+    }
+    &.btnColor02 {
+        @include btnColorSet($color10);
+    }
+    &.btnColor03 {
+        @include btnColorSet($color12);
+    }
+    &.btnColor04 {
+        @include btnColorSet($color13);
+    }
+    &.btnColor05 {
+        @include btnColorSet($color01);
+        color: $color03;
+    }
+}
+
+.btnType01,
+a.btnType01 {
+    @include box-sizing(border-box);
+    @include border-radius(r(0));
+    @include shadow(1);
+    @include fz(18);
+    @include transition(all 0.2s ease);
+    @include btnColorSets();
+
+    display: inline-block;
+    width: 100%;
+    padding: mgn(-2);
+    border: none;
+    background-color: darken($color01, 12%);
+    color: $color03;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+
+    &.btnBdr {
+        border: 1px solid $color02;
+    }
+
+    &:not(.tb):hover {
+        @include shadow(2);
+
+        background-color: lighten(darken($color01, 12%), 3%);
+    }
+}
+
+/*doc
+---
+title: 汎用円形ボタン
+name: Standard_Button-type2
+category: ボタン
+parent: Standard_Button
+---
+
+汎用円形ボタン。
+
+```html_example
+<a class="btnType02" href=""></a>
+```
+*/
+
+.btnType02,
+a.btnType02 {
+    @include box-sizing(border-box);
+    @include border-radius(50%);
+    @include shadow(1);
+    @include transition(all 0.2s ease);
+    @include btnColorSets();
+
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background-color: darken($color01, 10%);
+    color: $color03;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &.btnBdr {
+        border: 1px solid $color02;
+    }
+
+    &:not(.tb):hover {
+        @include shadow(2);
+
+        background-color: lighten(darken($color01, 10%), 3%);
+    }
+}
+
+/*doc
+---
+title: ページトップボタン
+name: pagetop
+category: ボタン
+parent:
+---
+
+追従ページトップボタン。
+
+```html_example
+<a href="#frame" id="fixedPagetop"></a>
+```
+*/
+
+#fixedPagetop {
+    @include border-radius(50%);
+    @include transition(
+        border-color 0.2s ease,
+        margin-right 0.4s $easeOutSine);
+    @include setElem(before, "");
+
+    display: none;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2002;
+    width: 50px;
+    height: 50px;
+    border:2px solid darken($color01, 20%);
+    background-color: $color01;
+    position: fixed;
+
+    &:before {
+        @include sprite(ico_arrow_up01, $commonSprites, $common);
+
+        top: 50%;
+        left: 50%;
+        margin: -8.5px 0 0 -12.5px;
+    }
+
+    &:hover {
+        border-color: darken($color01, 40%);
+    }
+}
+

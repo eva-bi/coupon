@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/*
+# structure
+
+## 各エリア構造
+
+
+*/
+
+#contentsArea {
+    min-height: 0;
+    padding-bottom: 0;
+    background: $color01;
+}
+
+#colItemsWrap {
+    display: table;
+    width: 100%;
+}
+#colItemsArea {
+    display: table-cell;
+    width: 100%;
+    padding: mgn(-1) mgn(-1, $baseSideMgn) mgn(2) 0;
+    vertical-align: top;
+}
+#colInfoArea {
+    display: table-cell;
+    width: 374px;
+    padding: mgn(-1) 0 mgn(2);
+    border-right: 1px solid $color02;
+    border-left: 1px solid $color02;
+    vertical-align: top;
+}
+#colInfoArea .colInfoCont {
+    margin: 0 mgn(-2, $baseSideMgn);
+}
+
+#btmInfoWrap {
+    width: 100%;
+    border-top: 1px solid $color02;
+}
+#btmInfoArea {
+    width: 1000px;
+    margin: 0 auto;
+    padding: mgn(0) mgn(0, $baseSideMgn) mgn(2);
+}
+
+body.typeExtend #btmInfoArea {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide #btmInfoArea {
+    width: auto;
+}

@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*-------------------------------------------------------------------
+ *
+ * File Name   : _market_nav.scss
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+  .navMarket
+
+================================================================= */
+.navMarket{
+    background:#303134;
+    height:34px;
+    border-top: 1px solid #bbb;
+}
+.navMarket ul li{
+    float:left;
+}
+.navMarket ul li a{
+    display:block;
+    width:auto;
+    padding:6px 15px 5px;
+    color:#fff;
+    font-size:15px;
+}
+.navMarket ul li a:hover{
+    background:#555;
+    text-decoration:none;
+}
+.navMarket ul li a.navMarketNow{
+    background:#777;
+    cursor:default;
+}

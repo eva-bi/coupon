@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/*-------------------------------------------------------------------
+ *
+ * File Name     : information.css
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+    Hyperlink
+
+================================================================= */
+a,
+a:link,
+a:visited {
+    color: #0dafde;
+}
+a:active,
+a:hover {
+    color: #0dd9f7;
+}
+
+/* =================================================================
+
+    Seminar Header Area
+
+================================================================= */
+#seminarHeaderArea {
+    background: #3e1804 url(/assets/image/static/seminar/dvd/vol10/index_bg_header.jpg) no-repeat center bottom;
+}
+#seminarHeaderArea .upsideBox {
+    background-color: #303135;
+    color: #ffffff;
+}
+#seminarHeaderArea .upsideBoxInner {
+    position: relative;
+    width: 940px;
+    height: 32px;
+    margin: 0 auto;
+    padding: 8px 30px 0;
+}
+#seminarHeaderArea .upsideBox .ci {
+    position: absolute;
+    top: 6px;
+    right: 30px;
+}
+
+/* =================================================================
+
+    Seminar Contents Area
+
+================================================================= */
+#seminarContentsArea {
+    width: 940px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+#seminarContentsArea .infoTableBox .hdInfo {
+    margin-bottom: 40px;
+    font-size: 200%;
+    text-align: center;
+}
+#seminarContentsArea .infoTableBox .infoTable {
+    width: 100%;
+    border-top: 1px solid #dddddd;
+    border-left: 1px solid #dddddd;
+}
+#seminarContentsArea .infoTableBox .infoTable th,
+#seminarContentsArea .infoTableBox .infoTable td {
+    padding: 8px 16px;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+#seminarContentsArea .infoTableBox .infoTable th {
+    width: 25%;
+    background-color: #eeeeee;
+    vertical-align: middle;
+}
+#seminarContentsArea .infoTableBox .pageBack {
+    text-align: center;
+    margin: 24px 0 0;
+}

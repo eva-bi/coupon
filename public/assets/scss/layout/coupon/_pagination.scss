@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+/*
+# couponPagination
+
+## クーポン検索　ページネーション
+
+*/
+
+/* ページネーション */
+.couponPaginationNav {
+    @include fz(18);
+
+    margin-bottom: mgn(2);
+    background-color: lighten($color06, 75%);
+
+    & > .couponPaginationList {
+        width: 1000px;
+        height: 40px;
+        margin: 3px auto 0;
+        padding: 0 $baseSideMgn;
+        text-align: center;
+
+        & > li {
+            display: inline-block;
+            margin-top: -5px;
+            vertical-align: middle;
+
+            & > a {
+                display: inline-block;
+                padding: 0 mgn(-2);
+            }
+
+            &.current {
+                & > a {
+                    color: $color03;
+                    cursor: text;
+                }
+            }
+
+            &.first {
+                @include setElem(before, "...");
+
+                padding-right: mgn(-1);
+
+                &:before {
+                    top: 0;
+                    right: 0;
+                }
+            }
+
+            &.last {
+                @include setElem(before, "...");
+
+                padding-left: mgn(-1);
+
+                &:before {
+                    top: 0;
+                    left: 0;
+                }
+            }
+
+            &.prev {
+                width: 230px;
+                margin-top: -3px;
+                margin-right: mgn(-2);
+
+                & > a {
+                    padding: mgn(-2);
+                    font-weight: normal;
+
+                    & > i {
+                        margin: 0 mgn(-1) 0 0;
+                    }
+                }
+            }
+
+            &.next {
+                width: 230px;
+                margin-top: -3px;
+                margin-left: mgn(-2);
+
+                & > a {
+                    padding: mgn(-2);
+                    font-weight: normal;
+
+                    & > i {
+                        margin: 0 0 0 mgn(-1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.typeExtend .couponPaginationNav .couponPaginationList {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide .couponPaginationNav .couponPaginationList {
+    width: auto;
+}
+
+
+

@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/*doc
+---
+title: マーケットプレイスロゴ
+name: Logo
+category: ロゴ
+parent:
+---
+
+```html_example
+<!-- 小さいロゴ -->
+<p class="yahuokuLogo"></p>
+<p class="mobaokuLogo"></p>
+<p class="rakuokuLogo"></p>
+<p class="rakutenLogo"></p>
+<p class="sekaimonLogo"></p>
+<p class="smaokuLogo"></p>
+<p class="amazonLogo"></p>
+<p class="yahooLogo"></p>
+<p class="a2matoLogo"></p>
+<p class="ebayLogo"></p>
+<p class="ticketcampLogo"></p>
+
+<br>
+
+<!-- やや大きいロゴ -->
+<p class="yahuokuLogo sizeM"></p>
+<p class="mobaokuLogo sizeM"></p>
+<p class="rakuokuLogo sizeM"></p>
+<p class="rakutenLogo sizeM"></p>
+<p class="sekaimonLogo sizeM"></p>
+<p class="smaokuLogo sizeM"></p>
+<p class="amazonLogo sizeM"></p>
+<p class="yahooLogo sizeM"></p>
+<p class="a2matoLogo sizeM"></p>
+<p class="ebayLogo sizeM"></p>
+<p class="ticketcampLogo sizeM"></p>
+
+```
+*/
+
+/*
+## Logo Icon
+
+ロゴアイコン
+
+*/
+
+// ロゴを追加する場合は「$logoIcoNames」にロゴ名を追加していく
+$logoNames:
+    yahuoku,
+    mobaoku,
+    rakuoku,
+    rakuten,
+    sekaimon,
+    smaoku,
+    amazon,
+    yahoo,
+    a2mato,
+    ebay,
+    ticketcamp
+;
+
+@each $name in $logoNames {
+    .#{$name}Logo {
+        @include commonIcoForm(logo_s_#{$name});
+
+        &.sizeM {
+            @include commonIcoForm(logo_m_#{$name});
+        }
+    }
+}

@@ -1,0 +1,882 @@
+@charset "utf-8";
+
+/*
+# Base
+
+## タグの初期スタイル
+
+*/
+
+/* html */
+html {
+    height:100%;
+    font-size: $baseFontSize;
+
+    @include overflow(y, scroll);
+}
+
+/* body */
+body {
+    position:relative;
+    width:100%;
+    min-width:$contMinWidth + $baseSideMgn * 2;
+    height:100%;
+    background: $color01;
+    color: $color03;
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    line-height: $baseFontLines;
+}
+
+/* frame */
+#frame {
+    position:relative;
+    z-index:1;
+}
+
+/* a */
+a,
+a:link {
+    color: $color05;
+    text-decoration:none;
+}
+a:visited {
+    color: $visitedColor;
+    text-decoration:none;
+}
+a:hover,
+a:active {
+    color: darken($ciColor02, 5%);
+    text-decoration:none;
+}
+
+/* b, em, strong */
+b, em, strong {
+    font-weight: bold;
+    & a {
+        font-weight: bold;
+    }
+}
+
+/* p */
+p {
+    margin-bottom: $baseMgn;
+}
+
+/* input */
+input,
+textarea{
+    color:$color03;
+    font-family:$baseFont;
+    box-sizing:content-box;
+}
+select{
+    border:1px solid $color02;
+    background:$color01;
+    font-family:$baseFont;
+    text-indent:0.2em;
+    text-overflow: "";
+    vertical-align:middle;
+}
+::-webkit-input-placeholder{
+    color: lighten($color03, 50%);
+}
+::-moz-placeholder{
+    color: lighten($color03, 30%);
+}
+:-moz-placeholder{
+    color: lighten($color03, 30%);
+}
+:-ms-input-placeholder{
+    color: lighten($color03, 50%);
+}
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px darken($color01, 5%) inset;
+}
+input:not([type="radio"]):not([type="checkbox"]){
+    border:1px solid $color02;
+    -webkit-appearance:none;
+
+    @include border-radius(0);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+    position:relative;
+    height:20px;
+    padding:0 0.5em;
+    border:1px solid $color02;
+    background:$color01;
+}
+button{
+    font-family:$baseFont;
+}
+
+/*doc
+---
+title: レイアウト調整
+name: Adjustment
+category: ベース
+parent:
+---
+
+レイアウトを調整できるCLASS一覧
+
+*/
+
+/*doc
+---
+title: レイアウト調整 - オブジェクト関連
+name: Adjustment-Object
+category: ベース
+parent: Adjustment
+---
+
+###.relative
+- 要素に「position:relative;」を設定する
+
+###.hidden
+- 要素に「overflow:hidden;」を設定する
+
+###.invisible
+- 要素に「visibility:hidden;」を設定する
+
+###.hide
+- 要素に「display:none;」を設定する
+
+###.block
+- 要素に「display:block;」を設定する
+
+###.blockC
+- ブロック要素を中央寄せにする
+
+###.ellipsis
+- 文言が横幅からはみ出る場合、「…」で表示されるようになる
+- 設定する要素は横幅を固定すること
+
+*/
+
+/* position relative */
+.relative {
+    position:relative;
+}
+
+/* hide contents */
+.hidden {
+    overflow:hidden;
+}
+
+/* visibility hidden */
+.invisible {
+    visibility:hidden;
+}
+
+/* display none */
+.hide {
+    display:none;
+}
+
+/* display block */
+.block {
+    display:block;
+}
+
+/* center block */
+.blockC {
+    display:block;
+    margin-right:auto;
+    margin-left:auto;
+
+    & iframe {
+        display:block;
+        margin-right:auto;
+        margin-left:auto;
+    }
+}
+
+/* ellipsis */
+.ellipsis {
+    display:inline-block;
+
+    @include ellipsis();
+}
+
+/*doc
+---
+title: レイアウト調整 - マウスホバー関連
+name: Adjustment-Hover
+category: ベース
+parent: Adjustment
+---
+
+###.op
+- マウスホバーした際、要素が透過される
+
+*/
+.op:not(a):not(.tb) {
+    @include transition(opacity 0.2s ease);
+
+    &:hover {
+        @include opacity(0.7);
+    }
+}
+
+a.op:not(.tb) {
+    & .op {
+        @include transition(opacity 0.2s ease);
+    }
+
+    &:hover {
+        & .op {
+            @include opacity(0.7);
+        }
+    }
+}
+
+/*doc
+---
+title: レイアウト調整 - 幅関連
+name: Adjustment-WidthHeight
+category: ベース
+parent: Adjustment
+---
+
+###.w100
+- 要素に「width:100% !important;」を設定する
+
+###.wAuto
+- 要素に「width:auto !important;」を設定する
+
+###.wXem / .wXhem
+- 要素にem単位で横幅を指定する
+    - 例：「w3em」→「width:3em;」、「w3hem」→「width:3.5em;」
+    - 最大値は「w60hem」
+
+###.hXem / .hXhem
+- 要素にem単位で縦幅を指定する
+    - 例：「h3em」→「height:3em;」、「h3hem」→「height:3.5em;」
+    - 最大値は「h60hem」
+
+*/
+
+/* width 100% */
+.w100 {
+    width:100% !important;
+}
+
+/* width auto */
+.wAuto {
+    width:auto !important;
+}
+
+/* width (ex: .w3em , .w3hem) */
+$widthVal: 0.5;
+$widthNum: 0;
+
+@for $i from 1 through 120 {
+    $widthVal: $widthVal + 0.5;
+
+    @if $i % 2 == 0 {
+        .w#{$widthNum + h}em {
+            width:#{$widthVal}em !important;
+        }
+    } @else {
+        $widthNum: $widthNum + 1;
+
+        .w#{$widthNum}em {
+            width:#{$widthVal}em !important;
+        }
+    }
+}
+
+/* height (ex: .h3em , .h3hem) */
+$heightVal: 0.5;
+$heightNum: 0;
+
+@for $i from 1 through 120 {
+    $heightVal: $heightVal + 0.5;
+
+    @if $i % 2 == 0 {
+        .h#{$heightNum + h}em {
+            height:#{$heightVal}em;
+        }
+    } @else {
+        $heightNum: $heightNum + 1;
+
+        .h#{$heightNum}em {
+            height:#{$heightVal}em;
+        }
+    }
+}
+
+/*doc
+---
+title: レイアウト調整 - ボーダー関連
+name: Adjustment-Border
+category: ベース
+parent: Adjustment
+---
+
+###.bdrAll
+- 要素の全辺にグレーのボーダーをつける
+
+###.bdrTop
+- 要素の上辺にグレーのボーダーをつける
+
+###.bdrBtm
+- 要素の下辺にグレーのボーダーをつける
+
+###.bdrRight
+- 要素の右辺にグレーのボーダーをつける
+
+###.bdrLeft
+- 要素の左辺にグレーのボーダーをつける
+
+###.bdrDashed
+- ボーダーをドットにする
+
+###.bdrNonAll
+- 要素の全辺のボーダーを消す
+
+###.bdrNonTop
+- 要素の上辺のボーダーを消す
+
+###.bdrNonBtm
+- 要素の下辺のボーダーを消す
+
+###.bdrNonRight
+- 要素の右辺のボーダーを消す
+
+###.bdrNonLeft
+- 要素の左辺のボーダーを消す
+
+###.bdrColor01
+- ボーダーカラーを薄いグレーにする（デフォルトカラー）
+
+###.bdrColor02
+- ボーダーカラーを濃いグレーにする
+
+*/
+
+/* border */
+$bdrForm01: 1px solid $color02;
+
+.bdrAll {
+    border:$bdrForm01;
+}
+.bdrTop {
+    border-top:$bdrForm01;
+}
+.bdrBtm {
+    border-bottom:$bdrForm01;
+}
+.bdrRight {
+    border-right:$bdrForm01;
+}
+.bdrLeft {
+    border-left:$bdrForm01;
+}
+
+.bdrDashed {
+    border-style:dashed;
+}
+
+.bdrNonAll {
+    border:none !important;
+}
+.bdrNonTop {
+    border-top:none !important;
+}
+.bdrNonBtm {
+    border-bottom:none !important;
+}
+.bdrNonRight {
+    border-right:none !important;
+}
+.bdrNonLeft {
+    border-left:none !important;
+}
+
+.bdrColor01 {
+    border-color:$color02 !important;
+}
+.bdrColor02 {
+    border-color:darken($color01, 20%) !important;
+}
+
+/*doc
+---
+title: レイアウト調整 - 背景関連
+name: Adjustment-Background
+category: ベース
+parent: Adjustment
+---
+
+要素に背景色をつける
+
+###.bgLight01
+```html_example
+<div class="bgLight01 bdrAll w3em h3em"></div>
+```
+
+###.bgLight02
+```html_example
+<div class="bgLight02 bdrAll w3em h3em"></div>
+```
+
+###.bgLight03
+```html_example
+<div class="bgLight03 bdrAll w3em h3em"></div>
+```
+
+###.bgDark01
+```html_example
+<div class="bgDark01 bdrAll w3em h3em"></div>
+```
+
+###.bgDark02
+```html_example
+<div class="bgDark02 bdrAll w3em h3em"></div>
+```
+
+###.bgDark03
+```html_example
+<div class="bgDark03 bdrAll w3em h3em"></div>
+```
+
+###.bgColor01
+```html_example
+<div class="bgColor01 bdrAll w3em h3em"></div>
+```
+
+###.bgColor02
+```html_example
+<div class="bgColor02 bdrAll w3em h3em"></div>
+```
+
+###.bgColor03
+```html_example
+<div class="bgColor03 bdrAll w3em h3em"></div>
+```
+
+###.bgNon
+- 要素の背景を消す
+
+*/
+
+/* background */
+.bgLight01 {
+    background-color:$color01 !important;
+}
+.bgLight02 {
+    background-color:darken($color01, 5%) !important;
+}
+.bgLight03 {
+    background-color:darken($color01, 10%) !important;
+}
+
+.bgDark01 {
+    background-color:$color04 !important;
+}
+.bgDark02 {
+    background-color:lighten($color04, 14%) !important;
+}
+.bgDark03 {
+    background-color:$color05 !important;
+}
+
+.bgColor01 {
+    background-color:$ciColor01 !important;
+}
+.bgColor02 {
+    background-color:$ciColor02 !important;
+}
+.bgColor03 {
+    background-color:$color09 !important;
+}
+
+.bgNon {
+    background:none !important;
+}
+
+/*doc
+---
+title: レイアウト調整 - インライン関連
+name: Adjustment-Inline
+category: ベース
+parent: Adjustment
+---
+
+###.tL
+- テキスト要素を左寄せにする
+
+###.tR
+- テキスト要素を右寄せにする
+
+###.tC
+- テキスト要素を中央寄せにする
+
+###.vM
+- テキスト要素を縦中央寄せにする（要素がtable-cell要素かinline要素になっている場合に限る）
+
+###.vT
+- テキスト要素を縦上寄せにする（要素がtable-cell要素かinline要素になっている場合に限る）
+
+###.vB
+- テキスト要素を縦下寄せにする（要素がtable-cell要素かinline要素になっている場合に限る）
+
+###.tColor01
+
+- スタンダードなテキストカラー
+
+```html_example
+<p class="tColor01">テキストカラー</p>
+```
+
+###.tColor02
+
+- やや薄い墨字
+
+```html_example
+<p class="tColor02">テキストカラー</p>
+```
+
+###.tColor03
+
+- かなり薄い墨字
+
+```html_example
+<p class="tColor03">テキストカラー</p>
+```
+
+###.tColor04
+
+- 強調する場合の赤字
+
+```html_example
+<div class="bgColor04">
+    <p class="tColor04">テキストカラー</p>
+</div>
+```
+
+###.tColor05
+
+- 白字
+
+```html_example
+<p class="tColor05">テキストカラー</p>
+```
+
+###.tColor06
+
+- 青字
+
+```html_example
+<p class="tColor06">テキストカラー</p>
+```
+
+###.tColor07
+
+- 黄色字
+
+```html_example
+<p class="tColor07">テキストカラー</p>
+```
+
+###.tColor08
+
+- オレンジ色字
+
+```html_example
+<p class="tColor08">テキストカラー</p>
+```
+
+###.fSizeXX
+- フォントサイズを「1px」刻みで調整する
+- CLASSは「.fSize01（10px）」〜「.fSize15（24px）」まで
+
+###.fNormal
+- フォントを細字にする
+
+###.fBold
+- フォントを太字にする
+
+###.wBreak
+- 要素に「word-break:break-all;」を指定する
+
+*/
+
+/* text align */
+.tL {
+    text-align:left !important;
+}
+.tR {
+    text-align:right !important;
+}
+.tC {
+    text-align:center !important;
+
+    & > [id^="div-gpt-ad-"] {
+        display:inline-block;
+
+        & div,
+        & iframe {
+            display:inline-block;
+        }
+    }
+}
+
+/* vertical align */
+.vM {
+    vertical-align:middle !important;
+
+    & > th,
+    & > td {
+        vertical-align:middle !important;
+    }
+}
+.vT {
+    vertical-align:top !important;
+
+    & > th,
+    & > td {
+        vertical-align:top !important;
+    }
+}
+.vB {
+    vertical-align:bottom !important;
+
+    & > th,
+    & > td {
+        vertical-align:bottom !important;
+    }
+}
+
+/* text color */
+.tColor01 {
+    color:$color03 !important;
+}
+.tColor02 {
+    color:lighten($color03, 20%) !important;
+}
+.tColor03 {
+    color:lighten($color04, 60%) !important;
+}
+.tColor04 {
+    color:$color10 !important;
+}
+.tColor05 {
+    color:$color01 !important;
+}
+.tColor06 {
+    color:$color07 !important;
+}
+.tColor07 {
+    color:darken($color08, 10%) !important;
+}
+.tColor08 {
+    color:$color09 !important;
+}
+
+/* font size */
+@for $i from 1 through 15 {
+    $num: 0;
+
+    @if $i < 10 {
+      $num: '0' + $i;
+    } @else {
+      $num: $i;
+    }
+
+    .fSize#{$num} {
+        @include fz(9 + $i, i);
+    }
+}
+
+/* font weight */
+.fNormal {
+    font-weight:normal !important;
+}
+.fBold {
+    font-weight:bold !important;
+}
+
+/* word break */
+.wBreak {
+    word-break:break-all;
+}
+
+/*doc
+---
+title: レイアウト調整 - マージン関連
+name: Adjustment-Margin
+category: ベース
+parent: Adjustment
+---
+
+###.negaTopXem / .negaTopXhem
+- テキスト要素をem単位で上方向にずらす
+    - 例：「negaTop1」→「top:-1px;」」
+    - 最大値は「negaTop20」
+
+###.sideMgnReset
+- 要素の両端の外余白をリセットする
+
+###.rightMgnReset
+- 要素の右のマージンをリセットする
+
+###.leftMgnReset
+- 要素の左のマージンをリセットする
+
+###.topMgnReset
+- 要素の上のマージンをリセットする
+
+###.btmMgnReset
+- 要素の下のマージンをリセットする
+
+
+###.sidePdgReset
+- 要素の両端のパディングをリセットする
+
+###.rightPdgReset
+- 要素の右のパディングをリセットする
+
+###.leftPdgReset
+- 要素の左のパディングをリセットする
+
+###.topPdgReset
+- 要素の上のパディングをリセットする
+
+###.btmPdgReset
+- 要素の下のパディングをリセットする
+
+
+###.topMgnSeth / .topMgnSetX
+- 要素の上にマージンを設定する
+    - .topMgnSeth - 4px
+    - .topMgnSetX - 8px刻み（Xの最大値は8）
+
+###.btmMgnSeth / .btmMgnSetX
+- 要素の下にマージンを設定する
+    - .btmMgnSeth - 4px
+    - .btmMgnSetX - 8px刻み（Xの最大値は8）
+
+###.rightMgnSeth / .rightMgnSetX
+- 要素の右にマージンを設定する
+    - .rightMgnSeth - 4px
+    - .rightMgnSetX - 8px刻み（Xの最大値は8）
+
+###.leftMgnSeth / .leftMgnSetX
+- 要素の左にマージンを設定する
+    - .leftMgnSeth - 4px
+    - .leftMgnSetX - 8px刻み（Xの最大値は8）
+
+
+###.topPdgSeth / .topPdgSetX
+- 要素の上にマージンを設定する
+    - .topPdgSeth - 4px
+    - .topPdgSetX - 8px刻み（Xの最大値は8）
+
+###.btmPdgSeth / .btmPdgSetX
+- 要素の下にマージンを設定する
+    - .btmPdgSeth - 4px
+    - .btmPdgSetX - 8px刻み（Xの最大値は8）
+
+###.rightPdgSeth / .rightPdgSetX
+- 要素の右にマージンを設定する
+    - .rightPdgSeth - 4px
+    - .rightPdgSetX - 8px刻み（Xの最大値は8）
+
+###.leftPdgSeth / .leftPdgSetX
+- 要素の左にマージンを設定する
+    - .leftPdgSeth - 4px
+    - .leftPdgSetX - 8px刻み（Xの最大値は8）
+
+*/
+
+/* negative top set (ex: .negaTop1) */
+[class^="negaTop"] {
+    position:relative;
+
+    $ntopVal: 0;
+    $ntopNum: 0;
+
+    @for $i from 1 through 20 {
+        $ntopVal: $ntopVal + 1;
+        $ntopNum: $ntopNum + 1;
+
+        &.negaTop#{$ntopNum} {
+            top:-#{$ntopVal}px;
+        }
+    }
+}
+
+/* margin & padding reset */
+$direction: side, top, right, bottom, left;
+
+@each $name in $direction {
+    $nameSet: if($name == bottom, btm, $name);
+
+    .#{$nameSet}MgnReset {
+        @if ($name == side) {
+            margin-right:0 !important;
+            margin-left:0 !important;
+        } @else {
+            margin-#{$name}:0 !important;
+        }
+    }
+    .#{$nameSet}PdgReset {
+        @if ($name == side) {
+            padding-right:0 !important;
+            padding-left:0 !important;
+        } @else {
+            padding-#{$name}:0 !important;
+        }
+    }
+}
+
+/* margin & padding set */
+@for $i from 0 through 8 {
+    $direction: top, right, bottom, left;
+    $mgnFlicker: 8px;
+    $marginVal: $mgnFlicker * $i;
+
+    @if ($i == 0) {
+        @each $name in $direction {
+            $nameSet: if($name == bottom, btm, $name);
+
+            .#{$nameSet}MgnSeth {
+                margin-#{$name}:$mgnFlicker / 2 !important;
+            }
+            .#{$nameSet}PdgSeth {
+                padding-#{$name}:$mgnFlicker / 2 !important;
+            }
+        }
+
+    } @else if ($i == 1) {
+        @each $name in $direction {
+            $nameSet: if($name == bottom, btm, $name);
+
+            .#{$nameSet}MgnSet {
+                margin-#{$name}:#{$marginVal} !important;
+            }
+            .#{$nameSet}PdgSet {
+                padding-#{$name}:#{$marginVal} !important;
+            }
+        }
+
+    } @else {
+        @each $name in $direction {
+            $nameSet: if($name == bottom, btm, $name);
+
+            .#{$nameSet}MgnSet#{$i} {
+                margin-#{$name}:#{$marginVal} !important;
+            }
+            .#{$nameSet}PdgSet#{$i} {
+                padding-#{$name}:#{$marginVal} !important;
+            }
+        }
+    }
+}

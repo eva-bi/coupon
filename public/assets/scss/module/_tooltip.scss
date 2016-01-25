@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*doc
+---
+title: ツールチップコメント
+name: Tooltip_Comment
+category: ツールチップ
+parent: 
+---
+
+ツールチップコメント。
+
+```html_example
+
+```
+*/
+
+#tooltipComment {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 0 4px;
+    border: 1px solid $color02;
+    background-color: $color01;
+    
+    @include border-radius(r(0));
+    @include shadow(0);
+    @include fz(12);
+}
+ 

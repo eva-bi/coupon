@@ -1,0 +1,713 @@
+@charset "UTF-8";
+
+/*-------------------------------------------------------------------
+ *
+ * File Name     : index.css
+ *
+-------------------------------------------------------------------*/
+
+/* =================================================================
+
+    Hyperlink
+
+================================================================= */
+a,
+a:link,
+a:visited {
+    color: #0dafde;
+}
+a:active,
+a:hover {
+    color: #0dd9f7;
+}
+
+/* =================================================================
+
+    Seminar Header Area
+
+================================================================= */
+#seminarHeaderArea {
+    background: url(/assets/image/static/seminar/school/export/index_bg_header.jpg) repeat-x center top;
+}
+#seminarHeaderArea .upsideBox {
+    background-color: #303135;
+}
+#seminarHeaderArea .upsideBoxInner {
+    position: relative;
+    width: 1000px;
+    height: 40px;
+    margin: 0 auto;
+    padding-top: 12px;
+}
+#seminarHeaderArea .upsideBoxInner .ci {
+    margin-left: 10px;index_bg_main_visual
+}
+#seminarHeaderArea .mainVisualBox {
+    height: 526px;
+    margin-top: -52px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_main_visual.png) no-repeat center top;
+}
+#seminarHeaderArea .mainVisualBoxInner {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 75px;
+}
+#seminarHeaderArea .mainVisualTxt {
+    padding-top: 25px;
+    margin-bottom: 0;
+}
+#seminarHeaderArea .headAttentionBox {
+    height: 401px;
+    margin-top: -112px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_head_attention.png) no-repeat center top;
+}
+#seminarHeaderArea .headAttentionBox .headAttentionBoxInner {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 165px;
+}
+#seminarHeaderArea .headAttentionBox p {
+    margin-bottom: 0;
+    font-size: 160%;
+    line-height: 1.8;
+    text-align: center;
+}
+#seminarHeaderArea .headAttentionBox .attention > em {
+    color: #e64418;
+    font-size: 170%;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------
+    seminarContentsArea
+----------------------------------------------------------------- */
+#seminarContentsArea {
+    position: relative;
+    z-index: -1;
+    margin-top: -65px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+#seminarContentsArea p {
+    margin-bottom: 1.6em;
+}
+#seminarContentsArea .secNote {
+    font-size: 80%;
+}
+
+/* -----------------------------------------------------------------
+    secBox
+----------------------------------------------------------------- */
+#seminarContentsArea .secBoxInner {
+    position: relative;
+    z-index: 1;
+    width: 1000px;
+    margin: 0 auto;
+}
+#seminarContentsArea .secCont {
+    margin-left: 100px;
+}
+
+/* -----------------------------------------------------------------
+    secHd
+----------------------------------------------------------------- */
+/* secHd01 */
+#seminarContentsArea .secHd01 {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* secHd02 */
+#seminarContentsArea .secHd02 {
+    position: relative;
+    z-index: 1;
+    height: 140px;
+    text-align: center;
+}
+#seminarContentsArea .secHd02:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    content: "";
+    width: 100%;
+    height: 140px;
+    background-color: #303135;
+}
+#seminarContentsArea .secHd02:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    width: 100%;
+}
+
+/* secHd03 */
+#seminarContentsArea .secHd03 {
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    border-top: 10px solid #f28c0f;
+    text-align: center;
+}
+#seminarContentsArea .secHd03:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    content: "";
+}
+
+/* -----------------------------------------------------------------
+    empTxt
+----------------------------------------------------------------- */
+#seminarContentsArea .empTxt01 {
+    margin: 0 5px;
+    padding: 5px;
+    background-color: #e28a18;
+    color: #ffffff;
+    font-weight: bold;
+}
+#seminarContentsArea .empTxt02 {
+    color: #e64418;
+    font-size: 135%;
+    font-weight: bold;
+}
+#seminarContentsArea .empTxt03 {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #666666;
+    color: #333333;
+    font-size: 135%;
+    font-weight: bold;
+}
+#seminarContentsArea .empTxt04 {
+    color: #333333;
+    font-size: 135%;
+    font-weight: bold;
+}
+
+/* -----------------------------------------------------------------
+    secBox01
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox01 {
+    background: #878787 url(/assets/image/static/seminar/school/export/index_bg_sec01.jpg) no-repeat 50% 0 fixed;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    color: #ffffff;
+}
+#seminarContentsArea .secBox01 .secBoxInner {
+    padding: 100px 0 70px;
+    text-align: center;
+}
+#seminarContentsArea .secBox01 .txt01 {
+    margin-bottom: 40px;
+    font-size: 160%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox01 .txt02 {
+    margin-bottom: 0;
+}
+#seminarContentsArea .secBox01 .seminarBtn01 {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 1600px) {
+    #seminarContentsArea .secBox01 {
+        -webkit-background-size: auto;
+        background-size: auto;
+    }
+}
+
+/* -----------------------------------------------------------------
+    secBox02
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox02 {
+    position: relative;
+    z-index: 1;
+    background-color: #f3e3cd;
+    background-image: url(/assets/image/static/seminar/school/export/index_bg_sec02_02.png),
+                      url(/assets/image/static/seminar/school/export/index_bg_sec02_01.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 200px, 50% 0;
+}
+#seminarContentsArea .secBox02 .secBoxInner {
+    padding: 0 0 80px;
+}
+#seminarContentsArea .secBox02 .txt01 {
+    position: relative;
+    z-index: -1;
+    margin: -190px 0 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox03
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox03 {
+    position: relative;
+    z-index: 1;
+    background-color: #ecedee;
+    background-image: url(/assets/image/static/seminar/school/export/index_bg_sec03_02.png),
+                      url(/assets/image/static/seminar/school/export/index_bg_sec03_03.png),
+                      url(/assets/image/static/seminar/school/export/index_bg_sec_common01.gif);
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-position: 50% 700px, 50% 100%, 50% 0;
+}
+#seminarContentsArea .secBox03 .secHd02:after {
+    height: 500px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec03_01.png) no-repeat 50% 0;
+}
+#seminarContentsArea .secBox03 .secBoxInner {
+    padding: 40px 0 110px;
+}
+#seminarContentsArea .secBox03 .txt01 {
+    position: relative;
+    z-index: -1;
+    margin: -190px 0 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox04
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox04 {
+    position: relative;
+    z-index: 1;
+    background-color: #ecedee;
+    background-image: url(/assets/image/static/seminar/school/export/index_bg_sec04_02.png),
+                      url(/assets/image/static/seminar/school/export/index_bg_sec04_03.png),
+                      url(/assets/image/static/seminar/school/export/index_bg_sec_common01.gif);
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-position: 50% 700px, 50% 100%, 50% 0;
+}
+#seminarContentsArea .secBox04 .secHd02 {
+    top: -65px;
+    padding-top: 65px;
+}
+#seminarContentsArea .secBox04 .secHd02:before {
+    top: 65px;
+}
+#seminarContentsArea .secBox04 .secHd02:after {
+    height: 850px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec04_01.png) no-repeat 50% 0;
+}
+#seminarContentsArea .secBox04 .secBoxInner {
+    padding: 40px 0 80px;
+}
+#seminarContentsArea .secBox04 .txt01 {
+    position: relative;
+    z-index: -1;
+    margin: -190px 0 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox05
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox05 {
+    position: relative;
+    z-index: 1;
+    background-color: #ecedee;
+    background-image: url(/assets/image/static/seminar/school/export/index_bg_sec_common01.gif);
+    background-repeat: repeat-y;
+    background-position: 50% 0;
+}
+#seminarContentsArea .secBox05 .secHd02 {
+    top: -54px;
+    height: 160px;
+}
+#seminarContentsArea .secBox05 .secHd02:before {
+    top: 54px;
+    height: 160px;
+}
+#seminarContentsArea .secBox05 .secHd02:after {
+    height: 1180px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec05_01.png) no-repeat 50% 0;
+}
+#seminarContentsArea .secBox05 .secBoxInner {
+    padding: 40px 0 80px;
+}
+#seminarContentsArea .secBox05 .txt01 {
+    margin-bottom: 1em;
+}
+
+/* -----------------------------------------------------------------
+    secBox06
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox06 {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    background-image:url(/assets/image/static/seminar/school/export/index_bg_sec_common02.gif);
+    background-repeat: repeat;
+    background-position: 50% 0;
+}
+#seminarContentsArea .secBox06 .secHd03 {
+    z-index: 2;
+}
+#seminarContentsArea .secBox06 .secHd03:after {
+    top: -64px;
+    width: 185px;
+    height: 118px;
+    margin-left: 214px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec06_01.png) no-repeat 0 0;
+}
+#seminarContentsArea .secBox06 .secBoxInner {
+    padding: 60px 0 80px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec06_02.png) no-repeat 40px 0;
+}
+#seminarContentsArea .secBox06 .lecturerMessage {
+    position: relative;
+    z-index: 1;
+    min-height: 660px;
+    padding: 0 320px 20px 0;
+}
+#seminarContentsArea .secBox06 .lecturerMessage:before {
+    display: block;
+    position: absolute;
+    top: -220px;
+    right: 156px;
+    bottom: 0;
+    content: "";
+    width: 6px;
+    background-color: #f28c0f;
+}
+#seminarContentsArea .secBox06 .lecturerProfile02 {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 2;
+}
+#seminarContentsArea .secBox06 .lecturerBiography {
+    position: relative;
+    z-index: 3;
+    width: 800px;
+    padding: 20px 30px 30px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 6px solid #f28c0f;
+    border-top: none;
+    -webkit-border-radius: 0 0 15px 15px;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox06 .lecturerBiography:before {
+    display: block;
+    position: absolute;
+    top: -210px;
+    right: -75px;
+    content: "";
+    width: 256px;
+    height: 256px;
+    background: url(/assets/image/static/seminar/school/export/index_img_sec06_03.png) no-repeat 0 0;
+}
+#seminarContentsArea .secBox06 .lecturerBiography li {
+    padding: 5px;
+    border-bottom: 1px dotted #e5c6a1;
+}
+#seminarContentsArea .secBox06 .lecturerBiography dt {
+    float: left;
+    margin-right: 10px;
+}
+#seminarContentsArea .secBox06 .lecturerBiography dd {
+    margin-left: 130px;
+}
+
+/* -----------------------------------------------------------------
+    secBox07
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox07 {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 520px;
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox07 .secHd02 {
+    height: 150px;
+}
+#seminarContentsArea .secBox07 .secHd02:before {
+    height: 150px;
+}
+#seminarContentsArea .secBox07 .secHd02:after {
+    height: 520px;
+    background: url(/assets/image/static/seminar/school/export/index_bg_sec07_01.png) no-repeat 50% 100%;
+}
+#seminarContentsArea .secBox07 .secBoxInner {
+    padding: 50px 0;
+}
+#seminarContentsArea .secBox07 .txt01 {
+    position: relative;
+    z-index: -1;
+    margin: -190px 0 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox08
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox08 {
+    background: #2a2e2f url(/assets/image/static/seminar/school/export/index_bg_sec08.jpg) no-repeat 50% 0 fixed;
+    -webkit-background-size: 100% auto;
+    background-size: 100% auto;
+    color: #ffffff;
+}
+#seminarContentsArea .secBox08 .secHd01 {
+    padding: 0;
+}
+#seminarContentsArea .secBox08 .secBoxInner {
+    padding: 70px 0 0;
+}
+
+@media screen and (max-width: 1600px) {
+    #seminarContentsArea .secBox08 {
+        -webkit-background-size: auto;
+        background-size: auto;
+    }
+}
+
+/* -----------------------------------------------------------------
+    secBox09
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox09 {
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox09 .secHd01 {
+    padding: 40px 0 0;
+}
+#seminarContentsArea .secBox09 .secBoxInner {
+    padding: 30px 0 80px;
+}
+#seminarContentsArea .secBox09 .secCont {
+    margin: 0 30px;
+}
+
+/* seminarTable */
+#seminarContentsArea .secBox09 .seminarTable {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox09 .seminarTable tbody {
+    border-left: 1px solid #d0d5da;
+}
+#seminarContentsArea .secBox09 .seminarTable th,
+#seminarContentsArea .secBox09 .seminarTable td {
+    padding: 10px;
+    border-right: 1px solid #d0d5da;
+    border-bottom: 1px solid #d0d5da;
+    text-align: center;
+    vertical-align: middle;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th {
+    border-bottom: none;
+    background-color: #797b84;
+    color: #ffffff;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:last-child {
+    border-right: none;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:nth-child(1) {
+    width: 22%;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:nth-child(2) {
+    width: 17%;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:nth-child(3) {
+    width: 16%;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:nth-child(4) {
+    width: 21%;
+}
+#seminarContentsArea .secBox09 .seminarTable thead th:nth-child(5) {
+    width: 24%;
+}
+#seminarContentsArea .secBox09 .seminarTable tbody td:first-child {
+    border-left: 1px solid #d0d5da;
+}
+#seminarContentsArea .secBox09 .seminarTable tbody td:last-child {
+    padding: 10px 0;
+}
+#seminarContentsArea .secBox09 .seminarTable tbody tr:nth-child(even) {
+    background-color: #ecedee;
+}
+
+/* -----------------------------------------------------------------
+    secBox10
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox10 {
+    background-color: #ecedee;
+}
+#seminarContentsArea .secBox10 .secHd01 {
+    padding: 50px 0 0;
+}
+#seminarContentsArea .secBox10 .secBoxInner {
+    padding: 50px 0 80px;
+}
+#seminarContentsArea .secBox10 .secCont {
+    margin: 0 30px;
+}
+
+/* seminarQaBox */
+#seminarContentsArea .secBox10 .seminarQaBox {
+    position: relative;
+    margin-top: 50px;
+    padding: 0 122px;
+}
+#seminarContentsArea .secBox10 .seminarQaBox:first-child {
+    margin-top: 0;
+}
+#seminarContentsArea .secBox10 .seminarQaBox:before,
+#seminarContentsArea .secBox10 .seminarAnswer:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 122px;
+    height: 102px;
+    background: url(/assets/image/static/seminar/school/export/index_img_sec10_01.png) no-repeat 0 0;
+}
+#seminarContentsArea .secBox10 .seminarQaBox:nth-child(even):before {
+    background-image: url(/assets/image/static/seminar/school/export/index_img_sec10_02.png);
+}
+#seminarContentsArea .secBox10 .seminarQuestion,
+#seminarContentsArea .secBox10 .seminarAnswer {
+    position: relative;
+    padding: 25px 10px 25px 67px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+#seminarContentsArea .secBox10 .seminarQuestion:before,
+#seminarContentsArea .secBox10 .seminarAnswer:before {
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    content: "";
+    width: 30px;
+    height: 33px;
+    background: url(/assets/image/static/seminar/school/export/index_img_sec10_04.png) no-repeat 50% 50%;
+}
+#seminarContentsArea .secBox10 .seminarQuestion {
+    font-size: 120%;
+    font-weight: bold;
+}
+#seminarContentsArea .secBox10 .seminarAnswer {
+    margin-top: 20px;
+}
+#seminarContentsArea .secBox10 .seminarAnswer:before {
+    background-image: url(/assets/image/static/seminar/school/export/index_img_sec10_05.png);
+}
+#seminarContentsArea .secBox10 .seminarAnswer:after {
+    right: -122px;
+    left: auto;
+    background-image: url(/assets/image/static/seminar/school/export/index_img_sec10_03.png);
+}
+#seminarContentsArea .secBox10 .seminarAnswer > p {
+    margin-bottom: 0;
+}
+
+/* -----------------------------------------------------------------
+    secBox11
+----------------------------------------------------------------- */
+#seminarContentsArea .secBox11 {
+    background-color: #f3e7d5;
+    background-image:url(/assets/image/static/seminar/school/export/index_bg_sec11_01.jpg),
+                     url(/assets/image/static/seminar/school/export/index_bg_sec11_02.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: 50% 0, 50% 0;
+    background-attachment: fixed, fixed;
+    -webkit-background-size: 100% auto, 100% auto;
+    background-size: 100% auto, 100% auto;
+}
+#seminarContentsArea .secBox11 .secHd01 {
+    padding: 50px 0 0;
+}
+#seminarContentsArea .secBox11 .secBoxInner {
+    padding: 50px 0 80px;
+}
+#seminarContentsArea .secBox11 .secCont {
+    margin: 0 162px;
+}
+
+@media screen and (max-width: 1600px) {
+    #seminarContentsArea .secBox11 {
+        -webkit-background-size: auto, auto;
+        background-size: auto, auto;
+    }
+}
+
+/* =================================================================
+
+    Button
+
+================================================================= */
+/* seminarBtn01 */
+.seminarBtn01 {
+    width: 670px;
+    height: 110px;
+    margin: 70px auto;
+}
+.seminarBtn01 > a {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: url(/assets/image/static/seminar/school/export/index_btn_entry01.png) no-repeat 0 0;
+    text-indent: -9999px;
+}
+.seminarBtn01 > a:hover {
+    background-position: 0 100%;
+}
+
+/* seminarBtn02 */
+a.seminarBtn02 {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #ed3d14;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+}
+a.seminarBtn02:hover {
+    top: 3px;
+}
+a.seminarBtn02:before,
+a.seminarBtn02:after {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    z-index: -2;
+    content: "";
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #a1270b;
+}
+a.seminarBtn02:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #ed3d14;
+}
+a.seminarBtn02:hover:before {
+    bottom: -2px;
+    background-color: #a85009;
+}
+a.seminarBtn02:hover:after {
+    background-color: #ed7514;
+}

@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+/*doc
+---
+title: 汎用アイコン
+name: Icon
+category: アイコン
+parent:
+---
+
+```html_example
+<!-- 右向き矢印（ブラック） -->
+<i class="arrowRightIco01"></i>
+<!-- 右向き2重矢印（ブラック） -->
+<i class="arrowRightIco02"></i>
+<!-- 右向き矢印（グレー） -->
+<i class="arrowRightIco03"></i>
+<!-- 棒付き右向き矢印（グリーン） -->
+<i class="arrowRightIco04"></i>
+<!-- 棒付き右向き矢印（ホワイト） -->
+<i class="arrowRightIco05"></i>
+<!-- やや大きい右向き矢印（グレー） -->
+<i class="arrowRightIco06"></i>
+<!-- やや大きい右向き矢印（ブラック） -->
+<i class="arrowRightIco07"></i>
+
+<!-- 下向き矢印（ブラック） -->
+<i class="arrowDownIco01"></i>
+<!-- 下向き矢印（グレー） -->
+<i class="arrowDownIco02"></i>
+
+<!-- 左向き向き矢印（ブラック） -->
+<i class="arrowLeftIco01"></i>
+<!-- 左向き2重矢印（ブラック） -->
+<i class="arrowLeftIco02"></i>
+<!-- 左向き矢印（グレー） -->
+<i class="arrowLeftIco03"></i>
+<!-- 棒付き左向き矢印（グリーン） -->
+<i class="arrowLeftIco04"></i>
+<!-- 棒付き左向き矢印（ホワイト） -->
+<i class="arrowLeftIco05"></i>
+<!-- やや大きい左向き矢印（グレー） -->
+<i class="arrowLeftIco06"></i>
+<!-- やや大きい左向き矢印（ブラック） -->
+<i class="arrowLeftIco07"></i>
+
+<!-- やや大きいクロス（ブラック） -->
+<i class="crossIco01"></i>
+<!-- やや大きいクロス（ホワイト） -->
+<i class="crossIco02"></i>
+<!-- 小さい枠付きクロス -->
+<i class="crossIco03"></i>
+
+<!-- ショッピングカート -->
+<i class="cartIco01"></i>
+```
+*/
+
+/*
+## Right Arrow Icon
+
+右向き矢印
+
+*/
+
+.arrowRightIco01 {
+    @include commonIcoForm(ico_arrow_right01);
+}
+.arrowRightIco02 {
+    @include commonIcoForm(ico_arrow_right01);
+    @include overflow(xy, visible);
+    @include setElem(before, "");
+
+    margin-left: mgn(-3, $baseSideMgn) + 6px;
+
+    &:before {
+        @include commonIcoForm(ico_arrow_right01);
+
+        top: 0;
+        left: -6px;
+        margin: 0;
+    }
+}
+.arrowRightIco03 {
+    @include commonIcoForm(ico_arrow_right02);
+}
+.arrowRightIco04 {
+    @include commonIcoForm(ico_arrow_right03);
+}
+.arrowRightIco05 {
+    @include commonIcoForm(ico_arrow_right04);
+}
+.arrowRightIco06 {
+    @include commonIcoForm(ico_arrow_right05);
+}
+.arrowRightIco07 {
+    @include commonIcoForm(ico_arrow_right06);
+}
+
+/*
+## Down Arrow Icon
+
+下向き矢印
+
+*/
+
+.arrowDownIco01 {
+    @include commonIcoForm(ico_arrow_down01);
+}
+.arrowDownIco02 {
+    @include commonIcoForm(ico_arrow_down02);
+}
+
+/*
+## Left Arrow Icon
+
+左向き矢印
+
+*/
+
+.arrowLeftIco01 {
+    @include commonIcoForm(ico_arrow_left01);
+}
+.arrowLeftIco02 {
+    @include commonIcoForm(ico_arrow_left01);
+    @include overflow(xy, visible);
+    @include setElem(before, "");
+
+    margin-right: mgn(-3, $baseSideMgn) + 6px;
+
+    &:before {
+        @include commonIcoForm(ico_arrow_left01);
+
+        top: 0;
+        right: -6px;
+        margin: 0;
+    }
+}
+.arrowLeftIco03 {
+    @include commonIcoForm(ico_arrow_left02);
+}
+.arrowLeftIco04 {
+    @include commonIcoForm(ico_arrow_left03);
+}
+.arrowLeftIco05 {
+    @include commonIcoForm(ico_arrow_left04);
+}
+.arrowLeftIco06 {
+    @include commonIcoForm(ico_arrow_left05);
+}
+.arrowLeftIco07 {
+    @include commonIcoForm(ico_arrow_left06);
+}
+
+/*
+## Cross Icon
+
+クロス
+
+*/
+
+.crossIco01 {
+    @include commonIcoForm(ico_cross01);
+}
+.crossIco02 {
+    @include commonIcoForm(ico_cross02);
+}
+.crossIco03 {
+    @include commonIcoForm(ico_cross03);
+}
+
+/*
+## Shopping Cart Icon
+
+ショッピングカート
+
+*/
+
+.cartIco01 {
+    @include commonIcoForm(ico_cart01);
+}
+
+/*
+## Question Balloon Icon
+
+クエスションバルーン
+
+*/
+
+.qBalloonIco01 {
+    @include commonIcoForm(ico_q_balloon01);
+}
+
+/*doc
+---
+title: 簡略ロゴアイコン
+name: Icon_Logo
+category: アイコン
+parent:
+---
+
+```html_example
+<!-- 小さいアイコン -->
+<i class="yahuokuIco"></i>
+<i class="mobaokuIco"></i>
+<i class="rakutenIco"></i>
+<i class="sekaimonIco"></i>
+<i class="smaokuIco"></i>
+<i class="amazonIco"></i>
+<i class="yahooIco"></i>
+<i class="a2matoIco"></i>
+<i class="ebayIco"></i>
+<i class="ticketcampIco"></i>
+
+<br>
+
+<!-- やや大きいアイコン -->
+<i class="yahuokuIco sizeM"></i>
+<i class="mobaokuIco sizeM"></i>
+<i class="rakutenIco sizeM"></i>
+<i class="sekaimonIco sizeM"></i>
+<i class="smaokuIco sizeM"></i>
+<i class="amazonIco sizeM"></i>
+<i class="yahooIco sizeM"></i>
+<i class="a2matoIco sizeM"></i>
+<i class="ebayIco sizeM"></i>
+<i class="ticketcampIco sizeM"></i><br>
+
+<!-- アイコンバッジ -->
+<div style="position:relative;">
+    <div class="logoBadge"><i class="yahuokuIco"></i></div>
+</div>
+```
+*/
+
+/*
+## Logo Icon
+
+ロゴアイコン
+
+*/
+
+// ロゴを追加する場合は「$logoIcoNames」にロゴ名を追加していく
+$logoIcoNames:
+    yahuoku,
+    mobaoku,
+    rakuten,
+    sekaimon,
+    smaoku,
+    amazon,
+    yahoo,
+    a2mato,
+    ebay,
+    ticketcamp
+;
+
+@each $name in $logoIcoNames {
+    .#{$name}Ico {
+        @include commonIcoForm(ico_logo_s_#{$name});
+
+        &.sizeM {
+            @include commonIcoForm(ico_logo_m_#{$name});
+        }
+    }
+}
+
+.logoBadge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 4;
+    width: 24px;
+    height: 24px;
+    background-color: $color01;
+    background-color: rgba($color01, 0.8);
+
+    @include border-radius(50%);
+
+    & > i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -7px 0 0 -7px;
+    }
+}
+
+
+
+
+
+
+

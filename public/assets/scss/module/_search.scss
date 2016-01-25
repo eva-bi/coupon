@@ -1,0 +1,495 @@
+@charset "utf-8";
+
+/*doc
+---
+title: ヘッダー検索ボックス
+name: Header_Search_Field
+category: 検索ボックス
+parent:
+---
+
+ヘッダーに配置する検索ボックス。
+
+```html_example
+```
+*/
+
+#searchField {
+    position: relative;
+    z-index: 10;
+    padding-bottom: mgn(-2);
+    background-color: lighten($color06, 75%);
+
+    & > .searchFieldInner {
+        width: 1000px;
+        height: 44px;
+        margin: 0 auto;
+        padding: 0 $baseSideMgn;
+
+        @extend %clearfix;
+
+        & > .searchBox {
+            position: relative;
+            z-index: 1;
+            float: left;
+            width: 63%;
+            height: 100%;
+
+            @extend %clearfix;
+
+            & > form {
+                height: 100%;
+            }
+
+            & .searchToolBox {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border: 2px solid lighten($color06, 20%);
+                background-color: $color01;
+
+                @include border-radius(r(0));
+                @include transition(box-shadow 0.5s ease);
+                @extend %clearfix;
+
+                &:not(.tb):hover {
+                    @include shadow(2);
+                }
+
+                & > .searchTxtBox {
+                    position: relative;
+                    height: 100%;
+
+                    @include overflow(xy, hidden);
+
+                    & > .searchInput {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 mgn(-2, $baseSideMgn);
+                        border: none;
+                        line-height: 44px;
+
+                        @include box-sizing(border-box);
+                        @include fz(18);
+                    }
+                }
+
+                & > .categorySelect {
+                    float: left;
+                    height: 100%;
+
+                    @include setElem(before, "");
+
+                    & > select {
+                        display: none;
+                    }
+
+                    & > .curCategory {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        padding: 0 30px 0 10px;
+                        border-right: 1px solid lighten($color06, 60%);
+                        background-color: $color01;
+                        color: $color03;
+                        line-height: 3.8;
+                        cursor: pointer;
+
+                        @include border-radius(r(0) 0 0 r(0));
+                        @include fz(12);
+                        @include setElem(before, "");
+
+                        &:before {
+                            top: 50%;
+                            right: 10px;
+                            margin-top: -3px;
+
+                            @include sprite(ico_arrow_down01, $commonSprites, $common);
+                        }
+                    }
+
+                    &:before {
+                        bottom: -2px;
+                        right: 1px;
+                        left: 100%;
+                        z-index: 1;
+                        height: 5px;
+                        background-color: $color01;
+
+                        @include transition(left 0.2s ease);
+                    }
+                }
+
+                & > .searchSubmit {
+                    position: relative;
+                    top: -1px;
+                    right: -1px;
+                    float: right;
+                    height: 100%;
+                    padding: 1px;
+                    background-color: $color06;
+                    color: $color01;
+
+                    @include border-radius(0 r(0) r(0) 0);
+                    @include fz(18);
+                    @include transition(background-color 0.2s ease);
+                    @include setElem(after, "");
+
+                    &:after {
+                        top: 50%;
+                        left: 50%;
+                        margin: -13.5px 0 0 -14px;
+
+                        @include sprite(ico_search01, $commonSprites, $common);
+                    }
+
+                    &:not(.tb):hover {
+                        background-color: lighten($color06, 10%);
+                    }
+
+                    & > .searchBtn {
+                        position: relative;
+                        z-index: 1;
+                        width: 60px;
+                        height: 100%;
+                        border: none;
+                        background: none;
+                        color: $color01;
+                        cursor: pointer;
+
+                        @include overflow(xy, hidden);
+                        @include hideTxt;
+                    }
+                }
+            }
+
+            & #searchCateSelect {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                width: 100%;
+
+                @include border-radius(r(0));
+                @include shadow(2);
+                @include fz(13);
+
+                & .searchCateSelectInner {
+                    display: table;
+                    width: 100%;
+                    padding: mgn(-1)+44px 0 mgn(-1);
+                    border: 2px solid lighten($color06, 20%);
+                    background-color: $color01;
+
+                    @include border-radius(r(0));
+
+                    & > ul {
+                        display: table-cell;
+                        width: 33.333333%;
+                        border-left: 1px dotted darken($color01, 30%);
+
+                        @include box-sizing(border-box);
+
+                        &:first-child {
+                            border-left: none;
+                        }
+
+                        & > li {
+                            padding: 2px mgn(-2, $baseSideMgn);
+                            cursor: pointer;
+                            margin-bottom: 1px;
+
+                            &:hover {
+                                background-color: $ciColor02;
+                                color: $color01;
+                            }
+
+                            &.selected {
+                                background-color: $ciColor02;
+                                color: $color01;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                & > .close {
+                    right: 8px;
+                    bottom: 8px;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+
+                    @include setElem(after, "");
+
+                    position: absolute;
+
+                    &:after {
+                        top: 50%;
+                        left: 50%;
+                        margin: -10px 0 0 -10px;
+
+                        @include sprite(ico_cross01, $commonSprites, $common);
+                    }
+                }
+            }
+
+            & .searchMore {
+                top: 50%;
+                right: -84px;
+                width: 84px;
+                margin-top: -0.6em;
+                text-align: right;
+
+                @include overflow(xy, hidden);
+                @include fz(13);
+                @include setElem(before, "");
+                @include setElem(after, "");
+
+                position: absolute;
+
+                &:before {
+                    top: 50%;
+                    left: 17px;
+                    width: 1px;
+                    height: 11px;
+                    margin-top: -7px;
+                    background-color: lighten($color04, 40%);
+                }
+
+                &:after {
+                    top: 50%;
+                    left: 12px;
+                    width: 11px;
+                    height: 1px;
+                    margin-top: -2px;
+                    background-color: lighten($color04, 40%);
+                }
+
+                & a {
+                    display: inline-block;
+                    color: lighten($color04, 40%);
+
+                    &:hover {
+                        color: darken($ciColor02, 5%);
+                    }
+                }
+            }
+        }
+
+        & > .searchAdBox {
+            float: right;
+            width: 265px;
+            height: 100%;
+            text-align: right;
+
+            @include fz(13);
+
+            & .adTxt {
+                display: table;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 0;
+
+                & a {
+                    display: table-cell;
+                    color: darken($ciColor01, 5%);
+                    font-weight: bold;
+                    text-align: right;
+                    vertical-align: middle;
+
+                    &:hover {
+                        color: darken($ciColor02, 5%);
+                    }
+
+                    & > span {
+                        display: inline-block;
+                        padding: 4px 0 4px mgn(-2, $baseSideMgn)+4;
+                        border-top: 1px dotted darken($color01, 30%);
+                        border-bottom: 1px dotted darken($color01, 30%);
+
+                        @include setElem(before, "");
+
+                        &:before {
+                            top: 50%;
+                            left: 6px;
+                            margin-top: -5px;
+
+                            @include sprite(ico_arrow_right01, $commonSprites, $common);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > .recommendKeywords {
+        position: relative;
+        z-index: -1;
+        width: 1000px;
+        margin: mgn(-1.5) auto 0;
+        padding: 0 $baseSideMgn;
+
+        @include border-radius(r(-1));
+        @include fz(13);
+        @extend %clearfix;
+
+        & > .recommendKeywordsInner {
+            width: 100%;
+            height: 28px;
+
+            @include overflow(xy, hidden);
+            @extend %clearfix;
+
+            & > dt {
+                float: left;
+                margin: 0 10px;
+                padding: 4px 0;
+                font-weight: bold;
+                cursor: pointer;
+
+                @include transition(opacity 0.2s ease);
+
+                &:not(.tb):hover {
+                    opacity: 0.7;
+                }
+
+                &.usually {
+                    opacity: 1;
+                    cursor: default;
+                }
+            }
+
+            & > dd {
+                position: relative;
+                height: 100%;
+                padding-right: 30px;
+                color: $color01;
+
+                @include overflow(xy, hidden);
+
+                & > .keywordsBlock{
+                    width: 100%;
+                    height: 100%;
+
+                    @include overflow(xy, hidden);
+                    @include setElem(before, "");
+
+                    &:before {
+                        top: 0;
+                        right: 0;
+                        bottom: 2px;
+                        z-index: 1;
+                        width: 50px;
+
+                        @include background-image(linear-gradient(left, rgba(lighten($color06, 75%), 0), rgba(lighten($color06, 75%), 1)));
+                        @include filter-gradient(rgba(lighten($color06, 75%), 0), rgba(lighten($color06, 75%), 1), horizontal);
+                        @include transition(all 0.2s ease);
+                    }
+
+                    & > ul {
+                        height: 100%;
+
+                        & > li {
+                            display: inline-block;
+                            float: left;
+                            margin: 0 10px 0 0;
+                            text-align: center;
+
+                            & > a{
+                                display: block;
+                                padding: 0 4px;
+                                color: $color03;
+                                line-height: 2;
+
+                                &:hover {
+                                    color: darken($ciColor02, 5%);
+                                }
+                            }
+                        }
+
+                        & > li:first-child {
+                            & > a{
+                                padding-left: 0;
+                            }
+                        }
+
+                        & > li:last-child {
+                            margin-right: 0;
+
+                            & > a{
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+
+                & > .nextPage{
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: 2;
+                    width: 30px;
+                    height: 35px;
+                    text-align: center;
+                    cursor: pointer;
+
+                    @include transition(opacity 0.2s ease);
+
+                    &:not(.tb):hover {
+                        opacity: 0.7;
+                    }
+
+                    & > i {
+                        margin: 8px 0 0 0;
+                    }
+                }
+
+                & > .scrollbar{
+                    display: none;
+                    position: absolute;
+                    bottom: 0;
+                    right: 30px;
+                    left: 0;
+                    z-index: 1;
+                    height: 2px;
+                    background-color: lighten($color06, 60%);
+                    line-height: 0;
+
+                    & > .handle {
+                        width: 100px;
+                        height: 100%;
+                        background-color: lighten($color06, 30%);
+                        cursor: pointer;
+
+                        & > .mousearea {
+                            position: absolute;
+                            top: -7px;
+                            left: 0;
+                            width: 100%;
+                            height: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+body.typeExtend #searchField > .searchFieldInner,
+body.typeExtend #searchField > .recommendKeywords {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide #searchField > .searchFieldInner,
+body.typeWide #searchField > .recommendKeywords {
+    width: auto;
+}
+

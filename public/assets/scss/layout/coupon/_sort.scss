@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/*
+# couponSort
+
+## クーポン検索　ソートナビ
+
+*/
+
+/* ソートナビ */
+.couponSortNav {
+    @include fz(18);
+
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+    & > li {
+        @include setElem(before, "");
+
+        display: inline-block;
+        margin-left: 0.4em;
+        padding-left: 0.8em;
+
+        &:before {
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 1em;
+            margin-top: -0.5em;
+            background-color: $color02;
+        }
+
+        &:first-child {
+            margin-left: 0;
+            padding-left: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &.current {
+            & > a {
+                color: $color03;
+                cursor: text;
+            }
+        }
+    }
+}
+
+body.typeExtend .couponSortNav {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide .couponSortNav {
+    width: auto;
+}
+
+
+

@@ -1,0 +1,517 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*-------------------------------------------------------------------
+ *
+ * File Name   : _showcase.scss
+ *
+-------------------------------------------------------------------*/
+
+.nonehit{
+    margin:30px auto;
+    padding:15px;
+    text-align:center;
+    font-size:20px;
+    border:5px solid #ccc;
+}
+
+/* =================================================================
+
+  .showcase
+
+================================================================= */
+
+/* --- .showcase --- */
+.showcase{
+    margin:10px auto 0 auto;
+}
+.showcase ul.showcaseUl{
+    margin:0 0 0 -32px;
+}
+.showcase ul li.showcaseLink{
+    position:relative;
+    float:left;
+    display:block;
+    width:200px;
+    margin:0 32px 32px 0;
+    padding:11px;
+    background:#ffffff;
+    border:2px solid #eeeeee;
+    color:#333333;
+    cursor:pointer;
+}
+.showcase ul li.showcaseLink:hover{
+    border:2px solid #e3e3e3;
+    text-decoration:none;
+}
+.showcase ul li.showcaseLink img{
+    transition-property:all;
+    transition: 0.2s linear;
+}
+.showcase ul li.showcaseLink:hover img{
+    opacity: 0.6;
+}
+
+/* --- .showcasePrice --- */
+.showcasePrice{
+    margin:5px 0 0;
+    color:#e83d15;
+    font-size:18px;
+    text-align:right;
+}
+.showcasePriceDown{
+    padding:0 5px 0 0;
+    font-size:12px;
+    color:#333333;
+}
+
+/* ---  --- */
+ul.showcaseAmazon li{
+    margin:4px 0;
+    font-size:13px;
+    float:left;
+}
+ul.showcaseAmazon li.showcasePriceOld{
+    float:right;
+}
+
+/* --- .showcaseShop --- */
+.showcaseShop{
+    white-space: nowrap;
+    overflow: hidden;
+    max-width:182px;
+    padding:2px 0 2px 17px;
+    font-size:11px;
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat 0 -100px;
+    text-overflow: ellipsis;
+    -moz-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+/* --- .showcasePoint --- */
+.showcasePoint{
+    margin:3px 0 0;
+    font-size:12px;
+}
+
+/* --- .showcase --- */
+.showcase ul.showcaseMarck{
+    margin:3px 0 0 -8px;
+}
+.showcase ul.showcaseMarck li{
+    float:left;
+    margin:0 0 0 8px;
+    padding:2px 7px;
+    background:#303134;
+    color:#ffffff;
+    font-size:12px;
+    border-radius:2px;
+}
+.showcase ul.showcaseMarck li.showcaseMarckNone{
+    background:#bbb;
+}
+
+/* --- .showcaseReview --- */
+.showcaseReview ul li{
+    float:left;
+    margin:2px 0;
+    font-size:11px;
+}
+.showcaseReview ul li.showcaseReviewStar span{
+    position:relative;
+    top:1px;
+    display:block;
+    float:left;
+    width:64px;
+    height:20px;
+    margin:0 3px 0 0;
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat;
+}
+
+/* --- .discountLabel --- */
+.discountLabel{
+    right:0;
+    bottom:0;
+    color:#ffffff;
+    font-family: $timesFont;
+    font-style: italic;
+
+    @include fz(40);
+    @include setElem(before, "");
+    @include setElem(after, "");
+
+    position:absolute;
+
+    &:before{
+        right: 7px;
+        bottom: 15px;
+        z-index: 1;
+        content: "%";
+
+        @include fz(20);
+    }
+
+    &:after{
+        right: 5px;
+        bottom: 3px;
+        z-index: 1;
+        content: "OFF";
+
+        @include fz(12);
+    }
+
+    & > .val{
+        display: block;
+        position: relative;
+        right: 30px;
+        bottom: -8px;
+        z-index: 2;
+        text-align: right;
+    }
+
+    & > .ext{
+        display: block;
+        position:absolute;
+        right:0;
+        bottom:0;
+        overflow: hidden;
+        width: 240px;
+        height: 240px;
+        background-color: #e83d15;
+        text-indent: -9999px;
+
+        @include transform(
+            rotate(60deg)
+            translate(220px, -10px)
+        );
+    }
+}
+
+/* --- .listLabel --- */
+.listLabel{
+    position:absolute;
+    top:10px;
+    left:-2px;
+    padding:3px 15px;
+    background:#e83d15;
+    color:#ffffff;
+}
+
+/* --- .bookmark --- */
+.bookmark{
+    position:absolute;
+    bottom:15px;
+    right:12px;
+    width:12px;
+    height:12px;
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat 0 -300px;
+}
+.bookmark:hover{
+    background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat -100px -300px;
+}
+
+
+/*------------------------------------------
+.star
+------------------------------------------ */
+.showcaseReview ul li.star5 span{
+    background-position:0px -148px;
+}
+.showcaseReview ul li.star4-75 span{
+    background-position:-200px -148px;
+}
+.showcaseReview ul li.star4-5 span{
+    background-position:0px -198px;
+}
+.showcaseReview ul li.star4-25 span{
+    background-position:-200px -198px;
+}
+.showcaseReview ul li.star4 span{
+    background-position:-12px -148px;
+}
+.showcaseReview ul li.star3-75 span{
+    background-position:-212px -148px;
+}
+.showcaseReview ul li.star3-5 span{
+    background-position:-12px -198px;
+}
+.showcaseReview ul li.star3-25 span{
+    background-position:-212px -198px;
+}
+.showcaseReview ul li.star3 span{
+    background-position:-12px -198px;
+}
+.showcaseReview ul li.star2-75 span{
+    background-position:-224px -148px;
+}
+.showcaseReview ul li.star2-5 span{
+    background-position:-24px -198px;
+}
+.showcaseReview ul li.star2-25 span{
+    background-position:-224px -198px;
+}
+.showcaseReview ul li.star2 span{
+    background-position:-38px -148px;
+}
+.showcaseReview ul li.star1-75 span{
+    background-position:-238px -148px;
+}
+.showcaseReview ul li.star1-5 span{
+    background-position:-38px -198px;
+}
+.showcaseReview ul li.star1-25 span{
+    background-position:-238px -198px;
+}
+.showcaseReview ul li.star1 span{
+    background-position:-50px -148px;
+}
+.showcaseReview ul li.star0-75 span{
+    background-position:-250px -148px;
+}
+.showcaseReview ul li.star0-5 span{
+    background-position:-50px -198px;
+}
+.showcaseReview ul li.star0-25 span{
+    background-position:-250px -198px;
+}
+.showcaseReview ul li.star0 span{
+    background-position:-64px -148px;
+}
+
+
+/* =================================================================
+
+  .trimmingImg
+
+================================================================= */
+.trimmingImg {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 0.3s ease-in 0s;
+    width:200px;
+    height:200px;
+}
+.trimmingImg img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    margin:auto;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+/* IE8以上 */
+.trimmingImg img {
+    position:relative\0;
+    top: 0\0;
+    left: auto\0;
+    right: auto\0;
+    width: 100%\0;
+}
+/* IE10以上 */
+@media all and (-ms-high-contrast:none){
+    .trimmingImg img {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    width: auto;
+}
+}
+
+
+
+/* =================================================================
+
+ marcket
+
+================================================================= */
+.showcase{
+    /* ノーマル */
+    ul.showcaseUlDefault li.showcaseLink{
+        height:300px;
+    }
+    /* ノーマル - 楽天市場 */
+    #basic04 ul.showcaseUlDefault li.showcaseLink{
+        height:368px;
+    }
+    /* ノーマル - アマゾン(amazon) */
+    #basic05 ul.showcaseUlDefault li.showcaseLink{
+        height:340px;
+    }
+    /* ノーマル - Yahoo! */
+    #basic06 ul.showcaseUlDefault li.showcaseLink{
+        height:330px;
+    }
+    /* mix */
+    ul.showcaseUlMix li.showcaseLink{
+        height:385px;
+    }
+    /* 楽天(rakuten) */
+    ul.showcaseUlRakuten li.showcaseLink{
+        height:368px;
+    }
+    /* アマゾン(amazon) */
+    ul.showcaseUlAmazon li.showcaseLink{
+        height:332px;
+    }
+    /* yahoo! */
+    ul.showcaseUlYahoo li.showcaseLink{
+        height:324px;
+    }
+}
+
+
+/* =================================================================
+
+ mix
+
+================================================================= */
+/* .marketLogo */
+.marketLogo{
+    position:relative;
+    bottom:4px;
+    height:17px;
+    width:17px;
+    margin:0 auto;
+    background:url(/assets/image/common/layout/search3/tools/icon_sitelogo.png);
+}
+.logoYahoo{
+    background-position:0 -2px;
+}
+.logoRakuten{
+    background-position:0 -31px;
+}
+.logoAmazon{
+    background-position:0 -128px;
+}
+
+
+
+/* Frame */
+.sly{
+    position:relative;
+    right:32px;
+    margin:10px 0 60px;
+
+    .frame{
+        height:346px;
+        overflow:hidden;
+    }
+    .frame ul.showcaseUl{
+        margin:0;
+    }
+    /* Frame - 楽天市場 */
+    .frame#basic04{
+        height:414px;
+    }
+    /* Frame - アマゾン(amazon) */
+    .frame#basic05{
+        height:386px;
+    }
+    /* Frame - Yahoo! */
+    .frame#basic06{
+        height:378px;
+    }
+
+    /* Scrollbar */
+    .scrollbar {
+        position:relative;
+        margin: 0 0 1em 0;
+        height: 3px;
+        background: #eeeeee;
+        line-height: 0;
+    }
+    .scrollbar .handle {
+        position:absolute;
+        top:-2px;
+        width: 100px;
+        height: 6px;
+        background: #999;
+        cursor: pointer;
+        border-radius:4px;
+    }
+    .scrollbar .handle .mousearea {
+        position: absolute;
+        top: -9px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+    }
+
+    /* Pages */
+    .pages {
+        list-style: none;
+        margin: 20px 0;
+        padding: 0;
+        text-align: center;
+    }
+    .pages li {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin: 0 4px;
+        text-indent: -999px;
+        border-radius: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,.2);
+    }
+    .pages li:hover {
+        background: #aaa;
+    }
+    .pages li.active {
+        background: #666;
+    }
+
+    /* One Item Per Frame example*/
+    .oneperframe { height: 300px; line-height: 300px; }
+    .oneperframe ul li { width: 1140px; }
+    .oneperframe ul li.active { background: #333333; }
+
+    /* Crazy example */
+    .crazy ul li:nth-child(2n) { width: 100px; margin: 0 4px 0 20px; }
+    .crazy ul li:nth-child(3n) { width: 300px; margin: 0 10px 0 5px; }
+    .crazy ul li:nth-child(4n) { width: 400px; margin: 0 30px 0 2px; }
+
+    /* Controls */
+    .controls {
+        position:relative;
+     }
+    .controls button{
+        position:absolute;
+        bottom:130px;
+        width:50px;
+        height:100px;
+        border:0;
+        background:#ffffff;
+    }
+    .controls button.prevPage{
+        left:-60px;
+    }
+    .controls button.nextPage{
+        right:-50px;
+    }
+    .controls .btnSlyLeft{
+        width:50px;
+        height:80px;
+        background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat 0 -350px;
+        border-radius:4px;
+    }
+    .controls .disabled .btnSlyLeft{
+        background:none;
+    }
+    .controls .btnSlyRight{
+        width:50px;
+        height:80px;
+        background:url(/assets/image/common/layout/search3/tools/sprite.png) no-repeat -200px -350px;
+        border-radius:4px;
+    }
+    .controls .disabled .btnSlyRight{
+        background:none;
+    }
+}

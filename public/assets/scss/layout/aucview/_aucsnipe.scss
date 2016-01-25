@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/*
+# aucSnipeConfig
+
+## 商品詳細　入札予約設定入力パーツ
+
+*/
+
+.aucSnipeConfig {
+    @include fz(13);
+
+    & > .aucSnipeConfigInner {
+        position: relative;
+        z-index: 1;
+
+        & > .aucSnipeConfigCont {
+            position: relative;
+            min-height: 200px;
+
+            & .val{
+                font-weight: bold;
+
+                @include fz(18);
+            }
+
+            & .snipInputBlock {
+                margin-bottom: 6px;
+                vertical-align: middle;
+
+                @include fz(15);
+
+                & .selectElem {
+                    position: relative;
+                    display: inline-block;
+                    width: 120px;
+                    border-bottom: 2px solid $ciColor02;
+                    vertical-align: bottom;
+
+                    @include overflow(xy, hidden);
+
+                    & > select {
+                        position: relative;
+                        z-index: 1;
+                        -moz-appearance: none;
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 180px;
+                        height: 30px;
+                        padding: 0 mgn(-1);
+                        border:none;
+                        background: none;
+                        text-indent: 0.01px;
+                        text-overflow: "";
+                        vertical-align: bottom;
+
+                        @include border-radius(0);
+                        @include box-sizing(content-box);
+                        @include fz(18);
+                    }
+
+                    & > i {
+                        position: absolute;
+                        top: 50%;
+                        right: 10px;
+                        margin: -3px 0 0;
+                    }
+                }
+
+                & input[type="text"] {
+                    width: 150px;
+                    height: 30px;
+                    padding: 0 mgn(-2);
+                    border:none;
+                    border-bottom: 2px solid $ciColor02;
+                    background: none;
+                    text-align: center;
+                    vertical-align: bottom;
+
+                    @include box-sizing(border-box);
+                    @include fz(18);
+                }
+
+                & .note {
+                    margin-top: mgn(-2);
+                    color: lighten($color04, 40%);
+
+                    @include fz(13);
+                }
+            }
+
+            & .snipSubmit {
+                margin: mgn(0) mgn(0) mgn(-2);
+            }
+        }
+    }
+}
+
+
+

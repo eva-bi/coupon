@@ -1,0 +1,121 @@
+/* graph setting*/
+.con{
+    position: relative;
+    width: 200px;
+    height: 120px;
+}
+#myfirstchart {
+    margin-left: -22px;
+    padding-top: 5px;
+    width: 100%;
+    height: 90%;
+}
+/* 3buttoms setting start*/
+.bu {
+    position: absolute;
+    top: 1.5px;
+    left: 15px;
+}
+a.but {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #20538D;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #4479BA;
+    color: #FFF;
+    padding: 2px 2px;
+    text-decoration: none;
+    font-size: 9px;
+    margin-left: 5px;
+}
+.but:hover {
+    background:#30588e;
+}
+/* 3buttoms setting end*/
+/*error message setting start*/
+.err p {
+    padding: 10px 10px 10px 10px;
+    color: red;
+}
+a.link {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #fff8c4;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #FEB803;
+    color: #FFF;
+    padding: 3px 3px;
+    margin: 10px 10px 10px 10px;
+    text-decoration: none;
+}
+/*error message setting end*/
+/* morris.js setting start*/
+svg text{
+    font-size:9px!important;
+}
+.morris-hover.morris-default-style {
+    margin-top: -35px;
+    margin-right: 20px;
+    margin-left: 20px;
+    position:static;
+    border-radius: 10px;
+    padding: 6px;
+    color: #666;
+    background: white;
+    border: 1px rgba(230, 230, 230, 0.8);
+    font-family: sans-serif;
+    font-size: 9px;
+    text-align: center;
+}
+.morris-hover.morris-default-style .morris-hover-row-label {
+    font-weight: bold;
+}
+.morris-hover.morris-default-style .morris-hover-point {
+    white-space: nowrap;
+    margin: -0.7em;
+}
+/* morris.js setting end*/
+/*for popup menu start*/
+.tooltip {
+    display:none;
+    position: absolute;
+    border:1px solid #333;
+    background-color:#161616;
+    border-radius:5px;
+    padding:10px;
+    color:#fff;
+    white-space: pre-line;
+    text-align: left;
+}
+.tooltip-inner {
+    white-space:pre;
+    max-width: none;
+}
+.round-button {
+    margin-right: 10px;
+    margin-top: -26px;
+    float: right;
+    display:block;
+    width:20px;
+    height:20px;
+    line-height:20px;
+    border: 2px solid #cfdcec;
+    border-radius: 50%;
+    text-align:center;
+    background: #4679BD;
+    color: white;
+    font-weight:bold;
+    text-decoration:none;
+}
+.round-button:hover {
+    background:#30588e;
+}
+/*for popup menu end*/

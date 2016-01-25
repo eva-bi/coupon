@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/*
+# Setting
+
+## 各種設定
+
+***
+*/
+
+/*
+# 画像
+*/
+// オークファンロゴ
+$ciLogo: inline-image("common/logo/logo_ci.png");
+
+// 共通スプライト画像
+$commonSprites: sprite-map("common/sprites/common/*.png", $spacing:30px, $position: 50%, $layout:vertical);
+$commonSprites-url: sprite-url($commonSprites);
+$common: image-url("common/sprites/common.png");
+
+// 商品詳細ページスプライト画像
+$aucviewSprites: sprite-map("common/sprites/aucview/*.png", $spacing:30px, $position: 50%, $layout:vertical);
+$aucviewSprites-url: sprite-url($aucviewSprites);
+$aucview: image-url("common/sprites/aucview.png");
+
+// クーポン検索スプライト画像
+$couponSprites: sprite-map("common/sprites/coupon/*.png", $spacing:30px, $position: 50%, $layout:vertical);
+$couponSprites-url: sprite-url($couponSprites);
+$coupon: image-url("common/sprites/coupon.png");
+
+// SVGのサポート
+$experimental-support-for-svg: true;
+
+/*
+# フォント
+*/
+// font-family
+$baseFont: "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", Meiryo, sans-serif;
+$timesFont: "Times New Roman", Times, serif;
+
+// font-size
+$baseFontSize: 15px;
+
+//  line-height
+$baseFontLines: 1.5;
+
+/*
+# カラー設定
+*/
+// コーポレートカラー
+$ciColor01: #29c278; // オークファングリーン
+$ciColor02: #96d533; // オークファンライトグリーン
+
+// 汎用カラー
+$color01: #ffffff; // ホワイト
+$color02: #dddddd; // グレー
+$color03: #333333; // フォントブラック
+$color04: #000000; // ブラック
+$color05: #0dafde; // リンクブルー
+$color06: #303134; // ダークブルー
+$color07: #248fea; // ブルー
+$color08: #ecc426; // イエロー
+$color09: #ffa200; // オレンジ
+$color10: #fa4c07; // レッド
+$color11: #fa6807; // ライトレッド
+$color12: #68b41f; // グリーン
+$color13: #acc007; // イエローグリーン
+
+// 訪問済みリンクカラー
+$visitedColor: #2166a6;
+
+/*
+# コンテンツ幅
+*/
+$contMinWidth: 1000px;
+$contMaxWidth: 1200px;
+
+/*
+# ベースとなる余白幅
+*/
+// 縦方向
+$baseMgn: 24px;
+
+// 横方向
+$baseSideMgn: 32px;
+
+/*
+# ベースとなる角丸の角度
+*/
+$baseR: 6px;
+

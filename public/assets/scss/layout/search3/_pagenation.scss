@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* =================================================================
+
+  common
+
+================================================================= */
+/* =================================================================
+
+  .pageNav
+
+================================================================= */
+.pageNav{
+    margin:0 0 60px;
+}
+.pageNav ul {
+    text-align: center;
+}
+.pageNav li{
+    margin: 10px 2px;
+    display: inline-block;
+}
+.pageNav li a{
+    padding:5px 8px;
+    border:1px solid #ddd;
+    border-radius:2px;
+    color:#333;
+}
+.pageNav li a:hover{
+    text-decoration:none;
+    background:#eee;
+}
+.pageNav li a.pageNavSelect{
+    background:#88cb1e;
+    color:#fff;
+}
+.pageNav li.pageNavNext a{
+    padding:7px 8px;
+    font-size:13px;
+}

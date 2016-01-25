@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+/*doc
+---
+title: 広告ボックス
+name: Ad_Banner_Box
+category: 広告
+parent:
+---
+
+広告バナーのスタイル
+
+```html_example
+<div class="adBnrBoxW300">
+    <div class="adBnrConfig">
+        <span>広告表示設定<i class="crossIco03"></i></span>
+    </div>
+    <img src="/template/new-aucview/dummy/ad_300x600_01.png" height="600" width="300" alt="">
+    <div class="substituteBlock">
+        <i class="crossIco02 close hv"></i>
+        <p class="premTxt">プレミアム会員になると<br>
+        広告を非表示にできます</p>
+        <p><a href="" class="btnType01 btnColor01">プレミアム会員登録する</a></p>
+        <p><a href="" class="btnType01">登録済みの方はこちら</a></p>
+    </div>
+</div>
+```
+*/
+
+%adBnrMiddle {
+    position: relative;
+    z-index: 1;
+    margin: mgn(-1) auto;
+    text-align: center;
+
+    & > iframe {
+        margin: 0 auto;
+    }
+
+    & > .adBnrConfig {
+        padding-bottom: mgn(-2.5);
+        color: darken($color01, 40%);
+        text-align: right;
+
+        @include fz(13);
+
+        & > span {
+            cursor: pointer;
+
+            & > i {
+                margin-top: -1px;
+                margin-right: 0;
+            }
+        }
+    }
+
+    & > .substituteBlock {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 100;
+        background-color: lighten($color06, 20%);
+        color: $color01;
+        text-align: center;
+
+        & > .close {
+            position: absolute;
+            top: mgn(-1);
+            right: mgn(-2, $baseSideMgn);
+            z-index: 1;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        & > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        & .premTxt {
+            padding-top: 40px;
+            color: $color01;
+
+            @include fz(18);
+        }
+
+        & [class*="btnType"] {
+            width: 260px;
+            margin: 0 auto;
+        }
+    }
+}
+
+// 広告の横幅設定（px）
+$adWidthSize: 300, 336;
+
+@each $val in $adWidthSize {
+    .adBnrBoxW#{$val} {
+        @extend %adBnrMiddle;
+    }
+    .adBnrBoxW#{$val} {
+        width: #{$val}px;
+    }
+}
+
+/*doc
+---
+title: タイル状広告ボックス
+name: Ad_Tile_Box
+category: 広告
+parent:
+---
+
+タイル状広告のスタイル
+
+```html_example
+
+```
+*/
+.adTileBox {
+    width: 600px;
+    margin: 0 auto mgn(-1);
+
+    & > .adTileBlock {
+        & > .adTileList {
+            @extend %clearfix;
+
+            & > li {
+                float: left;
+                width: 101px;
+                height: 101px;
+                margin-left: -2px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                & > a {
+                    position: relative;
+                    display: block;
+                    height: 100%;
+                    border: 2px solid $color03;
+
+                    @include box-sizing(border-box);
+                    @include overflow(xy, hidden);
+
+                    & > .adImg {
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        line-height: 94px;
+
+                        & > img {
+                            width: auto;
+                            max-width: 101px;
+                            height: auto;
+                            max-height: 101px;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    &:hover {
+                        & > .adTxt {
+                            top: 0;
+                        }
+                    }
+
+                    & > .adTxt {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $color01;
+                        background-color: rgba($color01, 0.9);
+
+                        @include fz(11);
+                        @include transition(top 0.5s $easeOutQuart);
+
+                        & > .name {
+                            height: 68px;
+                            margin: 0;
+                            padding: 4px 4px 0;
+                            color: $color03;
+
+                            @include overflow(xy, hidden);
+                        }
+
+                        & > .price {
+                            text-align: right;
+                            color: $color10;
+                            margin: 0;
+                            padding: 0 4px;
+                            font-weight: bold;
+
+                            @include overflow(xy, hidden);
+                            @include fz(13);
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .logo {
+            margin: mgn(-2) 0 0;
+
+            & > a {
+                margin: 0;
+            }
+        }
+    }
+
+    & > .adNonBlock {
+        & > .noMatchBgimg > a {
+            display: block;
+            height: 98px;
+            border: 2px solid $color03;
+            background: #ffffff url(/assets/image/common/module/ad/tile/ad_bg_recommend.png) no-repeat left center;
+            text-align: center;
+            text-shadow: 2px 1px 0 $color01;
+            line-height: 98px;
+
+            @include overflow(xy, hidden);
+            @include fz(18);
+
+            &:hover {
+                background-position: -928px center;
+                color: $color03;
+            }
+        }
+
+        & > .logo {
+            margin: mgn(-2) 0 0;
+
+            & > a {
+                margin: 0;
+            }
+        }
+    }
+}
+

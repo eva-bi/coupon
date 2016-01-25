@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* pagejack_bannar */
+.pagejack_bannar_l{
+    position: absolute;
+    top: 127px;
+    left: -160px;
+}
+.pagejack_bannar_r{
+    position: absolute;
+    top: 127px;
+    right: -160px;
+}
+
+/* pageCenterBnr */
+.pageCenterBnr{
+    margin: 20px 0;
+    text-align: center;
+    
+    & img{
+        vertical-align: top;
+    }
+}

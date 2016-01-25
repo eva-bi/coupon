@@ -1,0 +1,284 @@
+@charset "utf-8";
+
+/*
+# Mixin
+
+## 汎用的なミックスインなど
+
+***
+*/
+
+/*
+# slash hack
+*/
+$slash: "/";
+
+/*
+# easing
+*/
+$easeOutCubic : cubic-bezier(.215,.61,.355,1);
+$easeInOutCubic : cubic-bezier(.645,.045,.355,1);
+$easeInCirc : cubic-bezier(.6,.04,.98,.335);
+$easeOutCirc : cubic-bezier(.075,.82,.165,1);
+$easeInOutCirc : cubic-bezier(.785,.135,.15,.86);
+$easeInExpo : cubic-bezier(.95,.05,.795,.035);
+$easeOutExpo : cubic-bezier(.19,1,.22,1);
+$easeInOutExpo : cubic-bezier(1,0,0,1);
+$easeInQuad : cubic-bezier(.55,.085,.68,.53);
+$easeOutQuad : cubic-bezier(.25,.46,.45,.94);
+$easeInOutQuad : cubic-bezier(.455,.03,.515,.955);
+$easeInQuart : cubic-bezier(.895,.03,.685,.22);
+$easeOutQuart : cubic-bezier(.165,.84,.44,1);
+$easeInOutQuart : cubic-bezier(.77,0,.175,1);
+$easeInQuint : cubic-bezier(.755,.05,.855,.06);
+$easeOutQuint : cubic-bezier(.23,1,.32,1);
+$easeInOutQuint : cubic-bezier(.86,0,.07,1);
+$easeInSine : cubic-bezier(.47,0,.745,.715);
+$easeOutSine : cubic-bezier(.39,.575,.565,1);
+$easeInOutSine : cubic-bezier(.445,.05,.55,.95);
+$easeInBack : cubic-bezier(.6,-.28,.735,.045);
+$easeOutBack : cubic-bezier(.175, .885,.32,1.275);
+$easeInOutBack : cubic-bezier(.68,-.55,.265,1.55);
+
+/*
+# nounit
+*/
+@function nounit($value) {
+    $_nounit_divisor: (floor($value) * 2) % 2 + 1;
+    @return ($value / $_nounit_divisor);
+}
+
+/*
+# sprite
+*/
+@mixin sprite($name, $sprites, $spritesImg) {
+    display: block;
+    background-image: $spritesImg;
+    background-repeat: no-repeat;
+    width: image-width(sprite-file($sprites, $name));
+    height: image-height(sprite-file($sprites, $name));
+    $xpos: round(nth(sprite-position($sprites, $name), 1));
+    $ypos: round(nth(sprite-position($sprites, $name), 2));
+    background-position: $xpos $ypos;
+}
+
+/*
+# margin
+*/
+@function mgn($adjust: 0, $direction: $baseMgn) {
+    @return $direction + (8 * $adjust);
+}
+
+/*
+# roundedCorners
+*/
+@function r($adjust: 0) {
+    @return $baseR + (2 * $adjust);
+}
+
+/*
+# calc
+*/
+@mixin calc($prop, $expr, $sub: 0) {
+    #{ $prop }: #{ $sub };
+    $prefixes: webkit, moz;
+    @each $prefix in $prefixes {
+        #{ $prop }: -#{ $prefix }-calc(#{ $expr });
+    }
+    #{ $prop }: calc(#{ $expr });
+}
+
+/*
+# fontSize
+*/
+@mixin fz($size: $baseFontSize, $important: "") {
+    $imp: "";
+
+    @if $important == "i" {
+        $imp: " !important";
+    }
+
+    font-size: $size + px + $imp;
+    font-size: $size / nounit($baseFontSize) + rem + $imp;
+}
+
+/*
+# shadow
+*/
+@mixin shadow($pattern: 0, $shadowColor: $color04) {
+    @if $pattern == 0 {
+        @include box-shadow(0 1px 2px 0 rgba($shadowColor, 0.2));
+    } @else if $pattern == 1 {
+        @include box-shadow(0 2px 4px 0 rgba($shadowColor, 0.2),
+            1px 0 0 0 rgba($shadowColor, 0.03),
+            -1px 0 0 0 rgba($shadowColor, 0.03));
+    } @else if $pattern == 2 {
+        @include box-shadow(0 6px 10px 0 rgba($shadowColor, 0.2),
+            4px 0 4px 0 rgba($shadowColor, 0.1),
+            -4px 0 4px 0 rgba($shadowColor, 0.1));
+    }
+}
+
+/*
+# invisibilityElem
+*/
+@mixin setElem($elemPos: before, $elemCont: "") {
+    position: relative;
+
+    &:#{$elemPos} {
+        display: block;
+        position: absolute;
+        content: $elemCont;
+    }
+}
+
+/*
+# hideTxt
+*/
+@mixin hideTxt {
+    overflow: hidden;
+    text-indent: -9999px;
+    white-space: nowrap;
+}
+
+/*
+# overflow
+*/
+@mixin overflow($direction: xy, $set: hidden, $transform: true) {
+    @if $direction == xy {
+        overflow: $set;
+    } @else if $direction == x {
+        overflow-x: $set;
+    } @else if $direction == y {
+        overflow-y: $set;
+    }
+
+    -webkit-overflow-scrolling:touch;
+}
+
+/*
+# landscape
+*/
+@mixin landscape {
+    @media all and (orientation:landscape) {
+        @content;
+    }
+}
+
+/*
+# buttonClickEffects
+*/
+.btnEffects {
+    position: relative;
+
+    @include overflow(xy, hidden);
+
+    & > .ripple {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+        width: 200px;
+        height: 200px;
+        background-color: rgba($color01, 0.6);
+
+        @include border-radius(50%);
+        @include transform-origin(50%, 50%);
+        @include transform(
+            scale(0)
+        );
+    }
+
+    &.dim > .ripple {
+        background-color: rgba($color04, 0.2);
+    }
+}
+
+/*
+# icon
+*/
+%graphicCommonIcoForm {
+    position: relative;
+    top: -0.1em;
+    margin:0 mgn(-3, $baseSideMgn);
+    vertical-align: middle;
+
+    @include hideTxt;
+}
+%graphicIcoForm {
+    vertical-align: middle;
+
+    @include hideTxt;
+}
+
+@mixin commonIcoForm($name) {
+    @include sprite($name, $commonSprites, $common);
+    @extend %graphicCommonIcoForm;
+
+    display: inline-block;
+}
+@mixin aucviewIcoForm($name) {
+    @include sprite($name, $aucviewSprites, $aucview);
+    @extend %graphicIcoForm;
+
+    display: inline-block;
+}
+@mixin couponIcoForm($name) {
+    @include sprite($name, $couponSprites, $coupon);
+    @extend %graphicIcoForm;
+
+    display: inline-block;
+}
+
+/*
+# mediaquery
+*/
+@mixin mqMin($mqWidth: 1280) {
+    $mqWidth: $mqWidth + px;
+
+    @media (min-width: #{$mqWidth}) {
+        @content;
+    }
+}
+@mixin mqMinMax($mqWidth1: 1279, $mqWidth2: 960) {
+    $mqWidth1: $mqWidth1 + px;
+    $mqWidth2: $mqWidth2 + px;
+
+    @media (min-width: #{$mqWidth1}) and (max-width: #{$mqWidth2}) {
+        @content;
+    }
+}
+@mixin mqMax($mqWidth: 959) {
+    $mqWidth: $mqWidth + px;
+
+    @media (max-width: #{$mqWidth}) {
+        @content;
+    }
+}
+
+/*
+# clearfix
+*/
+.clearfix {
+    &:after {
+        display:block;
+        clear:both;
+        content:".";
+        height:0;
+        visibility:hidden;
+    }
+
+    #{$slash}zoom:1;
+}
+%clearfix {
+    &:after {
+        display:block;
+        clear:both;
+        content:".";
+        height:0;
+        visibility:hidden;
+    }
+
+    #{$slash}zoom:1;
+}

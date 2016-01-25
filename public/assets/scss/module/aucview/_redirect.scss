@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------
+    *
+    * File Name   : redirect.css
+    *
+-------------------------------------------------------------------*/
+
+#proRedirect {
+    position: fixed;
+    top:-1000px;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index:1000;
+    width: 500px;
+    height: 280px;
+    box-sizing: border-box;
+    padding:30px;
+    background: url(/assets/image/common/layout/search/redirect/search1_bg_proredirect01.png);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Meiryo", "メイリオ", "Osaka", "MS PGothic", arial, helvetica, sans-serif;
+}
+
+#proRedirect p {
+    padding:25px 0;
+    color:#ffffff;
+    font-size:145%;
+    line-height:1.5em;
+}
+#proLoginBtn {
+    display: block;
+    width: 390px;
+    height: 60px;
+    line-height:60px;
+    margin:0 auto;
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #dddddd 0%, #ffffff 100%);
+    border-radius: 7px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align:center;
+    color: #234673;
+}
+
+#proLoginBtn:hover {
+    text-decoration:none;
+    opacity: 0.9;
+}
+
+.proReCloseBtn {
+    position: absolute;
+    top:-12px;
+    right:-12px;
+    z-index:1001;
+    width: 45px;
+    height: 45px;
+    cursor:pointer;
+}
+
+#proReOverlay {
+    display:none;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index:900;
+    width: 100%;
+    height: 100%;
+    opacity:0.2;
+    
+}

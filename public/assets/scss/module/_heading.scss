@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/*doc
+---
+title: 汎用見出し h1相当
+name: Heading-type1
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h1相当とする。
+
+```html_example
+<h1 class="hdType01">テキストが入ります</h1>
+```
+*/
+
+.hdType01 {
+    margin-bottom: mgn(1);
+    padding: mgn(0) mgn(0, $baseSideMgn);
+    border-top: 4px solid lighten($color06, 30%);
+    background-color: lighten($color06, 75%);
+    font-weight: bold;
+
+    @include fz(28);
+    @include setElem(before, "");
+
+    &:before {
+        @include commonIcoForm(bg_hd_type01);
+
+        top: -4px;
+        left: 0;
+        margin: 0;
+    }
+}
+
+/*doc
+---
+title: 汎用見出し h2相当
+name: Heading-type2
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h2相当とする。
+
+```html_example
+<h2 class="hdType02">テキストが入ります</h2>
+```
+*/
+
+.hdType02 {
+    margin: mgn(5) 0 mgn(0);
+    padding: mgn(-1) mgn(-2);
+    border-top: 3px solid lighten($color06, 60%);
+    border-bottom: 1px dotted lighten($color06, 60%);
+    font-weight: bold;
+
+    @include fz(26);
+}
+
+/*doc
+---
+title: 汎用見出し h3相当
+name: Heading-type3
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h3相当とする。
+
+```html_example
+<h3 class="hdType03">テキストが入ります</h3>
+```
+*/
+
+.hdType03 {
+    margin: mgn(3) 0 mgn(0);
+    padding: 0 0 mgn(-2);
+    border-bottom: 1px solid $color06;
+
+    @include fz(22);
+}
+
+/*doc
+---
+title: 汎用見出し h4相当
+name: Heading-type4
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h4相当とする。
+
+```html_example
+<h4 class="hdType04">テキストが入ります</h4>
+```
+*/
+
+.hdType04 {
+    margin: mgn(2) 0 mgn(0);
+    padding: mgn(-2.5) 0 mgn(-2.5) mgn(-1);
+    border-left: 4px solid lighten($color06, 60%);
+
+    @include fz(18);
+}
+
+/*doc
+---
+title: 汎用見出し h5相当
+name: Heading-type5
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h5相当とする。
+
+```html_example
+<h4 class="hdType05">テキストが入ります</h4>
+```
+*/
+
+.hdType05 {
+    margin: mgn(2) 0 mgn(0);
+
+    @include fz(18);
+}
+
+/*doc
+---
+title: 汎用見出し h6相当
+name: Heading-type6
+category: 見出し
+parent:
+---
+
+汎用タイトル。
+見出しのレベル感は原則として、h6相当とする。
+
+```html_example
+<h4 class="hdType06">テキストが入ります</h4>
+```
+*/
+
+.hdType06 {
+    margin: mgn(-2) 0;
+    font-weight: bold;
+
+    @include fz(15);
+}

@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/*doc
+---
+title: パンくず
+name: Topics_Path
+category: パンくず
+parent:
+---
+
+パンくずのモジュール。
+
+```html_example
+<ul class="topicsPath">
+    <li><a href="/">トップ</a></li>
+    <li><a href="">羊毛フェルトの検索</a></li>
+    <li>商品詳細</li>
+<!-- /.topicsPath --></ul>
+```
+*/
+
+%topicsPathSubSet {
+    & > .topicsPath {
+        float: left;
+        width: 60%;
+        max-width: none;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    & > .topicsPathSubTxt {
+        float: right;
+        width: 40%;
+        margin: -4px 0 0;
+        color: lighten($color04, 60%);
+        font-weight: bold;
+        text-align: right;
+    }
+}
+
+.topicsPathBox {
+    width: 1000px;
+    margin:mgn(-1) auto;
+    padding: 0 $baseSideMgn;
+
+    @extend %clearfix;
+    @extend %topicsPathSubSet;
+}
+body.typeExtend .topicsPathBox {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+
+    @extend %topicsPathSubSet;
+}
+body.typeWide .topicsPathBox {
+    width: auto;
+
+    @extend %topicsPathSubSet;
+}
+
+.topicsPath {
+    width: 1000px;
+    margin:mgn(-1) auto;
+    padding: 0 $baseSideMgn;
+    color: lighten($color04, 60%);
+
+    @include fz(12);
+
+    & > li {
+        display: inline-block;
+        margin-left: 0.4em;
+        padding-left: 1.2em;
+
+        @include setElem(before, "");
+
+        &:before {
+            top: 50%;
+            left: 0;
+            margin-top: -5px;
+
+            @include sprite(ico_arrow_right02, $commonSprites, $common);
+        }
+
+        &:first-child {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        &:first-child:before {
+            display: none;
+        }
+
+        & > a {
+            color: lighten($color04, 60%);
+
+            &:hover {
+                color: darken($ciColor02, 5%);
+            }
+        }
+    }
+}
+body.typeExtend .topicsPath {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide .topicsPath {
+    width: auto;
+}
+

@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/*doc
+---
+title: 汎用的な表組み
+name: Standard_Table
+category: 表組み
+parent:
+---
+
+汎用的な表組み。
+
+```html_example
+<table class="tableType01">
+    <tbody>
+        <tr class="vM">
+            <th scope="row" class="sellSize35">タイトル</th>
+            <td class="sellSize65">テキスト</td>
+        </tr>
+        <tr class="vM">
+            <th scope="row">タイトル</th>
+            <td>テキスト</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<table class="tableType01">
+    <thead>
+        <tr class="vM">
+            <th scope="col" colspan="2" class="tC fBold">ヘッダータイトル</th>
+        </tr>
+    <thead>
+    <tbody>
+        <tr class="vM">
+            <th scope="row" class="sellSize35">タイトル</th>
+            <td class="sellSize65">テキスト</td>
+        </tr>
+    </tbody>
+</table>
+```
+###オプション
+
+- .sellSizeXX - セルの横幅の長さを設定できる（単位は％で1〜100まで）
+
+*/
+
+$tableCellPdg: mgn(-1.5) mgn(-1);
+$tableCellBdr: 1px solid $color02;
+
+// .sellSizeXX
+$widthVal: 0;
+
+%tableCellWidth {
+    @for $i from 1 through 100 {
+        $widthVal: $widthVal + 1%;
+
+        &.sellSize#{$i} {
+            width: #{$widthVal};
+        }
+    }
+}
+
+.tableType01 {
+    width:100%;
+    margin-bottom: mgn(0);
+    border-top: $tableCellBdr;
+    border-left: $tableCellBdr;
+
+    & th {
+        padding: $tableCellPdg;
+        border-right: $tableCellBdr;
+        border-bottom: $tableCellBdr;
+        background-color: darken($color01, 5%);
+        font-weight: bold;
+        vertical-align: middle;
+
+        @extend %tableCellWidth;
+    }
+
+    & td {
+        padding: $tableCellPdg;
+        border-right: $tableCellBdr;
+        border-bottom: $tableCellBdr;
+        background-color: $color01;
+
+        @extend %tableCellWidth;
+    }
+
+    & > thead th {
+        color: $color01;
+        background-color: lighten($color06, 30%);
+        text-align: center;
+    }
+}
+
+/*doc
+---
+title: シンプルな表組み
+name: Simple_Table
+category: 表組み
+parent:
+---
+
+シンプルな表組み。
+
+```html_example
+<table class="tableType02">
+    <tbody>
+        <tr class="vT">
+            <th scope="row" class="sellSize35">タイトル</th>
+            <td class="sellSize65">テキスト</td>
+        </tr>
+        <tr class="vT">
+            <th scope="row">タイトル</th>
+            <td>テキスト</td>
+        </tr>
+    </tbody>
+</table>
+```
+###オプション
+
+- .sellSizeXX - セルの横幅の長さを設定できる（単位は％で1〜100まで）
+
+*/
+
+.tableType02 {
+    width:100%;
+    margin-bottom: mgn(0);
+
+    & th {
+        padding: $tableCellPdg;
+        border-bottom: $tableCellBdr;
+        background-color: $color01;
+        vertical-align: middle;
+
+        @extend %tableCellWidth;
+    }
+
+    & td {
+        padding: $tableCellPdg;
+        border-bottom: $tableCellBdr;
+        background-color: $color01;
+
+        @extend %tableCellWidth;
+    }
+
+    & > thead th {
+        font-weight: bold;
+
+        @include fz(18);
+    }
+}
+
+
+

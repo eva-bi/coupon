@@ -1,0 +1,781 @@
+@charset "utf-8";
+
+/*-------------------------------------------------------------------
+ *
+ * File Name   : amazon.css
+ *
+-------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------
+    Search1_amazon検索
+-------------------------------------------------------------------*/
+
+body {
+    position: relative;
+}
+
+.amazonSearch1 .amazon-hits a{
+    background-position:0 -125px;
+}
+
+.amazon-activ {
+    background: #fe9901;
+    padding: 2px 0 2px 4px !important;
+    border-radius: 6px;
+}
+.amazon-activ a {
+    color: #ffffff;
+}
+.amazonSearch1 .sites_end {
+    margin: 0;
+}
+
+.searchListToolbarMainShadow,
+.searchListToolbarMain {
+    z-index: 1000;
+}
+.searchListToolbarSwitch {
+    z-index: 1001;
+}
+
+
+
+.amazonSearch1 .sites-hits li {
+    width: 150px;
+    display: inline-table;
+    padding: 5px 0;
+    margin: 0 10px 0 5px;
+}
+
+.sb_content dl.rowWide input[type="text"] {
+    width: 150px;
+}
+.sb_content dl.rowHalf input[type="text"] {
+    width: 46px;
+    margin-right: 2px;
+}
+
+.btnStyleAm {
+    display:block;
+    text-align:center;
+    width:100%;
+    margin:5px auto;
+    -webkit-border-radius:6px;
+    -moz-border-radius: 6px;
+    border-radius:6px;
+    border: none;
+    background:#666666 url(/assets/image/common/sprite/search_sprite.png) 45px -917px no-repeat;
+    color:#ffffff;
+    cursor: pointer;
+    font-size:14px;
+    line-height:36px;
+}
+
+.l-cate .amCateHd {
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 5px;
+    margin-bottom: 1em;
+}
+
+.amCateList li a {
+    display: inline;
+}
+
+
+
+/* =================================================================
+
+    Layout
+
+================================================================= */
+#amItemListArea{
+    margin-bottom:15px;
+}
+#amItemListArea .itemListBox{
+    position:relative;
+    float:right;
+    width:880px;
+    margin-bottom:15px;
+}
+#amItemListArea .filterCondBox{
+    float:left;
+    width:250px;
+    margin-right:20px;
+}
+
+/* -----------------------------------------------------------------
+    ListContentBlock
+----------------------------------------------------------------- */
+#amItemListArea .listContentBlock{
+    margin-bottom:15px;
+    padding:0 10px 15px;
+    background:#ffffff;
+}
+
+/* 
+#amItemListArea .listContentBlock li.item:first-child {
+    margin-top:25px;
+    border-top:0;
+}
+*/
+
+#amItemListArea .listContentBlock li.item{
+    margin-top:15px;
+    padding:15px 0 0 0;
+    border-top:1px solid #eeeeee;
+}
+
+#amItemListArea .listContentBlock li.item .amItemThumb{
+    float:left;
+    width:120px;
+    max-height:120px;
+    margin-right:15px;
+    text-align:center;
+}
+#amItemListArea .listContentBlock li.item .amItemThumb img{
+    max-width:120px;
+}
+#amItemListArea .listContentBlock li.item .rowDetail{
+    float:left;
+    width:580px;
+}
+
+/* itemName */
+#amItemListArea .listContentBlock li.item .title{
+    overflow:hidden;
+    width:580px;
+    white-space:nowrap;
+    -moz-text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    font-size: 16px;
+    margin:0 0 10px;
+}
+
+/* priceList */
+#amItemListArea .listContentBlock li.item .priceList{
+    // overflow:hidden;
+    margin-bottom:15px;
+    // white-space:nowrap;
+}
+#amItemListArea .listContentBlock li.item .priceList li{
+    display:inline-block;
+    line-height:25px;
+    margin-right:20px;
+}
+#amItemListArea .listContentBlock li.item .priceList .price{
+    margin-left:8px;
+    color:#dd4b39;
+    font-size:16px;
+    font-weight:bold;
+}
+#amItemListArea .listContentBlock li.item .priceList .bidNum{
+    margin-left:5px;
+    color:#999999;
+    font-size:12px;
+}
+
+/* detailList */
+#amItemListArea .listContentBlock li.item .detailList{
+    overflow:hidden;
+    margin-bottom:15px;
+}
+#amItemListArea .listContentBlock li.item .detailList dl,
+#amItemListArea .listContentBlock li.item .detailList dt,
+#amItemListArea .listContentBlock li.item .detailList dd{
+    float:left;
+}
+#amItemListArea .listContentBlock li.item .detailList dl{
+    width:235px;
+    line-height:24px;
+    margin-bottom:1px;
+}
+#amItemListArea .listContentBlock li.item .detailList dt{
+    width:90px;
+    margin-right: 1px;
+    background:#dfdfdf;
+    font-size:12px;
+    text-align:center;
+    vertical-align:middle;
+}
+#amItemListArea .listContentBlock li.item .detailList dd{
+    overflow:hidden;
+    width:115px;
+    background: #efefef;
+    padding:0 10px 0 15px;
+    font-size:12px;
+    white-space:nowrap;
+    -moz-text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+}
+
+#amItemListArea .listContentBlock ul.tagStatus{
+    overflow:hidden;
+    clear:both;
+}
+
+#amItemListArea .listContentBlock li.item .tagStatus li {
+    float: left;
+    position: relative;
+    line-height: 20px;
+    margin-right: 15px;
+    padding: 0 10px;
+    border: 1px solid #888888;
+    color: #888888;
+    font-size: 11px;
+    text-align: center;
+}
+#amItemListArea .listContentBlock li.item .tagStatus li:after {
+    content: "";
+    position: absolute;
+    transform:rotate(135deg);
+    top: -15px;
+    left: -10px;
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    border-top: 10px solid #888888;
+    }
+
+
+#amItemListArea .listContentBlock li.item .siteLink {
+    margin-top: 15px;
+}
+
+#amItemListArea .listContentBlock li.item .siteLink span {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.sortAm {
+    overflow: hidden;
+    margin: 5px auto;
+}
+
+
+
+/* -----------------------------------------------------------------
+    detailWindow
+----------------------------------------------------------------- */
+
+#amOverlay {
+    display: none;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
+    background:rgba(0,0,0,0.3);
+}
+
+.amItemWindow {
+    display: none;
+    position: absolute;
+    top:70px;
+    left: calc(50% - 560px);
+    margin:10px auto;
+    z-index: 101;
+    background: #ffffff;
+    width: 1060px;
+    border-radius: 10px;
+    padding: 30px;
+    color: #333333;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.amItemWindow img {
+    vertical-align:middle;
+}
+
+.amItemWinClose,
+.amFreeWinClose {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    z-index: 105;
+    cursor: pointer;
+}
+
+#amItemInrOverlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: #ffffff;
+    opacity: 0.4;
+}
+
+
+#detailHdBox{
+    overflow: hidden;
+    position:relative;
+    margin-bottom:20px;
+}
+#detailHdBox h3 {
+    display:inline-block;
+    max-width:750px;
+    font-size:20px;
+    font-weight:bold;
+    line-height:1.3;
+}
+#detailHdBox a {
+    display: block;
+    float: right;
+    width: 280px;
+    height: 46px;
+    background-color: #29c278;
+    border-radius: 6px;
+    margin-left: 10px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 50px;
+}
+#detailHdBox a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    -ms-filter:"alpha(opacity=70)";
+    transition: all 0.5s ease 0s;
+}
+
+#itemDetailArea{
+    overflow: hidden;
+}
+
+#amDetailInfoBox{
+    float:left;
+    width:720px;
+}
+
+#amDetailInfoBox .basicInfoBlock {
+    border: 1px solid #dddddd;
+    margin-bottom: 20px;
+}
+
+#thumbWideBox {
+    float: left;
+    width: 320px;
+    margin-right: 20px;
+    background: #ffffff;
+}
+
+
+/* -----------------------------------------------------------------
+    thumbWideBox
+----------------------------------------------------------------- */
+/* mainPhoto */
+#thumbWideBox .mainPhoto{
+    display:table-cell;
+    box-sizing:border-box;
+    width:320px;
+    height: 320px;
+    line-height: 320px;
+    background:#f0f0f0;
+    text-align:center;
+    border:1px solid #dddddd;
+}
+#thumbWideBox .mainPhoto img{
+    max-width:318px;
+    max-height:318px;
+}
+
+/* itemPhoto */
+#thumbWideBox .thumbList{
+    overflow:hidden;
+    margin:10px 0 20px 0;
+}
+#thumbWideBox .itemPhoto{
+    float:left;
+    width:100px;
+    height: 100px;
+    line-height: 100px;
+    margin-left:7px;
+    border:1px solid #dddddd;
+    text-align:center;
+}
+#thumbWideBox .itemPhoto:first-child{
+    margin-left:0;
+}
+#thumbWideBox .itemPhoto a{
+    display:block;
+}
+#thumbWideBox .itemPhoto img{
+    max-width:100px;
+    max-height:100px;
+    text-align:center;
+}
+
+/* hover */
+#thumbWideBox .mainPhoto a:hover img,
+#thumbWideBox .itemPhoto a:hover img{
+    opacity:0.7;
+    filter:alpha(opacity=70);
+    -ms-filter:"alpha(opacity=70)";
+    transition: all 0.5s ease 0s;
+}
+
+
+
+/* -----------------------------------------------------------------
+    detail
+----------------------------------------------------------------- */
+.basicInfoBlock .listContentBlock li.line{
+    float: left;
+}
+
+.ampriceArea{
+    width:400px;
+    padding:20px;
+}
+
+.ampriceArea ul.priceInfo{
+    display:table; 
+    width:380px;
+    margin-bottom:15px;
+}
+.ampriceArea .priceInfo li{
+    display:table-cell;
+    font-size:16px;
+}
+
+.ampriceArea .priceInfo li.title{
+    width:120px;
+}
+.ampriceArea .priceInfo li.price{
+    width:190px;
+    text-align:right;
+    color:#ee0000;
+    font-size:20px;
+}
+.ampriceArea .priceInfo li.price span{
+    font-weight:bold;
+}
+.ampriceArea .priceInfo li.itemCount{
+    width:120px;
+    text-align:right;
+}
+
+.itemInfoArea{
+    margin-top: 20px;
+}
+.itemInfoArea dl{
+    margin-bottom:1px;
+}
+.itemInfoArea dt{
+    width: 105px;
+    padding: 3px 3px 0 10px;
+    margin-bottom: 2px;
+    line-height: 25px;
+    float :left;
+    clear :both;
+    background:#dfdfdf;
+}
+.itemInfoArea dd{
+    width:120px;
+    padding:3px 3px 0 10px;
+    margin:0 0 0 2px;
+    line-height: 25px;
+    float :left;
+    background:#efefef;
+}
+
+.amItemWindow .listContentBlock ul.tagStatus{
+    overflow:hidden;
+    clear:both;
+    margin-top:25px;
+}
+.amItemWindow .listContentBlock ul.tagStatus li{
+    float:left;
+    position: relative;
+    line-height:20px;
+    margin-right:5px;
+    margin-bottom:2px;
+    padding:0 10px;
+    border:1px solid #888888;
+    color:#888888;
+    font-size:11px;
+    text-align:center;
+}
+
+.amItemWindow .listContentBlock ul.tagStatus li:after {
+    content: "";
+    position: absolute;
+    transform:rotate(135deg);
+    top: -15px;
+    left: -10px;
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    border-top: 10px solid #888888;
+    }
+
+
+#externalLinks{
+    clear:both;
+    margin:20px 0;
+    text-align:center;
+}
+#externalLinks li{
+    margin-right:15px;
+    padding-top:3px;
+    display:inline;
+}
+
+#externalLinks li.amReview{
+    padding-left:30px;
+    background:url(/assets/image/common/layout/search/amazon/azDetail_icon_sprite.png) no-repeat 0 0;
+}
+#externalLinks li.priceCheck{
+    padding-left:30px;
+    background:url(/assets/image/common/layout/search/amazon/azDetail_icon_sprite.png) no-repeat 0 -54px;
+}
+#externalLinks li.monorate{
+    padding-left:30px;
+    background:url(/assets/image/common/layout/search/amazon/azDetail_icon_sprite.png) no-repeat 0 -108px;
+}
+
+#amDescription {
+    width: 718px;
+    border: 1px solid #dddddd;
+    float:left;
+}
+#amDescription h4 {
+    line-height: 35px;
+    padding-left: 10px;
+    border-bottom: 1px solid #dddddd;
+    background: #f0f0f0;
+    font-size: 16px;
+}
+#amDescription .comment {
+    padding: 25px;
+    text-align: left;
+}
+
+#compareAmazon {
+    position: relative;
+    float:left;
+}
+#compareAmazon h4 {
+    margin: 20px 0 10px;
+    color: #234673;
+    font-size: 16px;
+    font-weight: bold;
+}
+#compareAmazon .amGlobal {
+    width: 718px;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+.amGlobal table#country_table {
+    width: 100%;
+    border: none;
+}
+.amGlobal table#country_table tr th {
+    border-right: 1px #ffffff solid;
+    line-height: 27px;
+    background: #5a7496;
+    color: #ffffff;
+}
+.amGlobal table#country_table tr th:last-child {
+    border-right: none;
+}
+.amGlobal table#country_table tr td {
+    padding: 5px;
+    border-top: 1px solid #eeeeee;
+}
+
+.amazonSearch1 .sb_content {
+    position: relative;
+    line-height: 1.7em;
+}
+.amazonSearch1 .sb_content dd {
+    margin: 0 0 5px 0;
+}
+
+.amFreeGray {
+    position: relative;
+    margin: 8px 0 10px;
+}
+.amFreeGray img {
+    vertical-align: middle;
+}
+.amFreeGray:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    border: 3px solid #999999;
+    border-radius: 6px;
+    width: 158px;
+    height: 38px;
+}
+
+.ampre1 {
+    background: #dddddd;
+    border-radius: 6px;
+    width: 100%;
+    height: 22px;
+    line-height: 24px;
+    margin: 0 auto 10px;
+    text-align: center;
+    color: #333333;
+}
+
+a.amPreLink {
+    display: block;
+    background: #00285b;
+    background-image: linear-gradient(to top, #ffa200 0%, #ffb83d 100%);
+    border-radius: 6px;
+    width: 90%;
+    height: 30px;
+    line-height: 32px;
+    margin: 10px auto 0;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+}
+a.amPreLink:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+
+.amNewSales {
+    top: 516px;
+    left: 0;
+}
+.amFBA {
+    top: 666px;
+    left: 0;
+}
+
+
+/*doc
+---
+title: 補足バルーン
+name: Supplement_Balloon
+category: バルーン
+parent:
+---
+マウスホバー時に表示される補足バルーン
+html_example
+*/
+
+[data-supballoon] {
+  position: relative;
+}
+[data-supballoon] .balloonWrap {
+  position: absolute;
+  top:-10px;
+  left:140px;
+  z-index: 10;
+  width: 35px;
+  height: 34px;
+}
+[data-supballoon] .balloonWrap > .balloonSymbol {
+  margin: 0;
+}
+[data-supballoon] .balloonWrap > .balloonBox {
+  display: none;
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ffa200;
+  background: #ffffff;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 14px;
+}
+[data-supballoon] .balloonWrap > .balloonBox > .balloonCont {
+  display: none;
+  width: 100%;
+}
+
+/*
+## Question Balloon Icon
+クエスションバルーン
+*/
+.qBalloonIco01 {
+  display: inline-block;
+  background-image: url('/assets/image/common/layout/search/amazon/amasearch1_ico_q.png');
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 34px;
+}
+
+
+/* -----------------------------------------------------------------
+    モノレート・プライスチェック モーダル
+----------------------------------------------------------------- */
+
+.mnrateFreeWindow,
+.pcheckFreeWindow {
+    display: none;
+    position: fixed;
+    top: calc(50% - 70px);
+    left: calc(50% - 150px);
+    z-index: 103;
+    width: 300px;
+    height: 140px;
+    border: 1px solid #ffa200;
+    background: #ffffff;
+    -webkit-overflow-scrolling: touch;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 4px 0 4px 0 rgba(0, 0, 0, 0.1), -4px 0 4px 0 rgba(0, 0, 0, 0.1);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+.mnrateFreeWindow a,
+.pcheckFreeWindow a {
+    display: block;
+    width: 240px;
+    height: 50px;
+    line-height: 50px;
+    margin: 10px auto;
+    background: #333;
+    text-align: center;
+    background: #00285b;
+    background-image: linear-gradient(to top, #ffa200 0%, #ffb83d 100%);
+    color: #ffffff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.mnrateFreeWindow a:hover,
+.pcheckFreeWindow a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}

@@ -1,0 +1,289 @@
+@charset "utf-8";
+
+/*
+# itemsBelt
+
+## 商品詳細　右カラムの商品説明エリア
+
+*/
+
+%itemsIcoForm {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+}
+
+.itemsDetails {
+    & > .marketPlaceBox {
+        padding: mgn(-1);
+        border-top: 1px dotted darken($color01, 20%);
+        background-color: lighten($color06, 75%);
+
+        & > .marketPlaceName {
+            margin-bottom: mgn(-1);
+
+            & > p {
+                margin: 0;
+            }
+        }
+
+        & > .marketPlaceInfo {
+            display: table;
+            width: 100%;
+            margin-bottom: mgn(-1);
+
+            & > .marketPlaceInfoBlock {
+                display: table-cell;
+                width: 50%;
+                padding-left: mgn(-1);
+                font-weight: bold;
+                word-break: break-all;
+
+                @include fz(24);
+
+                &:first-child {
+                    padding: 0 mgn(-1) 0 0;
+                    border-right: 1px dotted darken($color01, 20%);
+                }
+
+                & > .hd {
+                    font-weight: normal;
+
+                    @include fz(15);
+                }
+
+                & > p {
+                    margin-bottom: 0;
+
+                    & > .linkHistory {
+                        margin-left: mgn(-1);
+                        font-weight: normal;
+
+                        @include fz(14);
+                    }
+                }
+            }
+        }
+
+        & > .btnSingle {
+            margin-bottom: mgn(-2);
+
+            & > a {
+                vertical-align: bottom;
+
+                @include fz(24);
+            }
+        }
+
+        & > .btnList {
+            @extend %clearfix;
+
+            & > li {
+                position: relative;
+                z-index: 1;
+                float: left;
+                width: 167px;
+                margin-left: mgn(-2);
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                & [class*="btnType"] {
+                    position: relative;
+                    vertical-align: bottom;
+
+                    @include fz(21);
+                }
+
+                & .balloonWrap {
+                    position: absolute;
+                    top: -8px;
+                    right: -14px;
+                    margin: 0;
+
+                    & .pointGetBalloon {
+                        & > dt {
+                            padding: mgn(-2) 0;
+                            background-color: $color10;
+                            color: $color01;
+                            font-weight: bold;
+                            text-align: center;
+
+                            @include fz(16);
+                        }
+
+                        & > dd {
+                            padding: mgn(-1) mgn(-2);
+                            text-align: center;
+
+                            @include fz(13);
+
+                            & > .txt {
+                                margin-top: mgn(-2);
+                                padding: mgn(-2);
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > .itemsDetailsTab {
+        @extend %clearfix;
+
+        & > li {
+            position: relative;
+            float: left;
+            width: 187px - 60px;
+            height: 40px;
+            padding: 13px 0 0 60px;
+            background-color: darken($color01, 15%);
+            color: darken($color01, 50%);
+            vertical-align: middle;
+            cursor: pointer;
+
+            @include box-shadow(0 1px 1px rgba($color04, 0.2) inset);
+            @include border-radius(0 0 0 r(1));
+            @include fz(18);
+
+            &:first-child {
+                width: 187px - 65px;
+                padding: 13px 0 0 65px;
+
+                @include border-radius(0 0 r(1) 0);
+            }
+
+            & > .itemsBidIco {
+                @include aucviewIcoForm(ico_hammer02);
+
+                @extend %itemsIcoForm;
+            }
+
+            & > .itemsExhibitorIco {
+                @include aucviewIcoForm(ico_exhibitor02);
+
+                @extend %itemsIcoForm;
+            }
+
+            &.selected {
+                background-color: $color01;
+                color: $color03;
+                font-weight: bold;
+                cursor: default;
+
+                @include box-shadow(none);
+                @include setElem(before, "");
+
+                &:before {
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    border-top: 1px dotted darken($color01, 20%);
+                }
+
+                & > .itemsBidIco {
+                    @include aucviewIcoForm(ico_hammer01);
+
+                    @extend %itemsIcoForm;
+                }
+
+                & > .itemsExhibitorIco {
+                    @include aucviewIcoForm(ico_exhibitor01);
+
+                    @extend %itemsIcoForm;
+                }
+            }
+        }
+    }
+
+    & > .itemsDetailsTabContWrap {
+        overflow: hidden;
+        width: 374px;
+
+        & > .tabContBox {
+            position: relative;
+
+            & > .tabContBlock {
+                margin-top: mgn(0);
+                padding: 0 mgn(-1);
+
+                & > .tabContDl {
+                    margin: mgn(-2) 0;
+
+                    @extend %clearfix;
+
+                    & > dt {
+                        float: left;
+                    }
+                    & > dd {
+                        position: relative;
+                        margin-left: 7.5em;
+                        padding-left: 1.5em;
+                        word-break: break-all;
+
+                        @include setElem(before, "");
+
+                        &:before {
+                            top: 0;
+                            left: 0;
+                            content:"：";
+                        }
+                    }
+                }
+
+                & .exhibitorFaceIco01 {
+                    position: relative;
+                    top: -0.1em;
+
+                    @include aucviewIcoForm(ico_smile01);
+                }
+
+                & .exhibitorFaceIco02 {
+                    position: relative;
+                    top: -0.1em;
+
+                    @include aucviewIcoForm(ico_sad01);
+                }
+
+                & > .itemsLinkList {
+                    margin-top: mgn(-1);
+                    border-top: 1px solid $color02;
+
+                    & > li {
+                        border-bottom: 1px solid $color02;
+
+                        & > a {
+                            display: block;
+                            position: relative;
+                            min-height: 20px;
+                            padding: 10px 0 10px 46px;
+
+                            @include setElem(before, "");
+
+                            &:before {
+                                top: 50%;
+                                left: 0;
+                                margin: -15px 0 0;
+                            }
+                        }
+
+                        &.template > a:before {
+                            @include aucviewIcoForm(ico_template01);
+                        }
+                        &.otherAuction > a:before {
+                            @include aucviewIcoForm(ico_search01);
+                        }
+                        &.faq > a:before {
+                            @include aucviewIcoForm(ico_balloon01);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

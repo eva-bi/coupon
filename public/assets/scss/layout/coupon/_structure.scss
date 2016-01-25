@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*
+# structure
+
+## 各エリア構造
+
+
+*/
+
+#contentsArea {
+    position: relative;
+    z-index: 1;
+    min-height: 0;
+    margin-top: 144px;
+    padding-bottom: mgn(0);
+    background: none;
+
+    &.couponTopContents {
+        z-index: 2;
+        margin-top: -150px;
+    }
+}
+
+.couponPaginationArea {
+    padding-bottom: mgn(2);
+}
+
+body.typeExtend #btmInfoArea {
+    width: auto;
+    min-width: $contMinWidth;
+    max-width: $contMaxWidth;
+}
+body.typeWide #btmInfoArea {
+    width: auto;
+}

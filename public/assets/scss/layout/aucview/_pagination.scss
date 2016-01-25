@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/*
+# btmAside
+
+## メイン価格
+
+*/
+
+.itemsPagination {
+    text-align: center;
+
+    & .hdPagination {
+        margin: mgn(-1) 0;
+        font-weight: bold;
+        text-align: center;
+
+        @include fz(18);
+    }
+
+    & .paginationNav {
+        & > li {
+            display: inline-block;
+            padding: 0 0.5em;
+
+            &:first-child {
+                padding-right: 1em;
+
+                @include setElem(before, "");
+
+                &:before {
+                    top: 50%;
+                    right: 0;
+                    width: 1px;
+                    height: 1em;
+                    margin-top: -0.5em;
+                    background-color: $color02;
+                }
+            }
+        }
+    }
+}
+
+.btmAsideBox {
+    & > .btmAsideAdBox {
+        text-align: center;
+
+        & > [class*="adBnrBox"] {
+            display: inline-block;
+            margin-left: -0.3em;
+
+            &:first-child {
+                margin-right: mgn(0);
+                margin-left: 0;
+            }
+        }
+    }
+
+
+
+    & .btmAsideNav {
+        text-align: center;
+
+        & > li {
+            display: inline-block;
+            padding: 0 0.5em;
+
+            &:first-child {
+                padding-right: 1em;
+
+                @include setElem(before, "");
+
+                &:before {
+                    top: 50%;
+                    right: 0;
+                    width: 1px;
+                    height: 1em;
+                    margin-top: -0.5em;
+                    background-color: $color02;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,328 @@
+@charset "utf-8";
+
+/*
+# itemsCarousel
+
+## 商品詳細　商品画像カルーセル
+
+*/
+
+.itemsCarousel {
+    position: relative;
+    margin-bottom: mgn(3);
+
+    & .itemsInfinitySlider {
+        position: relative;
+        z-index: 1;
+        width: 600px;
+        height: 500px;
+        margin: 0 auto;
+        background-color: lighten($color06, 75%);
+        text-align: center;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+
+        @include overflow(xy, hidden);
+        @include box-sizing(border-box);
+        @include user-select(none);
+
+        & > .sliderBlock {
+            height: 100%;
+
+            & > a {
+                display: block;
+                height: 100%;
+                outline: none;
+                line-height: 500px;
+
+                & > img {
+                    width: auto;
+                    height: auto;
+                    max-width: 600px;
+                    max-height: 500px;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        & > .slick-arrow {
+            height: 500px;
+
+            @include transition(opacity 0.2s ease);
+            @include setElem(before, "");
+            @include setElem(after, "");
+
+            &:after {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color04;
+
+                @include opacity(0);
+            }
+
+            &:hover {
+                @include opacity(0.5);
+            }
+
+            &.prev {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                cursor: pointer;
+
+                &:before {
+                    top: 50%;
+                    left: mgn(-1);
+                    z-index: 1;
+                    margin-top: -23px;
+
+                    @include aucviewIcoForm(ico_arrow_item01);
+                }
+            }
+
+            &.next {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100px;
+                cursor: pointer;
+
+                &:before {
+                    top: 50%;
+                    right: mgn(-1);
+                    z-index: 1;
+                    margin-top: -23px;
+
+                    @include aucviewIcoForm(ico_arrow_item02);
+                }
+            }
+        }
+
+        & > .slick-list {
+            display: block;
+            position: relative;
+            z-index: -1;
+            height: 500px;
+            background-color: lighten($color06, 75%);
+
+            @include overflow(xy, hidden);
+
+            &:focus {
+                outline: none;
+            }
+            &.dragging {
+                cursor: pointer;
+                cursor: hand;
+            }
+
+            & > .slick-track {
+                display: block;
+                position: relative;
+                top: 0;
+                left: 0;
+                height: 100%;
+
+                @extend %clearfix;
+
+                & > .slick-slide {
+                    display: none;
+                    float: left;
+                    height: 100%;
+                    min-height: 1px;
+
+                    @include transition(background-color 0.3s ease);
+
+                    &:not(.slick-current) {
+                        background-color: $color06;
+
+                        & img {
+                            @include opacity(0.5);
+                        }
+                    }
+
+                    &.transit {
+                        background-color: transparent;
+
+                        & img {
+                            @include opacity(1);
+                        }
+                    }
+
+                    & > a {
+                        display: block;
+                        height: 100%;
+                        outline: none;
+                        line-height: 497px;
+                    }
+                    & img {
+                        vertical-align: middle;
+
+                        @include transition(opacity 0.3s ease);
+                    }
+                    &.slick-loading img {
+                        display: block;
+                    }
+                    &.slick-loading {
+                        display: none;
+                    }
+                    &.dragging {
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+
+        &.slick-initialized {
+            & > .slick-list {
+                & > .slick-track {
+                    & > .slick-slide {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        & > .sliderNav {
+            width: 100%;
+            margin-top: mgn(1);
+            text-align: center;
+
+            & > li {
+                display: inline-block;
+                width: auto !important;
+                margin: mgn(-1) mgn(-2) 0;
+                background-color: lighten($color06, 75%);
+                cursor: pointer;
+
+                @include setElem(before, "");
+
+                &:before {
+                    display: none;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: 1;
+                    border: 3px solid $color09;
+                }
+
+                &.slick-active {
+                    &:before {
+                        display: block;
+                    }
+                }
+
+                & img {
+                    width: auto;
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    & .toolBtnList {
+        position: absolute;
+        top: 470px;
+        right: 50%;
+        width: 600px;
+        margin-right: -290px;
+        padding: 0;
+
+        @include box-sizing(border-box);
+        @extend %clearfix;
+
+        & > li {
+            position: relative;
+            z-index: 2;
+            float: right;
+            padding: 0 mgn(-2);
+
+            @include border-radius(50%);
+
+            & > .txtDesc {
+                display: none;
+                top: -15px;
+                left: 50%;
+                opacity: 0;
+                margin-bottom: 0;
+                padding: 2px 0;
+                background-color: $color01;
+                text-align: center;
+
+                @include border-radius(200px);
+                @include shadow(2);
+                @include fz(13);
+                @include setElem(before, "");
+
+                position: absolute;
+
+                &:before {
+                    bottom: -6px;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    margin-left: -7px;
+                    border-color: $color01 transparent transparent;
+                    border-style: solid;
+                    border-width: 6px 7px 0;
+                }
+            }
+
+            & > a {
+                position: relative;
+            }
+
+            &.toolBookmark {
+                & i:not(.checkMark) {
+                    margin-top: -4px;
+
+                    @include aucviewIcoForm(ico_heart01);
+                    @include transition(opacity 0.2s ease);
+                }
+                & .txtDesc {
+                    width: 15em;
+                    margin-left: -7.5em;
+                }
+                & .checkMarkBlock {
+                    position: absolute;
+                    top: 14px;
+                    left: 11px;
+                    width: 36px;
+                    height: 30px;
+                    margin-left: -36px;
+
+                    @include overflow(xy, hidden);
+                    @include transition(margin-left 0.8s $easeOutCubic);
+
+                    & > .checkMark {
+                        position: absolute;
+                        top: 0;
+                        left: 36px;
+
+                        @include aucviewIcoForm(ico_check01);
+                        @include transition(left 0.8s $easeOutCubic);
+                    }
+                }
+            }
+            &.toolExhibit {
+                & i {
+                    margin-top: -4px;
+
+                    @include aucviewIcoForm(ico_exhibit01);
+                }
+                & .txtDesc {
+                    width: 11em;
+                    margin-left: -5.5em;
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+/*
+# itemsCarousel - state
+
+## 商品詳細　商品画像カルーセル - state
+
+*/
+
+.itemsCarousel {
+    &.typeSingle {
+        & .itemsInfinitySlider {
+            height: 500px;
+            margin: 0 auto;
+            background-color: lighten($color06, 75%);
+            text-align: center;
+        }
+    }
+
+    &.typeCarousel {
+        margin-bottom: mgn(2);
+
+        & .itemsInfinitySlider {
+            width: auto;
+            height: auto;
+            margin: 0;
+            background: none;
+        }
+
+        & .toolBtnList {
+            right: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0 mgn(-1);
+        }
+    }
+
+    & .toolBtnList {
+        & > li {
+            &.toolBookmark {
+                &.add {
+                    & > a {
+                        background-color: #ff8a44;
+
+                        & i:not(.checkMark) {
+                            @include opacity(0.3);
+                        }
+                        & .checkMarkBlock {
+                            margin-left: 0;
+
+                            & > .checkMark {
+                                left: 0;
+                            }
+                        }
+                    }
+
+                    & .txtDesc {
+                        width: 12em;
+                        margin-left: -6em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

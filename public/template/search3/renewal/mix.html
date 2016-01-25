@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>ショッピング検索 - 買うときも売るときも オークファン</title>
+    <meta name="author" content="aucfan">
+    <meta name="robots" content="noydir,noodp">
+    <meta name="description" content="あらゆる商品の最安値が一発でわかる。ヤフオク・楽天・Amazonなど各オークションやショッピングサイト比較情報で日本ナンバーワン総合サイト「オークファン」。過去10年間のオークション落札情報を全て網羅。カンタン出品・落札ツールなど、便利な機能も多数搭載。">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=1064">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/pathToCustomIcon.png">
+    <link rel="stylesheet" type="text/css" media="all" href="/assets/css/search3.css">
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="/assets/js/common/library/ie9.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/common/library/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/assets/js/common/library/quo.min.js"></script>
+    <script type="text/javascript" src="/assets/js/common/library/velocity.min.js"></script>
+    <script type="text/javascript" src="/assets/js/common/basic.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/common/search3/search3.js"></script>
+    
+    <script type="text/javascript" src="/assets/js/common/search3/nouislider.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/search3/nouislider.min.css">
+    
+    <!-- sly -->
+    <script type="text/javascript" src="/assets/js/common/library/sly.js"></script>
+    <script type="text/javascript" src="/assets/js/common/library/plugins.js"></script>
+    
+</head>
+
+<body id="shoppingSearchRakuten">
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-VVXB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-VVXB');</script>
+<!-- End Google Tag Manager -->
+
+    <div id="frame">
+
+        <!--===== Header Start =====-->
+        <header id="globalHeader">
+            <div class="globalHeaderInner">
+                <p class="ci"><a href="/"><img src="/assets/image/common/logo/logo_ci.png" alt="" height="104" width="500">
+                <span class="ciTxt">国内最大級のショッピング・<br>オークション相場検索サイト</span></a></p>
+                <ul class="headerNav">
+                    <li><a href="/auctemp/">オークションテンプレート</a></li>
+                    <li><a href="http://pro.aucfan.com/">オークファンプロ</a></li>
+                    <li><a href="/navi/premium/tutorial/">検索体験する</a></li>
+                    <li><a href="/faq.html">よくある質問</a></li>
+                    <li class="navAbout"><a href="/about.html">オークファンとは？</a></li>
+                </ul>
+            </div>
+        <!-- #globalHeader --></header>
+        <!--===== Header End=====-->
+
+        <div id="headerSwitchingArea">
+            <div class="headerSwitchingAreaInner">
+                <ul class="switchingTab">
+                    <li class="bid hv"><a href="javascript:void(0);" class="btnEffects dim">オークション落札相場</a></li>
+                    <li class="open hv"><a href="javascript:void(0);" class="btnEffects dim">開催中のオークション</a></li>
+                    <li class="shopping hv current"><a href="javascript:void(0);" class="btnEffects dim">ショッピング</a></li>
+                </ul>
+                <ul class="userAction">
+                    <li class="register"><a href="javascript:void(0);" class="btnEffects">会員登録</a></li>
+                    <li class="login"><a href="javascript:void(0);" class="btnEffects dim">ログイン</a></li>
+                    <li class="status">
+                        <a href="javascript:void(0);">ようこそ、<span class="userName">ゲスト</span>さん</a>
+                        <div class="userMenu">
+                            <ul class="userMenuList">
+                                <li><a href="/aucsnipe.html">かんたん入札予約ツール</a></li>
+                                <li><a href="http://tools.aucfan.com/bookmark/item">マイブックマーク</a></li>
+                            </ul>
+                            <ul class="userMenuList">
+                                <li><a href="/navi/simulation/auction/yahoo/">出品方法を学ぶ<br>
+                                <span class="subTxt">ヤフオク!で出品者デビューしよう！</span></a></li>
+                            </ul>
+                            <ul class="userMenuList">
+                                <li><a href="https://ssl.aucfan.com/member/logout">ログアウト</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        <!-- /#headerSwitchingArea --></div>
+        
+        
+        
+        <div class="searchShopping clearfix">
+            
+            <div class="navMarket">
+                <ul class="setLayout clearfix">
+                    <li><a class="navMarketNow" href="#"><span>一括検索</span></a></li>
+                    <li><a href="#"><span>楽天市場</span></a></li>
+                    <li><a href="#"><span>Yahoo!ショッピング</span></a></li>
+                    <li><a href="#"><span>Amazon</span></a></li>
+                    <li><a href="#"><span>ポンパレモール</span></a></li>
+                    <li><a href="#"><span>DeNAショッピング</span></a></li>
+                    <li><a href="#"><span>Qoo10</span></a></li>
+                </ul>
+            <!-- .navMarket --></div>
+        
+            <form class="searchForm clearfix">
+            
+                <div class="searchFormLeft">
+                    
+                    <div class="searchFromBox">
+                        <input id="searchFormKeyword" type="search" placeholder="キーワードを入力してください">
+                        <input id="searchFormBtn" type="image" src="/assets/image/common/layout/search3/tools/search3_btn_search.jpg" alt="検索する" width="82" height="38">
+                        <div class="searchFromBoxDetail">
+                            <span id="slideDownBtn01" class="slideDownBtn"></span>
+                            <div id="slideDown01" class="slideDown">
+                                <ul>
+                                    <li>
+                                        <dl>
+                                            <dt>キーワードを</dt>
+                                            <dd>
+                                                <input id="label01" type="radio" name="slideDown01Input" value="全て含む" checked>&nbsp;<label for="label01">全て含む</label>&nbsp;&nbsp;
+                                                <input id="label02" type="radio" name="slideDown01Input" value="一つでも含む">&nbsp;<label for="label02">一つでも含む</label>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl>
+                                            <dt>含めないキーワード</dt>
+                                            <dd><input type="text" value=""></dd>
+                                        </dl>
+                                    </li>
+                                    <li><input type="button" class="slideDown01Btn" value="検索する"></li>
+                                </ul>
+                            <!-- /.slideDown --></div>
+                        <!-- #searchFromBoxDetail --></div>
+                    <!-- .searchFromBox --></div>
+                    
+                    <div class="searchPickUp">
+                        <ul class="clearfix">
+                            <li>オススメキーワード:</li>
+                            <li><a href="#">キーワードキーワード</a></li>
+                            <li><a href="#">キーワード</a></li>
+                            <li><a href="#">キーワード</a></li>
+                            <li><a href="#">キーワードキーワード</a></li>
+                            <li><a href="#">キーワード</a></li>
+                        </ul>
+                    <!-- .searchPickUp --></div>
+                    
+                    <div class="searchPlus">
+                        <input type="checkbox" name="searchPlus" value="stock" id="checkboxStock"><label for="checkboxStock">在庫あり</label>
+                        <input type="checkbox" name="searchPlus" value="freeShipping" id="checkboxPostage"><label for="checkboxPostage">送料無料</label>
+                    <!-- .searchPlus --></div>
+                    
+                <!-- .searchFormLeft --></div>
+                
+                
+                <div class="searchFormRight">
+                
+                    <div id="searchDetail" class="clearfix">
+                        <div class="searchDetailBox">
+                            <span id="slideDownBtn02" class="slideDownBtn">カテゴリ選択</span>
+                            <div id="slideDown02" class="slideDown">
+                                <ul>
+                                    <li><a href="#">コンピュータ<span>(10000件)</span></a></li>
+                                    <li><a href="#">家電・AV・カメラ<span>(10000件)</span></a></li>
+                                    <li><a href="#">本・雑誌<span>(10000件)</span></a></li>
+                                    <li><a href="#">音楽<span>(10000件)</span></a></li>
+                                    <li><a href="#">映画・ビデオ<span>(10000件)</span></a></li>
+                                    <li><a href="#">おもちゃ・ゲーム<span>(10000件)</span></a></li>
+                                    <li><a href="#">ホビー・カルチャー<span>(10000件)</span></a></li>
+                                    <li><a href="#">アンティーク<span>(10000件)</span></a></li>
+                                    <li><a href="#">コミック・アニメグッズ<span>(10000件)</span></a></li>
+                                    <li><a href="#">タレントグッズ<span>(10000件)</span></a></li>
+                                    <li><a href="#">ファッション<span>(10000件)</span></a></li>
+                                    <li><a href="#">アクセサリー・時計<span>(10000件)</span></a></li>
+                                    <li><a href="#">キッズ・ベビー<span>(10000件)</span></a></li>
+                                    <li><a href="#">ビューティ・健康<span>(10000件)</span></a></li>
+                                    <li><a href="#">食品・飲料<span>(10000件)</span></a></li>
+                                    <li><a href="#">自動車・バイク<span>(10000件)</span></a></li>
+                                    <li><a href="#">スポーツ・レジャー<span>(10000件)</span></a></li>
+                                    <li><a href="#">事務・店舗用品<span>(10000件)</span></a></li>
+                                    <li><a href="#">住まい・インテリア<span>(10000件)</span></a></li>
+                                    <li><a href="#">花・園芸<span>(10000件)</span></a></li>
+                                    <li><a href="#">ペット・いきもの<span>(10000件)</span></a></li>
+                                    <li><a href="#">チケット・金券<span>(10000件)</span></a></li>
+                                    <li><a href="#">チャリティ<span>(10000件)</span></a></li>
+                                    <li><a href="#">その他<span>(10000件)</span></a></li>
+                                </ul>
+                            <!-- /.slideDown --></div>
+                        <!-- /.searchDetailBox--></div>
+                        <div id="searchDetailBoxNon" class="searchDetailBox searchDetailBox02">
+                            <span id="slideDownBtn03">こだわり選択</span>
+                        <!-- /.searchDetailBox --></div>
+                    <!-- #searchDetail --></div>
+                    
+                    <div class="clearfix">
+                        <div class="searchPrice clearfix">
+                        
+                            <!--<div id="slider" class="searchPriceLine clearfix">
+                                    <div class="noUi-origin">
+                                        <div class="noUi-handle-lower"></div>
+                                    </div>
+                                    <div class="noUi-origin">
+                                        <div class="noUi-handle-upper"></div>
+                                    </div>
+                                   <div class="searchPriceLineLow"></div>
+                                    <div class="searchPriceLineHigh searchPriceLineHover"></div>
+                                    <div class="searchPriceLineBack"></div>
+                            </div>-->
+                            <p>価格帯:&nbsp;<input type="text" value="">&nbsp;円&nbsp;〜&nbsp;<input type="text" value="">&nbsp;円</p>
+                        <!-- /.searchPrice --></div>
+                        
+                        <div class="searchPriceBtn">
+                            <input type="button" value="設定">
+                            <input type="reset" value="解除">
+                        <!-- .searchPriceBtn --></div>
+                    </div>
+                <!-- #searchFormRight --></div>
+                
+            <!-- /.searchForm --></form>
+             
+             
+             <div class="searchFormConditions">
+                    <div class="setLayout">
+                        <ul class="clearfix">
+                            <li class="searchFormConditionsListNumber">該当件数：<span class="red">231,443,328</span>件</li>
+                            <!--<li class="searchFormConditionsListHd">現在の検索条件:</li>
+                            <li class="searchFormConditionsList">キーワード&nbsp;$$$$$$$</li>
+                            <li class="searchFormConditionsList">カテゴリ&nbsp;$$$$$$$</li>
+                            <li class="searchFormConditionsList">こだわり検索&nbsp;$$$$$$$&nbsp;$$$$$$$&nbsp;$$$$$$$</li>
+                            -->
+                        </ul>
+                    </div>
+                </div>
+        <!-- .searchShopping --></div>
+        
+        
+        <ul class="topicsPath">
+            <li><a href="/">トップ</a></li>
+            <li><a href="/search3/">ショッピング</a></li>
+            <li>一括検索</li>
+        <!-- /.topicsPath --></ul>
+
+       
+        <!--===== Contents Start=====-->
+        <div id="contentsArea" class="setLayout">
+            
+            <h1 class="hdKeyword">「キーワード」の検索結果</h1>
+            
+            <form id="sortChangeForm">
+                <ul class="clearfix">
+                    <li>
+                        <select>
+                            <option value="orderPickUp" selected="selected">おすすめの順</option>
+                            <option value="orderReview">レビュー得点の高い順</option>
+                            <option value="orderCheap">価格の安い順</option>
+                            <option value="orderHigh">価格の高い順</option>
+                        </select>
+                    </li>
+                    <li>
+                        表示件数:&nbsp;<select>
+                            <option value="number120" selected="selected">120件</option>
+                            <option value="number240">240件</option>
+                        </select>
+                    </li>
+                </ul>
+            <!-- /#sortChangeForm --></form>
+            
+            
+            <div class="showcase setLayout">
+            
+                <ul class="showcaseUl showcaseUlMix clearfix">
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoYahoo"></div>
+                            <div class="trimmingImg">
+                                <img src="http://item.shopping.c.yimg.jp/i/j/kurosu_33102487ku" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice"><span class="showcasePriceDown">¥3,324,670 →</span>¥20,580</p>
+                                <p class="showcaseShop"><a href="#">スタンダードキッチン</a></p>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>送料無料</li>
+                                </ul>
+                            </section>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoYahoo"></div>
+                            <div class="trimmingImg">
+                                <img src="http://item.shopping.c.yimg.jp/i/l/kintsu_plus-diary-mud0011_1" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice"><span class="showcasePriceDown">¥3,324,670 →</span>¥6,432,580</p>
+                                <p class="showcaseShop"><a href="#">ショップ名ショップ名ショップ名ショップ名ショップ名</a></p>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>送料無料</li>
+                                </ul>
+                            </section>
+                            <div class="listLabel">34%OFF</div>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoRakuten"></div>
+                            <div class="trimmingImg">
+                                <img src="http://image.rakuten.co.jp/idog/cabinet/201411/catgdlc131_main.jpg" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice">¥20,580</p>
+                                <div class="showcaseReview">
+                                    <ul class="clearfix">
+                                        <li class="showcaseReviewStar star5"><span></span>5</li>
+                                        <li>（13,245件）</li>
+                                    </ul>
+                                </div>
+                                <p class="showcaseShop"><a href="#">スタンダードキッチン</a></p>
+                                <p class="showcasePoint">500ポイント（15倍）</p>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>送料無料</li>
+                                    <li>残り：5点</li>
+                                </ul>
+                            </section>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoAmazon"></div>
+                            <div class="trimmingImg">
+                                <img src="http://ecx.images-amazon.com/images/I/91qQHn-iB2L._UL1500_.jpg" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice">¥20,580</p>
+                                <ul class="showcaseAmazon clearfix">
+                                    <li class="showcaseRank"></li>
+                                    <li class="showcasePriceOld">(中古:¥3,324,670&ndash;)</li>
+                                </ul>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>レビュー有り</li>
+                                    <li>プライム対象</li>
+                                </ul>
+                            </section>
+                            <div class="listLabel">34%OFF</div>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoAmazon"></div>
+                            <div class="trimmingImg">
+                                <img src="http://ecx.images-amazon.com/images/I/51mrDRcfgwL._AC_SS300_.jpg" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice"><span class="showcasePriceDown">¥3,324,670 →</span>¥20,580</p>
+                                <ul class="showcaseAmazon clearfix">
+                                    <li class="showcaseRank">256位</li>
+                                    <li class="showcasePriceOld">(中古:¥3,324,670&ndash;)</li>
+                                </ul>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>レビュー有り</li>
+                                    <li>プライム対象</li>
+                                </ul>
+                            </section>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoYahoo"></div>
+                            <div class="trimmingImg">
+                                <img src="http://item.shopping.c.yimg.jp/i/j/kurosu_10017578" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice">¥20,580</p>
+                                <p class="showcaseShop"><a href="#">ショップ名ショップ名ショップ名</a></p>
+                            </section>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoRakuten"></div>
+                            <div class="trimmingImg">
+                                <img src="http://image.rakuten.co.jp/idog/cabinet/201411/li046_main.jpg" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice">¥1,580</p>
+                                <div class="showcaseReview">
+                                    <ul class="clearfix">
+                                        <li class="showcaseReviewStar star4-25"><span></span>4.25</li>
+                                        <li>（13,245件）</li>
+                                    </ul>
+                                </div>
+                                <p class="showcaseShop"><a href="#">ショップ名</a></p>
+                                <p class="showcasePoint">30ポイント（2倍）</p>
+                                <ul class="showcaseMarck clearfix">
+                                    <li>送料無料</li>
+                                    <li>残り：5点</li>
+                                </ul>
+                            </section>
+                            <div class="listLabel">SALE</div>
+                            <div class="bookmark"></div>
+                    </li>
+                    <li class="showcaseLink">
+                            <div class="marketLogo logoYahoo"></div>
+                            <div class="trimmingImg">
+                                <img src="http://item.shopping.c.yimg.jp/i/j/waza_lucky-cat" alt="">
+                            </div>
+                            <section>
+                                <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                <p class="showcasePrice"><span class="showcasePriceDown">¥3,324,670 →</span>¥980</p>
+                                <p class="showcaseShop"><a href="#">ショップ名ショップ名</a></p>
+                            </section>
+                            <div class="listLabel">34%OFF</div>
+                            <div class="bookmark"></div>
+                    </li>
+                <!-- /.showcaseUl --></ul>
+                
+                
+                <h2 class="h2Showcase">ポンパレモール「キーワード」の検索結果<a href="#">全てを見る&nbsp;&gt;&gt;</a></h2>
+                <div class="sly">
+                    
+                    <div id="basic01" class="frame">
+                        <ul class="showcaseUl showcaseUlDefault clearfix">
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://img.ponparemall.net/imgmgr/57/00108057/32/upa-32_1.jpg?ver=1&size=pict300_300" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://img.ponparemall.net/imgmgr/17/00102117/tasya17/9480287.jpg?ver=1&size=pict300_300" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://img.ponparemall.net/imgmgr/25/00107525/548/4906295062548.jpg?ver=1&size=pict300_300" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://img.ponparemall.net/imgmgr/25/00107525/380/4580471860380.jpg?ver=1&size=pict300_300" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/idog/cabinet/201411/catgdlc131_main.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/necosekai/cabinet/04280697/04282081/imgrc0068284173.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                        <!-- /.showcaseUl --></ul>
+                    <!-- /.frame basic --></div>
+                    <div class="controls center">
+                        <button class="btn prevPage"><div class="btnSlyLeft"></div></button>
+                        <button class="btn nextPage"><div class="btnSlyRight"></div></button>
+                    </div>
+                    <div class="scrollbar">
+                        <div class="handle">
+                            <div class="mousearea"></div>
+                        </div>
+                    </div>
+                <!-- /.sly --></div>
+                
+                
+                <h2 class="h2Showcase">DeNAショッピング「キーワード」の検索結果<a href="#">全てを見る&nbsp;&gt;&gt;</a></h2>
+                <div class="sly">
+                    
+                    <div id="basic02" class="frame">
+                        <ul class="showcaseUl showcaseUlDefault clearfix">
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://ic4-a.dena.ne.jp/mi/gr/130/imgr-a.dena.ne.jp/exr6/cb/2/1870466/3/mb/186110979_1.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://ic4-a.dena.ne.jp/mi/gr/130/image.rakuten.co.jp/pets-kojima/cabinet/08/08207324.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://ic4-a.dena.ne.jp/mi/gr/130/bcimg1-a.dena.ne.jp/bc11/u1482858/88/4903588234088.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://ic4-a.dena.ne.jp/mi/gr/130/bcimg1-a.dena.ne.jp/bc11/u1482858/97/4902397798897.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/idog/cabinet/201411/catgdlc131_main.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/necosekai/cabinet/04280697/04282081/imgrc0068284173.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                        <!-- /.showcaseUl --></ul>
+                    <!-- /.frame basic --></div>
+                    <div class="controls center">
+                        <button class="btn prevPage"><div class="btnSlyLeft"></div></button>
+                        <button class="btn nextPage"><div class="btnSlyRight"></div></button>
+                    </div>
+                    
+                    <div class="scrollbar">
+                        <div class="handle">
+                            <div class="mousearea"></div>
+                        </div>
+                    </div>
+                <!-- /.sly --></div>
+                
+                
+                <h2 class="h2Showcase">Qoo10「キーワード」の検索結果<a href="#">全てを見る&nbsp;&gt;&gt;</a></h2>
+                <div class="sly">
+                    
+                    <div id="basic03" class="frame">
+                        <ul class="showcaseUl showcaseUlDefault clearfix">
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://gd.image-gmkt.com/li/862/728/446728862.g_400-w_g.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://gd.image-gmkt.com/li/477/975/448975477.g_400-w_g.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://gd.image-gmkt.com/li/167/754/492754167.g_400-w_g.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://gd.image-gmkt.com/li/662/472/483472662.g_400-w_g.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/idog/cabinet/201411/catgdlc131_main.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥6,432,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/necosekai/cabinet/04280697/04282081/imgrc0068284173.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥1,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://thumbnail.image.rakuten.co.jp/@0_mall/mitsuyoshi/cabinet/pellet/pellet20kg-33l.jpg?_ex=320x320&s=2&r=1" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥20,580</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                            <li class="showcaseLink">
+                                    <div class="trimmingImg">
+                                        <img src="http://image.rakuten.co.jp/pinacolada/cabinet/zakka/pi-chigue_01.jpg" alt="">
+                                    </div>
+                                    <section>
+                                        <h1 class="showcaseHd">商品タイトル商品タイトル</h1>
+                                        <p class="showcasePrice">¥980</p>
+                                    </section>
+                                    <div class="bookmark"></div>
+                            </li>
+                        <!-- /.showcaseUl --></ul>
+                    <!-- /.frame basic --></div>
+                    <div class="controls center">
+                        <button class="btn prevPage"><div class="btnSlyLeft"></div></button>
+                        <button class="btn nextPage"><div class="btnSlyRight"></div></button>
+                    </div>
+                    
+                    <div class="scrollbar">
+                        <div class="handle">
+                            <div class="mousearea"></div>
+                        </div>
+                    </div>
+                <!-- /.sly --></div>
+                
+                
+                
+                
+                
+           <!-- /.showcase setLayout --></div>
+		
+      
+            
+            
+            <div class="pageNav">
+                <ul class="clearfix">
+                    <li class="pageNavNext"><a href="#">&lt;&lt;&nbsp;前のページへ</a></li>
+                    <li><a href="#">1</a></li>
+                    <li>…</li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a class="pageNavSelect" href="#">6</a></li>
+                    <li><a href="#">7</a></li>
+                    <li><a href="#">8</a></li>
+                    <li>…</li>
+                    <li><a href="#">9</a></li>
+                    <li class="pageNavNext"><a href="#">次のページへ&nbsp;&gt;&gt;</a></li>
+                </ul>
+            <!-- .pageNav --></div>
+
+        <!-- /#contentsArea --></div>
+        <!--===== Contents End=====-->
+        
+        
+        <!--===== Footer Start =====-->
+        <footer id="globalFooter">
+            <div class="globalFooterInner">
+                <ul class="footerNav">
+                    <li><a href="https://secure.aucfan.com/contact/general/">お問い合わせ</a></li>
+                    <li><a href="http://aucfan.co.jp/">会社概要</a></li>
+                    <li><a href="/navi/premium/tokushoho.html">特定商取引表示</a></li>
+                    <li><a href="http://aucfan.co.jp/recruit/">スタッフ募集</a></li>
+                    <li><a href="/company/ad.html">広告掲載について</a></li>
+                    <li><a href="/siteinfo/sitemap.html">サイトマップ</a></li>
+                    <li><a href="/siteinfo/service.html">利用規約</a></li>
+                    <li><a href="/siteinfo/link.html">リンクについて</a></li>
+                    <li><a href="/company/pp.html">プライバシーポリシー</a></li>
+                </ul>
+                <small class="copyright">&copy; 2000 aucfan Co.,Ltd. All Rights Reserved.</small>
+            </div>
+            <p class="switchingNav">表示：PC <a href="http://aucfan.com/" onclick="changeViewMode('SP','.aucfan.com','/',1 );">スマートフォン</a></p>
+        <!-- #globalFooter --></footer>
+        
+        <a href="#frame" id="fixedPagetop"></a>
+        <!--===== /Footer End =====-->
+        
+    <!-- / #frame --></div>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+/* -----------------------------------------------------------------
+    151002 pro導線バナー
+----------------------------------------------------------------- */
+
+.prem_sidebnr_pro.fixed {
+    position: fixed;
+    top:15px;
+    left:50%;
+    margin-left: -660px;
+}
+
+.prem_sidebnr_pro {
+    position: absolute;
+    top: 140px;
+    left:-174px;
+    text-align: center;
+}
+.prem_sidebnr_prologo {
+    position: absolute;
+    left: 10px;
+}
+.prem_sidebnr_proinr {
+    width: 146px;
+    height: 438px;
+    padding: 10px;
+    background-color: #f0f8fa;
+    font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.prem_sidebnr_proinr p {
+    padding: 45px 0 18px;
+    line-height: 1.5em;
+    font-size: 15px;
+    color: #333333;
+}
+.prem_sidebnr_proinr a {
+    display: block;
+    margin: 12px auto 0;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
+    background-image: linear-gradient(to top, #dc5621 0%, #ff750f 100%);
+    border-radius: 7px;
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.prem_sidebnr_proinr a:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}
+.prem_sidebnr_close {
+    position: absolute;
+    top:-10px;
+    right: -10px;
+    cursor: pointer;
+}

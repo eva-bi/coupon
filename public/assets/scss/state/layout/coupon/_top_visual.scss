@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*
+# couponTopVisual - state
+
+## クーポン検索　トップビジュアル
+
+*/
+
+#couponTopVisual {
+    & > .couponTopVisualInner {
+        & > .couponTopInput {
+            & .areaSelectBox,
+            & .categorySelectBox {
+                & > .selectList {
+                    & > .selectListInner {
+                        & > li {
+                            &.current,
+                            &.current:not(.tb):hover {
+                                background-color: $ciColor02;
+                                color: $color01;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

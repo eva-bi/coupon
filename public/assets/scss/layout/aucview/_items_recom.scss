@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+/*
+# itemsRecommend
+
+## 商品詳細　商品説明概要
+
+*/
+
+.itemsRecommend {
+    margin-bottom: mgn(1);
+
+    & > .hdRecomBox {
+        @extend %clearfix;
+
+        & > .hdRecom {
+            float: left;
+            width: 250px;
+            margin-top: 0;
+        }
+
+        & > .linkRecom {
+            margin: 0 0 0 260px;
+            padding-top: 4px;
+            text-align: right;
+
+            & em {
+                width: 12em;
+                margin-top: -3px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    & > .recomList {
+        height: 190px + mgn(-1);
+        margin-left: mgn(0) * -1;
+
+        @include overflow(xy, hidden);
+        @include fz(13);
+
+        & > ul {
+            @extend %clearfix;
+
+            & > .recomBlock {
+                float: left;
+                width: 160px;
+                height: 190px;
+                padding: 0 0 mgn(-1) mgn(0);
+
+                @include overflow(xy, hidden);
+
+                & > a {
+                    display: block;
+                    height: 100%;
+
+                    & > .recomImg {
+                        height: 120px;
+                        margin-bottom: mgn(-2);
+                        text-align: center;
+                        line-height: 120px;
+
+                        & > .recomImgInner {
+                            display: inline-block;
+                            position: relative;
+                            vertical-align: middle;
+
+                            & > img {
+                                width: auto;
+                                height: auto;
+                                max-width: 160px;
+                                max-height: 120px;
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+
+                    & > .recomTxt {
+                        & > .name {
+                            margin-bottom: 4px;
+                        }
+
+                        & > .price {
+                            margin-bottom: 0;
+                            color: lighten($color04, 60%);
+
+                            & > span {
+                                color: $color10;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:nth-of-type(even) {
+        & > .recomNoItems {
+            background-image: url(/assets/image/common/layout/aucview/items_recom/img_noitems02.jpg);
+        }
+    }
+
+    & > .recomNoItems {
+        width: 100%;
+        background: url(/assets/image/common/layout/aucview/items_recom/img_noitems01.jpg) no-repeat left top;
+
+        @include overflow(xy, hidden);
+
+        & > .recomNoItemsInner {
+            display: table;
+            width: 100%;
+            height: 220px;
+            text-align: center;
+            word-break: break-all;
+
+            @include fz(20);
+
+            & > .recomNoItemsCont {
+                display: table-cell;
+                vertical-align: middle;
+
+                & .linkRecom {
+                    margin: 0;
+                    padding: mgn(0);
+                    background-color: rgba($color01, 0.7);
+
+                    & > i[class*="Logo"] {
+                        margin: 0 0 mgn(-2);
+                    }
+
+                    & > em {
+                        margin-top: -3px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+
+    & > .recomMore {
+        padding: mgn(-2) 0;
+        border-bottom: 1px solid $color02;
+        color: lighten($color04, 40%);
+        text-align: center;
+        cursor: pointer;
+
+        @include setElem(before, "");
+        @include setElem(after, "");
+
+        &:before {
+            bottom: -12px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -12px;
+            border-color: lighten($color04, 80%) transparent transparent;
+            border-style: solid;
+            border-width: 12px 12px 0;
+        }
+
+        &:after {
+            bottom: -10px;
+            left: 50%;
+            width: 0;
+            height: 0;
+            margin-left: -12px;
+            border-color: $color01 transparent transparent;
+            border-style: solid;
+            border-width: 11px 12px 0;
+        }
+
+        & > .line {
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            right: 50%;
+            height: 1px;
+            background-color: $ciColor02;
+
+            @include transition(all 0.5s $easeOutSine);
+        }
+
+        &:not(.tb):hover {
+            color: darken($ciColor02, 5%);
+
+            &:before {
+                border-color: $ciColor02 transparent transparent;
+            }
+
+            & > .line {
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
+

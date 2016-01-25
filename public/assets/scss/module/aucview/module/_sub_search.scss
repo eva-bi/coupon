@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/* Sub Search Box */
+#select_wrap_body{
+    position: relative;
+    width: 100%;
+    padding-top: 67px;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;  
+    -moz-border-radius: 6px;
+}
+#select_wrap_body li a{
+    font-size:12px;
+}
+#head_select_category_body{
+    display: block;
+    position: absolute;
+    top:27px;
+    left:4px;
+    width:187px;
+    height:26px;
+    font-size:12px;
+}
+#head_search_input_body{
+    display: block;
+    width: 400px;
+    height: 24px;
+    font-size:15px;
+    position: absolute;
+    top:32px;
+    left: 202px;
+    line-height:12px;
+    border: solid 1px #CCCCCC;
+    padding:2px;
+    vertical-align:center;
+}
+#head_btn_search_body{
+    width: 131px;
+    height: 30px;
+    position: absolute;
+    top: 32px;
+    left: 622px;
+    background: url(/assets/image/common/sprite/search_sprite.png) -490px -436px no-repeat;
+    text-align: center;
+    color: #FFF;
+    border: none;
+    line-height:18px;
+    font-size:12px;
+    cursor:pointer;
+    font-weight:bold;
+}
+#select_alias_body {
+    display: block;
+    width: 460px;
+    position: absolute;
+    top:2px;
+    left:0px;
+    margin-left: 5px;
+}
+#select_alias_body li{
+    display: inline;
+    line-height: 32px;
+    font-size:12px;
+    margin-left: 0.5em;
+}
+#select_alias_body li a{
+    padding-left:0.5em;
+    padding-right:0.5em;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;  
+    -moz-border-radius: 3px;
+}
+#select_alias_body .l1_on{
+    background:#5289BD;
+    color: #FFFFFF;
+}
+#select_alias_body .l2_on{
+    background:#F19E1A;
+    color: #FFFFFF;
+}
+#select_alias_body .l3_on{
+    background:#53A21E;
+    color: #FFFFFF;
+}
+.select_wrap_body_1{
+    border: solid 3px #5289BD;
+}
+.select_wrap_body_2{
+    border: solid 3px #F19E1A;
+}
+.select_wrap_body_3{
+    border: solid 3px #53A21E;
+}
+div.selectalt{
+    border:1px solid #CCCCCC;
+    background: #EEEEEE url(/assets/image/common/module/sub_search/ico_arr_select.gif) right no-repeat;
+    border-radius: 10px;
+    position: absolute;
+    top:32px;
+    left:10px;
+    font-size: 13px;
+    height:27px;
+    width:180px;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+}
+div.selectalt span{
+    line-height:30px;
+    padding-left: 10px;
+}
+select.selectalt{
+    position: absolute;
+    zoom:1.1;
+    z-index: 2;
+    opacity: 0;
+}
+
